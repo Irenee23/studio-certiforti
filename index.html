@@ -8,10 +8,7 @@
         body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 0; background-color: #f4f7f4; color: #333; line-height: 1.6; }
         header { background-color: #1b5e20; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 10000; }
         .logo-container { display: flex; align-items: center; flex: 1; }
-        
-        /* CORREZIONE LOGO ROTONDO */
         .logo-container img { height: 80px; width: 80px; display: block; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        
         .text-header-container { display: flex; flex-direction: column; margin-left: 20px; max-width: 60%; }
         .org-name { color: #ffffff; font-size: 1.6em; font-weight: bold; }
         .org-domain { color: #c8e6c9; font-size: 0.85em; }
@@ -40,7 +37,7 @@
         .faq-question { font-weight: bold; color: #1b5e20; }
 
         .quote-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 20000; justify-content: center; align-items: center; }
-        .quote-content { background: white; padding: 30px; border-radius: 12px; max-width: 500px; width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; }
+        .quote-content { background: white; padding: 30px; border-radius: 12px; max-width: 500px; width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; max-height: 90vh; overflow-y: auto; }
         .quote-close { position: absolute; top: 15px; right: 20px; font-size: 1.5em; cursor: pointer; color: #666; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #1b5e20; }
@@ -68,7 +65,7 @@
         <div class="quote-content">
             <span class="quote-close" id="closeQuoteBtn">&times;</span>
             <h3 style="color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Gratuito</h3>
-            <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">Inserisci i tuoi dettagli e verrai ricontattato via email entro 24 ore.</p>
+            <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">Inserisci i tuoi dettagli e verrai ricontattato entro 24 ore.</p>
             <form action="#" method="POST" id="quoteForm">
                 <div class="form-group">
                     <label>Nome o Ragione Sociale</label>
@@ -77,6 +74,11 @@
                 <div class="form-group">
                     <label>Email di Contatto</label>
                     <input type="email" name="email" required placeholder="Es. nome@azienda.it">
+                </div>
+                <!-- AGGIUNTO CAMPO RECAPITO TELEFONICO -->
+                <div class="form-group">
+                    <label>Recapito Telefonico</label>
+                    <input type="tel" name="phone" required placeholder="Es. +39 333 1234567">
                 </div>
                 <div class="form-group">
                     <label>Servizio Richiesto</label>
