@@ -44,29 +44,26 @@
         .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #1b5e20; font-size: 1.05em; }
         .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1.05em; }
         
-        /* FILE DI SELEZIONE SCORREVOLE INTEGRALE */
-        .scrollable-select { 
-            width: 100%; 
-            height: 150px; 
-            border: 1px solid #ccc; 
-            border-radius: 6px; 
-            background: white; 
-            overflow-y: auto; 
-            box-sizing: border-box;
-            padding: 5px;
+        /* NUOVA STRUTTURA AD OPZIONI ESTESE INFALLIBILE */
+        .service-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
         }
-        .scrollable-option { 
-            padding: 10px; 
-            font-size: 1.05em; 
-            cursor: pointer; 
-            border-bottom: 1px solid #eee;
+        .service-option {
             display: flex;
             align-items: center;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
         }
-        .scrollable-option:last-child { border-bottom: none; }
-        .scrollable-option input { width: 20px; height: 20px; margin-right: 12px; accent-color: #1b5e20; cursor: pointer; }
-        .scrollable-option span { cursor: pointer; color: #333; font-weight: 500; }
-        .scrollable-option:hover { background-color: #e8f5e9; }
+        .service-option:hover { background-color: #e8f5e9; }
+        .service-option input { width: 22px; height: 22px; margin-right: 12px; accent-color: #1b5e20; cursor: pointer; flex-shrink: 0; }
+        .service-option span { font-size: 1.05em; color: #333; font-weight: 500; cursor: pointer; }
 
         .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 14px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1em; transition: background-color 0.2s; }
         .btn-submit:hover { background-color: #2e7d32; }
@@ -132,7 +129,7 @@
                 </div>
                 <div class="iso-box">
                     <div class="iso-badge">ISO 22000</div>
-                    <h3>Securezza Alimentare</h3>
+                    <h3>Sicurezza Alimentare</h3>
                     <p>Garantiamo che ogni fase della produzione agricola urbana rispetti i più rigidi standard di sicurezza alimentare, assicurando ortaggi biologici salubri e controllati per il consumatore finale.</p>
                 </div>
             </div>
@@ -152,3 +149,5 @@
                         <input type="email" name="email" required placeholder="Es. nome@azienda.it">
                     </div>
                     <div class="form-group">
+                        <label>Recapito Telefonico</label>
+                        <input type="tel" name="phone" required placeholder="Es. +39 333 1234567">
