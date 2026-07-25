@@ -21,35 +21,39 @@
         .hero { background-color: #e8f5e9; padding: 40px 20px; text-align: center; border-bottom: 3px solid #c8e6c9; }
         .hero h1 { color: #1b5e20; font-size: 2.2em; margin-bottom: 15px; }
         .section-title { text-align: center; color: #1b5e20; font-size: 2em; margin-top: 40px; margin-bottom: 25px; }
-        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto 40px auto; padding: 0 20px; }
-        .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 22px; border-top: 4px solid #2e7d32; }
+
+        /* --- STRUTTURA SLIDER SCORREVOLE EVIDENZIATO --- */
+        .slider-wrapper { position: relative; max-width: 1240px; margin: 0 auto 20px auto; padding: 0 70px; }
+        .slider-container { overflow: hidden; width: 100%; }
+        .features { display: flex; transition: transform 0.4s ease-in-out; gap: 20px; padding: 10px 0; }
+        .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 22px; flex: 0 0 calc(33.333% - 14px); min-width: 280px; box-sizing: border-box; border-top: 4px solid #2e7d32; }
         .card h3 { color: #2e7d32; margin-top: 0; font-size: 1.15em; }
         .card p { font-size: 0.9em; margin-bottom: 0; color: #444; }
-        @media (max-width: 992px) { .features { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 650px) { .features { grid-template-columns: 1fr; } }
-        
+
+        /* FRECCE DI SCORRIMENTO GIGANTI E ALTAMENTE VISIBILI */
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background-color: #1b5e20; border: 3px solid #ffffff; color: white; width: 55px; height: 55px; border-radius: 50%; font-size: 1.5em; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 10; display: flex; align-items: center; justify-content: center; user-select: none; transition: background-color 0.2s, transform 0.2s; }
+        .slider-btn:hover { background-color: #2e7d32; transform: translateY(-50%) scale(1.1); }
+        .slider-btn.prev { left: 5px; }
+        .slider-btn.next { right: 5px; }
+
+        /* PUNTINI INDICATORI DI SCORRIMENTO DI SPESSORE */
+        .slider-dots { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; }
+        .dot { width: 14px; height: 14px; background-color: #c8e6c9; border-radius: 50%; cursor: pointer; transition: background-color 0.2s; border: 1px solid #1b5e20; }
+        .dot.active { background-color: #1b5e20; width: 28px; border-radius: 7px; }
+
         .iso-section { background-color: #ffffff; padding: 40px 20px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
         .iso-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
         .iso-box { background-color: #f9fbf9; border: 2px dashed #81c784; border-radius: 8px; padding: 20px; width: 45%; min-width: 280px; text-align: center; }
         .iso-badge { background-color: #1b5e20; color: white; padding: 5px 15px; border-radius: 4px; font-weight: bold; }
-        .faq-section { max-width: 800px; margin: 0 auto 60px auto; padding: 0 20px; }
-        .faq-item { background-color: white; margin-bottom: 15px; padding: 20px; border-radius: 6px; border-left: 4px solid #81c784; }
-        .faq-question { font-weight: bold; color: #1b5e20; }
 
-        /* REQUISITI VISIVI MODULO DI PREVENTIVO */
+        /* MODULO DI PREVENTIVO */
         .quote-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 20000; justify-content: center; align-items: center; }
-        .quote-content { background: white; padding: 30px; border-radius: 12px; max-width: 550px; width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; max-height: 90vh; overflow-y: auto; }
+        .quote-content { background: white; padding: 30px; border-radius: 12px; max-width: 500px; width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; max-height: 90vh; overflow-y: auto; }
         .quote-close { position: absolute; top: 15px; right: 20px; font-size: 1.5em; cursor: pointer; color: #666; }
         .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #1b5e20; font-size: 1.05em; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1em; }
-        
-        .radio-container { display: flex; flex-direction: column; gap: 10px; margin-top: 5px; }
-        .radio-label { display: flex; align-items: center; gap: 12px; background: #f9fbf9; border: 1px solid #e0e0e0; padding: 12px; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; color: #333; }
-        .radio-label:hover { background: #e8f5e9; border-color: #81c784; }
-        .radio-input { width: 20px !important; height: 20px !important; cursor: pointer; margin: 0; accent-color: #1b5e20; }
-        
-        .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1em; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #1b5e20; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1em; }
+        .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1em; }
         .btn-submit:hover { background-color: #2e7d32; }
     </style>
 </head>
@@ -63,7 +67,6 @@
             </div>
         </div>
         <div class="header-actions">
-            <!-- Pulsante che attiva il modulo -->
             <div class="btn-quote-header" id="openQuoteBtn">📋 Richiedi Preventivo</div>
             <a href="https://wa.me" class="btn-link-header">🟢 WhatsApp</a>
         </div>
@@ -72,8 +75,8 @@
     <div class="quote-modal" id="quoteModal">
         <div class="quote-content">
             <span class="quote-close" id="closeQuoteBtn">&times;</span>
-            <h3 style="color: #1b5e20; margin-top: 0; font-size: 1.4em;">Richiesta di Preventivo Gratuito</h3>
-            <p style="font-size: 0.95em; color: #666; margin-bottom: 20px;">Inserisci i tuoi dettagli e verrai ricontattato entro 24 ore.</p>
+            <h3 style="color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Gratuito</h3>
+            <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">Inserisci i tuoi dettagli e verrai ricontattato entro 24 ore.</p>
             <form action="#" method="POST" id="quoteForm">
                 <div class="form-group">
                     <label>Nome o Ragione Sociale</label>
@@ -91,26 +94,15 @@
                     <label>Città / Località</label>
                     <input type="text" name="city" required placeholder="Es. Milano (MI)">
                 </div>
-                
                 <div class="form-group">
-                    <label>Seleziona il Servizio Richiesto:</label>
-                    <div class="radio-container">
-                        <label class="radio-label">
-                            <input type="radio" name="service" value="Consulenza ISO: Cooperative, Aziende Agroalimentari" class="radio-input" checked>
-                            <span>Consulenza ISO: Cooperative, Aziende Agroalimentari</span>
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="service" value="Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè" class="radio-input">
-                            <span>Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè</span>
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="service" value="Agricoltura Urbana: Scuole, Mense, strutture HORECA" class="radio-input">
-                            <span>Agricoltura Urbana: Scuole, Mense, strutture HORECA</span>
-                        </label>
-                    </div>
+                    <label>Servizio Richiesto</label>
+                    <select name="service">
+                        <option value="Consulenza ISO: Cooperative, Aziende Agroalimentari">Consulenza ISO: Cooperative, Aziende Agroalimentari</option>
+                        <option value="Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè">Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè</option>
+                        <option value="Agricoltura Urbana: Scuole, Mense, strutture HORECA">Agricoltura Urbana: Scuole, Mense, strutture HORECA</option>
+                    </select>
                 </div>
-
-                <div class="form-group" style="margin-top: 20px;">
+                <div class="form-group">
                     <label>Descrizione del Progetto / Note</label>
                     <textarea name="message" rows="4" placeholder="Fornisci una breve descrizione delle tue necessità..."></textarea>
                 </div>
@@ -121,20 +113,29 @@
 
     <section class="hero">
         <h1>Coltiviamo la Biodiversità nelle Nostre Città</h1>
-        <p>Progettiamo ecosistemi urbani, rigeneriamo suoli e offritus consulenza agronomica e di certificazione (ISO 9001/22000).</p>
+        <p>Progettiamo ecosistemi urbani, rigeneriamo suoli e offriamo consulenza agronomica e di certificazione (ISO 9001/22000).</p>
     </section>
 
     <main>
         <h2 class="section-title">Pilastri Rigenerativi & Consulenza ISO</h2>
-        <div class="features">
-            <div class="card"><h3>1. Biodiversità Integrata</h3><p>Permacultura e attrattori utili.</p></div>
-            <div class="card"><h3>2. Cibo a Metri Zero</h3><p>Produzione urbana biologica.</p></div>
-            <div class="card"><h3>3. Compostaggio Ecologico</h3><p>Valorizzazione scarti organici.</p></div>
-            <div class="card"><h3>4. Spazi Comuni ed Educativi</h3><p>Rigenerazione aree condominiali.</p></div>
-            <div class="card"><h3>5. Paesaggio Commestibile</h3><p>Edible landscaping urbano.</p></div>
-            <div class="card"><h3>6. Ispezioni e Controllo</h3><p>Audit Bio, HACCP, HORECA.</p></div>
+        
+        <!-- INTRODUZIONE STRUTTURA SCORREVOLE CON FRECCE EVIDENZIATE -->
+        <div class="slider-wrapper">
+            <button class="slider-btn prev" id="prevBtn">◀</button>
+            <div class="slider-container">
+                <div class="features" id="sliderFeatures">
+                    <div class="card"><h3>1. Biodiversità Integrata</h3><p>Permacultura e attrattori utili.</p></div>
+                    <div class="card"><h3>2. Cibo a Metri Zero</h3><p>Produzione urbana biologica.</p></div>
+                    <div class="card"><h3>3. Compostaggio Ecologico</h3><p>Valorizzazione scarti organici.</p></div>
+                    <div class="card"><h3>4. Spazi Comuni ed Educativi</h3><p>Rigenerazione aree condominiali.</p></div>
+                    <div class="card"><h3>5. Paesaggio Commestibile</h3><p>Edible landscaping urbano.</p></div>
+                    <div class="card"><h3>6. Ispezioni e Controllo</h3><p>Audit Bio, HACCP, HORECA.</p></div>
+                </div>
+            </div>
+            <button class="slider-btn next" id="nextBtn">▶</button>
         </div>
+
+        <!-- PUNTINI DI SCORRIMENTO SOTTO LE SCHEDE -->
+        <div class="slider-dots" id="sliderDots"></div>
+
         <div class="iso-section">
-            <h2 class="section-title">Qualità e Sicurezza</h2>
-            <div class="iso-container">
-                <div class="iso-box"><div class="iso-badge">ISO 9001</div><h3>Qualità</h3><p>Protocolli scientifici.</p></div>
