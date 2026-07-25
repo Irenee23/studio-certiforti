@@ -13,9 +13,11 @@
         .org-name { color: #ffffff; font-size: 1.6em; font-weight: bold; }
         .org-domain { color: #c8e6c9; font-size: 0.85em; }
         .header-actions { display: flex; align-items: center; gap: 12px; margin-left: 20px; }
-        .btn-link-header, .btn-email-header { padding: 10px 18px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.9em; transition: transform 0.2s; }
+        .btn-link-header, .btn-quote-header { padding: 10px 18px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.9em; transition: transform 0.2s; cursor: pointer; }
         .btn-link-header { background-color: #25d366; color: white; }
-        .btn-email-header { background-color: #ffffff; color: #1b5e20; border: 1px solid #1b5e20; }
+        .btn-quote-header { background-color: #ffffff; color: #1b5e20; border: 1px solid #1b5e20; }
+        .btn-link-header:hover, .btn-quote-header:hover { transform: scale(1.05); }
+        
         .hero { background-color: #e8f5e9; padding: 40px 20px; text-align: center; border-bottom: 3px solid #c8e6c9; }
         .hero h1 { color: #1b5e20; font-size: 2.2em; margin-bottom: 15px; }
         .section-title { text-align: center; color: #1b5e20; font-size: 2em; margin-top: 40px; margin-bottom: 25px; }
@@ -25,6 +27,7 @@
         .card p { font-size: 0.9em; margin-bottom: 0; color: #444; }
         @media (max-width: 992px) { .features { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 650px) { .features { grid-template-columns: 1fr; } }
+        
         .iso-section { background-color: #ffffff; padding: 40px 20px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
         .iso-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
         .iso-box { background-color: #f9fbf9; border: 2px dashed #81c784; border-radius: 8px; padding: 20px; width: 45%; min-width: 280px; text-align: center; }
@@ -32,6 +35,16 @@
         .faq-section { max-width: 800px; margin: 0 auto 60px auto; padding: 0 20px; }
         .faq-item { background-color: white; margin-bottom: 15px; padding: 20px; border-radius: 6px; border-left: 4px solid #81c784; }
         .faq-question { font-weight: bold; color: #1b5e20; }
+
+        /* --- STILI NUOVO MODULO PREVENTIVO --- */
+        .quote-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 20000; justify-content: center; align-items: center; }
+        .quote-content { background: white; padding: 30px; border-radius: 12px; max-width: 500px; width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; }
+        .quote-close { position: absolute; top: 15px; right: 20px; font-size: 1.5em; cursor: pointer; color: #666; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #1b5e20; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; }
+        .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1em; }
+        .btn-submit:hover { background-color: #2e7d32; }
     </style>
 </head>
 <body>
@@ -44,14 +57,49 @@
             </div>
         </div>
         <div class="header-actions">
-            <a href="mailto:info@certiforti.it" class="btn-email-header">📩 info@certiforti.it</a>
+            <!-- Pulsante Preventivo Pratico -->
+            <div class="btn-quote-header" id="openQuoteBtn">📋 Richiedi Preventivo</div>
             <a href="https://wa.me" class="btn-link-header">🟢 WhatsApp</a>
         </div>
     </header>
+
+    <!-- SCHERMATA MODULO PREVENTIVO INTEGRATA -->
+    <div class="quote-modal" id="quoteModal">
+        <div class="quote-content">
+            <span class="quote-close" id="closeQuoteBtn">&times;</span>
+            <h3 style="color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Gratuito</h3>
+            <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">Inserisci i tuoi dettagli e verrai ricontattato via email entro 24 ore.</p>
+            <form action="https://formspree.io" method="POST" id="quoteForm">
+                <div class="form-group">
+                    <label>Nome o Ragione Sociale</label>
+                    <input type="text" name="name" required placeholder="Es. Azienda Agricola Rossi">
+                </div>
+                <div class="form-group">
+                    <label>Email di Contatto</label>
+                    <input type="email" name="email" required placeholder="Es. nome@azienda.it">
+                </div>
+                <div class="form-group">
+                    <label>Servizio Richiesto</label>
+                    <select name="service">
+                        <option value="Consulenza ISO 9001 / 22000">Consulenza Conformità ISO</option>
+                        <option value="Audit Certificazione Biologico & HACCP">Assistenza Audit & HACCP</option>
+                        <option value="Progettazione Agronomica Urbana">Agricoltura Urbana & HORECA</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Descrizione del Progetto / Note</label>
+                    <textarea name="message" rows="4" placeholder="Fornisci una breve descrizione delle tue necessità..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Invia Richiesta</button>
+            </form>
+        </div>
+    </div>
+
     <section class="hero">
         <h1>Coltiviamo la Biodiversità nelle Nostre Città</h1>
         <p>Progettiamo ecosistemi urbani, rigeneriamo suoli e offriamo consulenza agronomica e di certificazione (ISO 9001/22000).</p>
     </section>
+
     <main>
         <h2 class="section-title">Pilastri Rigenerativi & Consulenza ISO</h2>
         <div class="features">
@@ -70,5 +118,16 @@
             </div>
         </div>
     </main>
+
+    <!-- SCRIPT GESTIONE APERTURA MODULO -->
+    <script>
+        const modal = document.getElementById('quoteModal');
+        const openBtn = document.getElementById('openQuoteBtn');
+        const closeBtn = document.getElementById('closeQuoteBtn');
+
+        openBtn.addEventListener('click', () => { modal.style.display = 'flex'; });
+        closeBtn.addEventListener('click', () => { modal.style.display = 'none'; });
+        window.addEventListener('click', (e) => { if (e.target === modal) { modal.style.display = 'none'; } });
+    </script>
 </body>
 </html>
