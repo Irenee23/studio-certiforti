@@ -36,13 +36,21 @@
         .faq-item { background-color: white; margin-bottom: 15px; padding: 20px; border-radius: 6px; border-left: 4px solid #81c784; }
         .faq-question { font-weight: bold; color: #1b5e20; }
 
+        /* MODULO PREVENTIVO MIGLIORATO PER LA LEGGIBILITÀ */
         .quote-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 20000; justify-content: center; align-items: center; }
-        .quote-content { background: white; padding: 30px; border-radius: 12px; max-width: 500px; width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; max-height: 90vh; overflow-y: auto; }
+        .quote-content { background: white; padding: 30px; border-radius: 12px; max-width: 550px; width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; max-height: 90vh; overflow-y: auto; }
         .quote-close { position: absolute; top: 15px; right: 20px; font-size: 1.5em; cursor: pointer; color: #666; }
         .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #1b5e20; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; }
-        .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1em; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #1b5e20; font-size: 1.05em; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1em; }
+        
+        /* NUOVO STILE PULSANTI DI SELEZIONE GRANDI */
+        .radio-container { display: flex; flex-direction: column; gap: 10px; margin-top: 5px; }
+        .radio-label { display: flex; align-items: center; gap: 12px; background: #f9fbf9; border: 1px solid #e0e0e0; padding: 12px; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 500; color: #333; }
+        .radio-label:hover { background: #e8f5e9; border-color: #81c784; }
+        .radio-input { width: 20px !important; height: 20px !important; cursor: pointer; margin: 0; accent-color: #1b5e20; }
+        
+        .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1em; }
         .btn-submit:hover { background-color: #2e7d32; }
     </style>
 </head>
@@ -64,8 +72,8 @@
     <div class="quote-modal" id="quoteModal">
         <div class="quote-content">
             <span class="quote-close" id="closeQuoteBtn">&times;</span>
-            <h3 style="color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Gratuito</h3>
-            <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">Inserisci i tuoi dettagli e verrai ricontattato entro 24 ore.</p>
+            <h3 style="color: #1b5e20; margin-top: 0; font-size: 1.4em;">Richiesta di Preventivo Gratuito</h3>
+            <p style="font-size: 0.95em; color: #666; margin-bottom: 20px;">Inserisci i tuoi dettagli e verrai ricontattato entro 24 ore.</p>
             <form action="#" method="POST" id="quoteForm">
                 <div class="form-group">
                     <label>Nome o Ragione Sociale</label>
@@ -79,20 +87,31 @@
                     <label>Recapito Telefonico</label>
                     <input type="tel" name="phone" required placeholder="Es. +39 333 1234567">
                 </div>
-                <!-- AGGIUNTO CAMPO CITTÀ / LOCALITÀ -->
                 <div class="form-group">
                     <label>Città / Località</label>
                     <input type="text" name="city" required placeholder="Es. Milano (MI)">
                 </div>
+                
+                <!-- SEZIONE DEI SERVIZI TRASFORMATA IN GRANDI OPZIONI VISIBILI -->
                 <div class="form-group">
-                    <label>Servizio Richiesto</label>
-                    <select name="service">
-                        <option value="Consulenza ISO: Cooperative, Aziende Agroalimentari">Consulenza ISO: Cooperative, Aziende Agroalimentari</option>
-                        <option value="Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè">Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè</option>
-                        <option value="Agricoltura Urbana: Scuole, Mense, strutture HORECA">Agricoltura Urbana: Scuole, Mense, strutture HORECA</option>
-                    </select>
+                    <label>Seleziona il Servizio Richiesto:</label>
+                    <div class="radio-container">
+                        <label class="radio-label">
+                            <input type="radio" name="service" value="Consulenza ISO: Cooperative, Aziende Agroalimentari" class="radio-input" checked>
+                            <span>Consulenza ISO: Cooperative, Aziende Agroalimentari</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="service" value="Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè" class="radio-input">
+                            <span>Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="service" value="Agricoltura Urbana: Scuole, Mense, strutture HORECA" class="radio-input">
+                            <span>Agricoltura Urbana: Scuole, Mense, strutture HORECA</span>
+                        </label>
+                    </div>
                 </div>
-                <div class="form-group">
+
+                <div class="form-group" style="margin-top: 20px;">
                     <label>Descrizione del Progetto / Note</label>
                     <textarea name="message" rows="4" placeholder="Fornisci una breve descrizione delle tue necessità..."></textarea>
                 </div>
@@ -119,19 +138,3 @@
         <div class="iso-section">
             <h2 class="section-title">Qualità e Sicurezza</h2>
             <div class="iso-container">
-                <div class="iso-box"><div class="iso-badge">ISO 9001</div><h2>Qualità</h2><p>Protocolli scientifici.</p></div>
-                <div class="iso-box"><div class="iso-badge">ISO 22000</div><h2>Sicurezza</h2><p>Standard alimentari rigorosi.</p></div>
-            </div>
-        </div>
-    </main>
-
-    <script>
-        const modal = document.getElementById('quoteModal');
-        const openBtn = document.getElementById('openQuoteBtn');
-        const closeBtn = document.getElementById('closeQuoteBtn');
-        openBtn.addEventListener('click', () => { modal.style.display = 'flex'; });
-        closeBtn.addEventListener('click', () => { modal.style.display = 'none'; });
-        window.addEventListener('click', (e) => { if (e.target === modal) { modal.style.display = 'none'; } });
-    </script>
-</body>
-</html>
