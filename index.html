@@ -8,10 +8,7 @@
         body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 0; background-color: #f4f7f4; color: #333; line-height: 1.6; scroll-behavior: smooth; }
         header { background-color: #1b5e20; padding: 20px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 10000; }
         .logo-container { display: flex; align-items: center; flex: 1; }
-        
-        /* CORREZIONE: LOGO ZOOMATO E INGRANDITO */
         .logo-container img { height: 120px; width: 120px; display: block; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.2); border: 2px solid #ffffff; }
-        
         .text-header-container { display: flex; flex-direction: column; margin-left: 20px; max-width: 60%; }
         .org-name { color: #ffffff; font-size: 1.7em; font-weight: bold; }
         .org-domain { color: #c8e6c9; font-size: 0.85em; }
@@ -30,7 +27,7 @@
         .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 22px; border-top: 4px solid #2e7d32; box-sizing: border-box; }
         .card h3 { color: #2e7d32; margin-top: 0; font-size: 1.15em; margin-bottom: 12px; }
         .card p { font-size: 0.9em; margin-bottom: 0; color: #444; }
-        @media (max-width: 992px) { .features { grid-template-columns: repeat(2, 1fr); } header { flex-direction: column; text-align: center; gap: 15px; } .text-header-container { margin-left: 0; max-width: 100%; } }
+        @media (max-width: 992px) { .features { grid-template-columns: repeat(2, 1fr); header { flex-direction: column; text-align: center; gap: 15px; } .text-header-container { margin-left: 0; max-width: 100%; } } }
         @media (max-width: 650px) { .features { grid-template-columns: 1fr; } }
         
         .quote-section { background-color: #ffffff; padding: 50px 20px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; margin: 40px 0; }
@@ -39,6 +36,8 @@
         .form-group label { font-weight: bold; margin-bottom: 8px; color: #1b5e20; font-size: 1.05em; }
         .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1.05em; background: white; }
         .form-group select { cursor: pointer; color: #333; font-weight: 500; }
+        
+        .form-group textarea { min-height: 120px; resize: vertical; }
         
         .iso-section { background-color: #ffffff; padding: 40px 20px; margin: 40px 0; }
         .iso-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
@@ -93,7 +92,7 @@
             </div>
             <div class="card">
                 <h3>5. Paesaggio Commestibile</h3>
-                <p>Sviluppiamo progetti di architecture del paesaggio commestibile (edible landscaping) sia per contesti privati sia collettivi, integrando estetica del verde e produzione alimentare urbana.</p>
+                <p>Sviluppiamo progetti di architettura del paesaggio commestibile (edible landscaping) sia per contesti privati sia collettivi, integrando estetica del verde e produzione alimentare urbana.</p>
             </div>
             <div class="card">
                 <h3>6. Ispezioni e Controllo</h3>
@@ -137,5 +136,6 @@
                         </select>
                     </div>
 
+                    <!-- CORREZIONE DEFINITIVA: INSERITO IL DIV DI APERTURA STRUTTURALE MANCANTE -->
                     <div class="form-group">
                         <label>Descrizione del Progetto / Note aggiuntive</label>
