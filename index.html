@@ -36,7 +36,7 @@
         .faq-item { background-color: white; margin-bottom: 15px; padding: 20px; border-radius: 6px; border-left: 4px solid #81c784; }
         .faq-question { font-weight: bold; color: #1b5e20; }
 
-        /* --- STILI NUOVO MODULO PREVENTIVO --- */
+        /* MODULO PREVENTIVO */
         .quote-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 20000; justify-content: center; align-items: center; }
         .quote-content { background: white; padding: 30px; border-radius: 12px; max-width: 500px; width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; }
         .quote-close { position: absolute; top: 15px; right: 20px; font-size: 1.5em; cursor: pointer; color: #666; }
@@ -57,19 +57,17 @@
             </div>
         </div>
         <div class="header-actions">
-            <!-- Pulsante Preventivo Pratico -->
             <div class="btn-quote-header" id="openQuoteBtn">📋 Richiedi Preventivo</div>
             <a href="https://wa.me" class="btn-link-header">🟢 WhatsApp</a>
         </div>
     </header>
 
-    <!-- SCHERMATA MODULO PREVENTIVO INTEGRATA -->
     <div class="quote-modal" id="quoteModal">
         <div class="quote-content">
             <span class="quote-close" id="closeQuoteBtn">&times;</span>
             <h3 style="color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Gratuito</h3>
             <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">Inserisci i tuoi dettagli e verrai ricontattato via email entro 24 ore.</p>
-            <form action="https://formspree.io" method="POST" id="quoteForm">
+            <form action="#" method="POST" id="quoteForm">
                 <div class="form-group">
                     <label>Nome o Ragione Sociale</label>
                     <input type="text" name="name" required placeholder="Es. Azienda Agricola Rossi">
@@ -83,7 +81,8 @@
                     <select name="service">
                         <option value="Consulenza ISO 9001 / 22000">Consulenza Conformità ISO</option>
                         <option value="Audit Certificazione Biologico & HACCP">Assistenza Audit & HACCP</option>
-                        <option value="Progettazione Agronomica Urbana">Agricoltura Urbana & HORECA</option>
+                        <!-- VOCE AGGIORNATA CON PRECISIONE -->
+                        <option value="Agricoltura Urbana & HORECA (Hotel, Ristoranti, Café)">Agricoltura Urbana & HORECA (Hotel, Ristoranti, Café)</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -113,18 +112,16 @@
         <div class="iso-section">
             <h2 class="section-title">Qualità e Sicurezza</h2>
             <div class="iso-container">
-                <div class="iso-box"><div class="iso-badge">ISO 9001</div><h3>Qualità</h3><p>Protocolli scientifici.</p></div>
-                <div class="iso-box"><div class="iso-badge">ISO 22000</div><h3>Sicurezza</h3><p>Standard alimentari rigorosi.</p></div>
+                <div class="iso-box"><div class="iso-badge">ISO 9001</div><h2>Qualità</h2><p>Protocolli scientifici.</p></div>
+                <div class="iso-box"><div class="iso-badge">ISO 22000</div><h2>Sicurezza</h2><p>Standard alimentari rigorosi.</p></div>
             </div>
         </div>
     </main>
 
-    <!-- SCRIPT GESTIONE APERTURA MODULO -->
     <script>
         const modal = document.getElementById('quoteModal');
         const openBtn = document.getElementById('openQuoteBtn');
         const closeBtn = document.getElementById('closeQuoteBtn');
-
         openBtn.addEventListener('click', () => { modal.style.display = 'flex'; });
         closeBtn.addEventListener('click', () => { modal.style.display = 'none'; });
         window.addEventListener('click', (e) => { if (e.target === modal) { modal.style.display = 'none'; } });
