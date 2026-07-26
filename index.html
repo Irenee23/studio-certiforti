@@ -30,15 +30,13 @@
         @media (max-width: 992px) { .features { grid-template-columns: repeat(2, 1fr); header { flex-direction: column; text-align: center; gap: 15px; } .text-header-container { margin-left: 0; max-width: 100%; } } }
         @media (max-width: 650px) { .features { grid-template-columns: 1fr; } }
         
-        /* STRUTTURA DEL PREVENTIVO CORRETTA E APERTA */
+        /* STRUTTURA DEL PREVENTIVO SEMPLIFICATA AL MASSIMO PER EVITARE BUG */
         .quote-section { background-color: #ffffff; padding: 50px 20px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; margin: 40px 0; }
         .quote-container { background: #f9fbf9; border: 2px solid #1b5e20; padding: 30px; border-radius: 12px; max-width: 650px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
         .form-group label { font-weight: bold; margin-bottom: 8px; color: #1b5e20; font-size: 1.05em; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1.05em; background: white; }
-        .form-group select { cursor: pointer; color: #333; font-weight: 500; }
-        
-        .form-group textarea { min-height: 140px; resize: vertical; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1.05em; background: white; color: #333; }
+        .form-group textarea { min-height: 140px; resize: vertical; display: block; }
         
         .iso-section { background-color: #ffffff; padding: 40px 20px; margin: 40px 0; }
         .iso-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
@@ -47,7 +45,7 @@
         .iso-box h3 { margin-top: 5px; font-size: 1.15em; color: #1b5e20; }
         .iso-box p { margin: 0; font-size: 0.9em; color: #555; }
 
-        .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 14px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1em; transition: background-color 0.2s; margin-top: 10px; }
+        .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 14px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1em; transition: background-color 0.2s; margin-top: 10px; display: block; }
         .btn-submit:hover { background-color: #2e7d32; }
     </style>
 </head>
@@ -85,7 +83,7 @@
             </div>
             <div class="card">
                 <h3>3. Compostaggio Ecologico</h3>
-                <p>Implementiamo sistemi avanzati di gestione e valorizzazione degli scarti organici urbani, trasformando i rifiuti in ammendanti biologici di altissima qualità per i suoli cittadini.</p>
+                <p>Implementiamo sistemi avanzati di gestione e valorizzazione degli scarti organici urbani, transforming i rifiuti in ammendanti biologici di alta qualità per i suoli cittadini.</p>
             </div>
             <div class="card">
                 <h3>4. Spazi Comuni ed Educativi</h3>
@@ -101,7 +99,7 @@
             </div>
         </div>
 
-        <!-- AREA PREVENTIVO TOTALMENTE SISTEMATA E ALLINEATA -->
+        <!-- AREA PREVENTIVO APERTA, LINEARE E COMPLETA -->
         <section class="quote-section" id="preventivo">
             <h2 class="section-title">Richiesta di Preventivo Gratuito</h2>
             <div class="quote-container">
@@ -129,7 +127,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label>Servizio Richiesto (Tocca per scorrere l'elenco):</label>
+                        <label>Servizio Richiesto (Tocca per scegliere):</label>
                         <select name="service" required>
                             <option value="" disabled selected>-- Scegli un servizio dall'elenco --</option>
                             <option value="Consulenza ISO: Cooperative, Aziende Agroalimentari">Consulenza ISO: Cooperative, Aziende Agroalimentari</option>
@@ -139,3 +137,4 @@
                     </div>
 
                     <div class="form-group">
+                        <label>Descrizione del Progetto / Note aggiuntive</label>
