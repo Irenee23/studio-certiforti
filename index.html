@@ -37,14 +37,14 @@
         .iso-box h3 { margin-top: 5px; font-size: 1.15em; color: #1b5e20; }
         .iso-box p { margin: 0; font-size: 0.9em; color: #555; }
 
-        /* SEZIONE PREVENTIVO IN FONDO COMPLETA ED ERMETICA */
+        /* SEZIONE PREVENTIVO IN FONDO */
         .quote-section { background-color: #ffffff; padding: 50px 20px; border-top: 1px solid #e0e0e0; margin-top: 40px; }
         .quote-container { background: #f9fbf9; border: 1px solid #e0e0e0; padding: 30px; border-radius: 12px; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
         .form-group label { font-weight: bold; margin-bottom: 8px; color: #1b5e20; font-size: 1.05em; }
         .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1.05em; }
         
-        /* Opzioni di selezione dei servizi stabili, grandi e distanziate */
+        /* Opzioni di selezione dei servizi grandi e distanziate */
         .service-selection { display: flex; flex-direction: column; gap: 12px; margin-top: 5px; }
         .service-row { display: flex; align-items: center; background: white; border: 1px solid #ccc; padding: 14px; border-radius: 6px; cursor: pointer; }
         .service-row:hover { background-color: #e8f5e9; border-color: #81c784; }
@@ -121,11 +121,11 @@
             </div>
         </div>
 
-        <!-- MODULO DI COMPILAZIONE INTERAMENTE CORRETTO E RICOSTRUITO DA ZERO -->
+        <!-- SEZIONE PREVENTIVO INTERAMENTE RICOSTRUITA CON STRUTTURE COMPLETE -->
         <section class="quote-section" id="preventivo">
             <h2 class="section-title">Richiesta di Preventivo Gratuito</h2>
             <div class="quote-container">
-                <p style="text-align: center; color: #666; margin-bottom: 25px; font-size: 1.05em;">Compila i campi sottostanti per richiedere uno studio di fattibilità o un preventivo personalizzato.</p>
+                <p style="text-align: center; color: #666; margin-bottom: 25px;">Compila i campi sottostanti per richiedere uno studio di fattibilità o un preventivo personalizzato.</p>
                 <form action="#" method="POST">
                     
                     <div class="form-group">
@@ -140,3 +140,4 @@
                     
                     <div class="form-group">
                         <label>Recapito Telefonico</label>
+                        <input type="tel" name="phone" required placeholder="Es. +39 333 1234567">
