@@ -30,26 +30,20 @@
         @media (max-width: 992px) { .features { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 650px) { .features { grid-template-columns: 1fr; } }
         
-        .iso-section { background-color: #ffffff; padding: 40px 20px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
+        /* SCHEDA PREVENTIVO STRUTTURATA A SANDWICH (OPZIONE B GRAFICA) */
+        .quote-section { background-color: #ffffff; padding: 50px 20px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; margin: 40px 0; }
+        .quote-container { background: #f9fbf9; border: 2px solid #1b5e20; padding: 30px; border-radius: 12px; max-width: 650px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
+        .form-group label { font-weight: bold; margin-bottom: 8px; color: #1b5e20; font-size: 1.05em; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1.05em; background: white; }
+        .form-group select { cursor: pointer; color: #333; font-weight: 500; }
+        
+        .iso-section { background-color: #ffffff; padding: 40px 20px; margin: 40px 0; }
         .iso-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
         .iso-box { background-color: #f9fbf9; border: 2px dashed #81c784; border-radius: 8px; padding: 20px; width: 45%; min-width: 280px; text-align: center; }
         .iso-badge { background-color: #1b5e20; color: white; padding: 5px 15px; border-radius: 4px; font-weight: bold; }
         .iso-box h3 { margin-top: 5px; font-size: 1.15em; color: #1b5e20; }
         .iso-box p { margin: 0; font-size: 0.9em; color: #555; }
-
-        /* STRUTTURA PROFESSIONALE DEL PREVENTIVO */
-        .quote-section { background-color: #ffffff; padding: 50px 20px; border-top: 1px solid #e0e0e0; margin-top: 40px; }
-        .quote-container { background: #f9fbf9; border: 1px solid #e0e0e0; padding: 30px; border-radius: 12px; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
-        .form-group label { font-weight: bold; margin-bottom: 8px; color: #1b5e20; font-size: 1.05em; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1.05em; }
-        
-        /* Contenitore delle opzioni radio grandi */
-        .service-selection { display: flex; flex-direction: column; gap: 12px; margin-top: 5px; }
-        .service-row { display: flex; align-items: center; background: white; border: 1px solid #ccc; padding: 14px; border-radius: 6px; cursor: pointer; }
-        .service-row:hover { background-color: #e8f5e9; border-color: #81c784; }
-        .service-row input { width: 22px; height: 22px; margin-right: 12px; accent-color: #1b5e20; cursor: pointer; flex-shrink: 0; }
-        .service-row span { font-size: 1.05em; color: #333; font-weight: 500; cursor: pointer; }
 
         .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 14px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1em; transition: background-color 0.2s; }
         .btn-submit:hover { background-color: #2e7d32; }
@@ -105,27 +99,11 @@
             </div>
         </div>
 
-        <div class="iso-section">
-            <h2 class="section-title">Qualità e Sicurezza</h2>
-            <div class="iso-container">
-                <div class="iso-box">
-                    <div class="iso-badge">ISO 9001</div>
-                    <h3>Sistema di Gestione Qualità</h3>
-                    <p>Studio CertifOrti applica rigorosi protocolli scientifici internazionali per garantire la massima qualità e precisione nelle analisi agronomiche e nella progettazione di orti biologici urbani.</p>
-                </div>
-                <div class="iso-box">
-                    <div class="iso-badge">ISO 22000</div>
-                    <h3>Sicurezza Alimentare</h3>
-                    <p>Garantiamo che ogni fase della produzione agricola urbana rispetti i più rigidi standard di sicurezza alimentare, assicurando ortaggi biologici salubri e controllati per il consumatore finale.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- MODULO DI COMPILAZIONE PERFETTAMENTE STRUTTURATO E SENZA TAG INTERROTTI -->
+        <!-- MODULO DI COMPILAZIONE INTEGRATO, ERMETICO E COSTRUITO SECONDO I DETTAGLI COMPLETI -->
         <section class="quote-section" id="preventivo">
             <h2 class="section-title">Richiesta di Preventivo Gratuito</h2>
             <div class="quote-container">
-                <p style="text-align: center; color: #666; margin-bottom: 25px; font-size: 1.05em;">Compila i campi sottostanti per richiedere uno studio di fattibilità o un preventivo personalizzato.</p>
+                <p style="text-align: center; color: #666; margin-bottom: 25px; font-size: 1.05em;">Compila tutti i dati sottostanti per richiedere un preventivo o uno studio di conformità personalizzato.</p>
                 <form action="#" method="POST">
                     
                     <div class="form-group">
@@ -141,3 +119,23 @@
                     <div class="form-group">
                         <label>Recapito Telefonico</label>
                         <input type="tel" name="phone" required placeholder="Es. +39 333 1234567">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Città / Località</label>
+                        <input type="text" name="city" required placeholder="Es. Milano (MI)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Servizio Richiesto (Tocca per scorrere l'elenco):</label>
+                        <select name="service" required>
+                            <option value="" disabled selected>-- Scegli un servizio dall'elenco --</option>
+                            <option value="Consulenza ISO: Cooperative, Aziende Agroalimentari">Consulenza ISO: Cooperative, Aziende Agroalimentari</option>
+                            <option value="Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè">Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè</option>
+                            <option value="Agricoltura Urbana: Scuole, Mense, strutture HORECA">Agricoltura Urbana: Scuole, Mense, strutture HORECA</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Descrizione del Progetto / Note aggiuntive</label>
+                        <textarea name="message" rows="5" placeholder="Fornisci una breve descrizione delle tue necessità strutturali o aziendali..."></textarea>
