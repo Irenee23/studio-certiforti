@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio CertifOrti - Agronomia Urbana Biologica Rigenerativa</title>
     <style>
-        body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 0; background-color: #f4f7f4; color: #333; line-height: 1.6; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 0; background-color: #f4f7f4; color: #333; line-height: 1.6; scroll-behavior: smooth; }
         header { background-color: #1b5e20; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 10000; }
         .logo-container { display: flex; align-items: center; flex: 1; }
-        .logo-container img { height: 80px; width: auto; display: block; }
+        .logo-container img { height: 80px; width: 80px; display: block; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         .text-header-container { display: flex; flex-direction: column; margin-left: 20px; max-width: 60%; }
         .org-name { color: #ffffff; font-size: 1.6em; font-weight: bold; }
         .org-domain { color: #c8e6c9; font-size: 0.85em; }
         .header-actions { display: flex; align-items: center; gap: 12px; margin-left: 20px; }
-        .btn-link-header, .btn-quote-header { padding: 10px 18px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.9em; transition: transform 0.2s; cursor: pointer; }
+        
+        .btn-link-header, .btn-quote-header { padding: 10px 18px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.9em; transition: transform 0.2s; cursor: pointer; display: inline-block; box-sizing: border-box; }
         .btn-link-header { background-color: #25d366; color: white; }
         .btn-quote-header { background-color: #ffffff; color: #1b5e20; border: 1px solid #1b5e20; }
         .btn-link-header:hover, .btn-quote-header:hover { transform: scale(1.05); }
@@ -21,9 +22,10 @@
         .hero { background-color: #e8f5e9; padding: 40px 20px; text-align: center; border-bottom: 3px solid #c8e6c9; }
         .hero h1 { color: #1b5e20; font-size: 2.2em; margin-bottom: 15px; }
         .section-title { text-align: center; color: #1b5e20; font-size: 2em; margin-top: 40px; margin-bottom: 25px; }
+        
         .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto 40px auto; padding: 0 20px; }
-        .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 22px; border-top: 4px solid #2e7d32; }
-        .card h3 { color: #2e7d32; margin-top: 0; font-size: 1.15em; }
+        .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 22px; border-top: 4px solid #2e7d32; box-sizing: border-box; }
+        .card h3 { color: #2e7d32; margin-top: 0; font-size: 1.15em; margin-bottom: 12px; }
         .card p { font-size: 0.9em; margin-bottom: 0; color: #444; }
         @media (max-width: 992px) { .features { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 650px) { .features { grid-template-columns: 1fr; } }
@@ -32,18 +34,24 @@
         .iso-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
         .iso-box { background-color: #f9fbf9; border: 2px dashed #81c784; border-radius: 8px; padding: 20px; width: 45%; min-width: 280px; text-align: center; }
         .iso-badge { background-color: #1b5e20; color: white; padding: 5px 15px; border-radius: 4px; font-weight: bold; }
-        .faq-section { max-width: 800px; margin: 0 auto 60px auto; padding: 0 20px; }
-        .faq-item { background-color: white; margin-bottom: 15px; padding: 20px; border-radius: 6px; border-left: 4px solid #81c784; }
-        .faq-question { font-weight: bold; color: #1b5e20; }
+        .iso-box h3 { margin-top: 5px; font-size: 1.15em; color: #1b5e20; }
+        .iso-box p { margin: 0; font-size: 0.9em; color: #555; }
 
-        /* MODULO PREVENTIVO */
-        .quote-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 20000; justify-content: center; align-items: center; }
-        .quote-content { background: white; padding: 30px; border-radius: 12px; max-width: 500px; width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; }
-        .quote-close { position: absolute; top: 15px; right: 20px; font-size: 1.5em; cursor: pointer; color: #666; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #1b5e20; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; }
-        .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1em; }
+        /* STRUTTURA PROFESSIONALE DEL PREVENTIVO */
+        .quote-section { background-color: #ffffff; padding: 50px 20px; border-top: 1px solid #e0e0e0; margin-top: 40px; }
+        .quote-container { background: #f9fbf9; border: 1px solid #e0e0e0; padding: 30px; border-radius: 12px; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
+        .form-group label { font-weight: bold; margin-bottom: 8px; color: #1b5e20; font-size: 1.05em; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1.05em; }
+        
+        /* Contenitore delle opzioni radio grandi */
+        .service-selection { display: flex; flex-direction: column; gap: 12px; margin-top: 5px; }
+        .service-row { display: flex; align-items: center; background: white; border: 1px solid #ccc; padding: 14px; border-radius: 6px; cursor: pointer; }
+        .service-row:hover { background-color: #e8f5e9; border-color: #81c784; }
+        .service-row input { width: 22px; height: 22px; margin-right: 12px; accent-color: #1b5e20; cursor: pointer; flex-shrink: 0; }
+        .service-row span { font-size: 1.05em; color: #333; font-weight: 500; cursor: pointer; }
+
+        .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 14px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1em; transition: background-color 0.2s; }
         .btn-submit:hover { background-color: #2e7d32; }
     </style>
 </head>
@@ -57,42 +65,10 @@
             </div>
         </div>
         <div class="header-actions">
-            <div class="btn-quote-header" id="openQuoteBtn">📋 Richiedi Preventivo</div>
+            <a href="#preventivo" class="btn-quote-header">📋 Richiedi Preventivo</a>
             <a href="https://wa.me" class="btn-link-header">🟢 WhatsApp</a>
         </div>
     </header>
-
-    <div class="quote-modal" id="quoteModal">
-        <div class="quote-content">
-            <span class="quote-close" id="closeQuoteBtn">&times;</span>
-            <h3 style="color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Gratuito</h3>
-            <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">Inserisci i tuoi dettagli e verrai ricontattato via email entro 24 ore.</p>
-            <form action="#" method="POST" id="quoteForm">
-                <div class="form-group">
-                    <label>Nome o Ragione Sociale</label>
-                    <input type="text" name="name" required placeholder="Es. Azienda Agricola Rossi">
-                </div>
-                <div class="form-group">
-                    <label>Email di Contatto</label>
-                    <input type="email" name="email" required placeholder="Es. nome@azienda.it">
-                </div>
-                <div class="form-group">
-                    <label>Servizio Richiesto</label>
-                    <select name="service">
-                        <!-- SOTTO-VOCI AGGIORNATE IN MODO SPECIFICO -->
-                        <option value="Consulenza ISO: Cooperative, Aziende Agroalimentari">Consulenza ISO: Cooperative, Aziende Agroalimentari</option>
-                        <option value="Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè">Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè</option>
-                        <option value="Agricoltura Urbana: Scuole, Mense, strutture HORECA">Agricoltura Urbana: Scuole, Mense, strutture HORECA</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Descrizione del Progetto / Note</label>
-                    <textarea name="message" rows="4" placeholder="Fornisci una breve descrizione delle tue necessità..."></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Invia Richiesta</button>
-            </form>
-        </div>
-    </div>
 
     <section class="hero">
         <h1>Coltiviamo la Biodiversità nelle Nostre Città</h1>
@@ -101,30 +77,67 @@
 
     <main>
         <h2 class="section-title">Pilastri Rigenerativi & Consulenza ISO</h2>
+        
         <div class="features">
-            <div class="card"><h3>1. Biodiversità Integrata</h3><p>Permacultura e attrattori utili.</p></div>
-            <div class="card"><h3>2. Cibo a Metri Zero</h3><p>Produzione urbana biologica.</p></div>
-            <div class="card"><h3>3. Compostaggio Ecologico</h3><p>Valorizzazione scarti organici.</p></div>
-            <div class="card"><h3>4. Spazi Comuni ed Educativi</h3><p>Rigenerazione aree condominiali.</p></div>
-            <div class="card"><h3>5. Paesaggio Commestibile</h3><p>Edible landscaping urbano.</p></div>
-            <div class="card"><h3>6. Ispezioni e Controllo</h3><p>Audit Bio, HACCP, HORECA.</p></div>
+            <div class="card">
+                <h3>1. Biodiversità Integrata</h3>
+                <p>Progettiamo micro-orti e tetti verdi seguendo i principi della permacultura. Inseriamo piante nettarifere per attirare impollinatori utili in modo del tutto naturale.</p>
+            </div>
+            <div class="card">
+                <h3>2. Cibo a Metri Zero</h3>
+                <p>Accorciamo la filiera azzerando i trasporti. La produzione biologica urbana garantisce ortaggi freschissimi e ricchi di nutrienti per le comunità locali.</p>
+            </div>
+            <div class="card">
+                <h3>3. Compostaggio Ecologico</h3>
+                <p>Implementiamo sistemi avanzati di gestione e valorizzazione degli scarti organici urbani, trasformando i rifiuti in ammendanti biologici di altissima qualità per i suoli cittadini.</p>
+            </div>
+            <div class="card">
+                <h3>4. Spazi Comuni ed Educativi</h3>
+                <p>Curiamo la rigenerazione di spazi privati, aree comuni condominiali e cortili educativi, strutturando micro-ambienti verdi che favoriscono la socialità e l'apprendimento attivo.</p>
+            </div>
+            <div class="card">
+                <h3>5. Paesaggio Commestibile</h3>
+                <p>Sviluppiamo progetti di architettura del paesaggio commestibile (edible landscaping) sia per contesti privati sia collettivi, integrando estetica del verde e produzione alimentare urbana.</p>
+            </div>
+            <div class="card">
+                <h3>6. Ispezioni e Controllo</h3>
+                <p>Forniamo assistenza agli Audit di 2°, 3° parte di certificazione Biologico, HACCP per aziende agroalimentari, cooperative, strutture HORECA (ristoranti, caffè, hotel).</p>
+            </div>
         </div>
+
         <div class="iso-section">
             <h2 class="section-title">Qualità e Sicurezza</h2>
             <div class="iso-container">
-                <div class="iso-box"><div class="iso-badge">ISO 9001</div><h2>Qualità</h2><p>Protocolli scientifici.</p></div>
-                <div class="iso-box"><div class="iso-badge">ISO 22000</div><h2>Sicurezza</h2><p>Standard alimentari rigorosi.</p></div>
+                <div class="iso-box">
+                    <div class="iso-badge">ISO 9001</div>
+                    <h3>Sistema di Gestione Qualità</h3>
+                    <p>Studio CertifOrti applica rigorosi protocolli scientifici internazionali per garantire la massima qualità e precisione nelle analisi agronomiche e nella progettazione di orti biologici urbani.</p>
+                </div>
+                <div class="iso-box">
+                    <div class="iso-badge">ISO 22000</div>
+                    <h3>Sicurezza Alimentare</h3>
+                    <p>Garantiamo che ogni fase della produzione agricola urbana rispetti i più rigidi standard di sicurezza alimentare, assicurando ortaggi biologici salubri e controllati per il consumatore finale.</p>
+                </div>
             </div>
         </div>
-    </main>
 
-    <script>
-        const modal = document.getElementById('quoteModal');
-        const openBtn = document.getElementById('openQuoteBtn');
-        const closeBtn = document.getElementById('closeQuoteBtn');
-        openBtn.addEventListener('click', () => { modal.style.display = 'flex'; });
-        closeBtn.addEventListener('click', () => { modal.style.display = 'none'; });
-        window.addEventListener('click', (e) => { if (e.target === modal) { modal.style.display = 'none'; } });
-    </script>
-</body>
-</html>
+        <!-- MODULO DI COMPILAZIONE PERFETTAMENTE STRUTTURATO E SENZA TAG INTERROTTI -->
+        <section class="quote-section" id="preventivo">
+            <h2 class="section-title">Richiesta di Preventivo Gratuito</h2>
+            <div class="quote-container">
+                <p style="text-align: center; color: #666; margin-bottom: 25px; font-size: 1.05em;">Compila i campi sottostanti per richiedere uno studio di fattibilità o un preventivo personalizzato.</p>
+                <form action="#" method="POST">
+                    
+                    <div class="form-group">
+                        <label>Nome o Ragione Sociale</label>
+                        <input type="text" name="name" required placeholder="Es. Azienda Agricola Rossi">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email di Contatto</label>
+                        <input type="email" name="email" required placeholder="Es. nome@azienda.it">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Recapito Telefonico</label>
+                        <input type="tel" name="phone" required placeholder="Es. +39 333 1234567">
