@@ -11,6 +11,7 @@
     display: flex; 
     align-items: center; 
     flex: 1; 
+    white-space: nowrap !important; /* Costringe il testo Certiforti a stare su una riga senza tagliarsi */
 }
 .logo-container img { 
     height: 130px !important; 
@@ -21,6 +22,7 @@
     object-fit: cover; 
     box-shadow: 0 2px 8px rgba(0,0,0,0.2); 
     border: 2px solid #ffffff; 
+    margin-right: 15px !important; /* Spinge via il testo di 15 pixel per non farlo accavallare */
 }
         .text-header-container { display: flex; flex-direction: column; margin-left: 20px; max-width: 60%; }
         .org-name { color: #ffffff; font-size: 1.7em; font-weight: bold; }
