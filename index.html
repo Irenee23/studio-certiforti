@@ -8,28 +8,29 @@
         body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 0; background-color: #f4f7f4; color: #333; line-height: 1.6; scroll-behavior: smooth; }
         header { background-color: #1b5e20; padding: 20px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 10000; }
 .logo-container { 
-    display: flex; 
-    align-items: center; 
-    flex: 1; 
-    white-space: nowrap !important; /* Costringe il testo Certiforti a stare su una riga senza tagliarsi */
+    display: flex !important; 
+    align-items: center !important; 
+    flex: 1 !important; 
+    white-space: nowrap !important;
+    overflow: visible !important;
 }
-.lo<div class="logo-container" style="display: flex !important; align-items: center !important; flex: 1 !important; white-space: nowrap !important; overflow: visible !important;">
-    <!-- LOGO: Dimensione a 130px con lo zoom attivo -->
-    <img src="images/logo.png" alt="Logo Certiforti" style="height: 130px !important; width: 130px !important; min-width: 130px !important; min-height: 130px !important; display: block !important; border-radius: 50% !important; object-fit: cover !important; box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important; border: 2px solid #ffffff !important; margin-right: 20px !important;">
-    
-    <!-- SCRITTA CERTIFORTI: Se hai un tag di testo separato per il nome, assicurati che abbia questo stile -->
-    <span style="white-space: nowrap !important; display: inline-block !important;">CERTIFORTI</span>
-</div>
-go-container img { 
-    height: 130px !important; 
-    width: 130px !important; 
-    min-height: 130px !important;
-    display: block; 
-    border-radius: 50%; 
-    object-fit: cover; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2); 
-    border: 2px solid #ffffff; 
-    margin-right: 15px !important; /* Spinge via il testo di 15 pixel per non farlo accavallare */
+.logo-container img { 
+    height: 110px !important; 
+    width: 110px !important; 
+    max-height: 110px !important;
+    max-width: 110px !important;
+    display: block !important; 
+    border-radius: 50% !important; 
+    object-fit: cover !important; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important; 
+    border: 2px solid #ffffff !important; 
+    margin-right: 25px !important;
+}
+
+/* Questa riga protegge il testo CERTIFORTI e gli dà il giusto spazio */
+.logo-container h1, .logo-container span, .logo-container a {
+    white-space: nowrap !important;
+    display: inline-block !important;
 }
         .text-header-container { display: flex; flex-direction: column; margin-left: 20px; max-width: 60%; }
         .org-name { color: #ffffff; font-size: 1.7em; font-weight: bold; }
