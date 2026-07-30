@@ -13,7 +13,14 @@
     flex: 1; 
     white-space: nowrap !important; /* Costringe il testo Certiforti a stare su una riga senza tagliarsi */
 }
-.logo-container img { 
+.lo<div class="logo-container" style="display: flex !important; align-items: center !important; flex: 1 !important; white-space: nowrap !important; overflow: visible !important;">
+    <!-- LOGO: Dimensione a 130px con lo zoom attivo -->
+    <img src="images/logo.png" alt="Logo Certiforti" style="height: 130px !important; width: 130px !important; min-width: 130px !important; min-height: 130px !important; display: block !important; border-radius: 50% !important; object-fit: cover !important; box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important; border: 2px solid #ffffff !important; margin-right: 20px !important;">
+    
+    <!-- SCRITTA CERTIFORTI: Se hai un tag di testo separato per il nome, assicurati che abbia questo stile -->
+    <span style="white-space: nowrap !important; display: inline-block !important;">CERTIFORTI</span>
+</div>
+go-container img { 
     height: 130px !important; 
     width: 130px !important; 
     min-height: 130px !important;
