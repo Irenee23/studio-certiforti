@@ -1,39 +1,26 @@
-/* LOGO HEADER — ZOOM RIDOTTO + CENTRATO + DRITTO */
+/* LOGO HEADER — zoom ridotto, centrato, dritto */
 .logo-container img {
     height: 180px;
     width: 180px;
     border-radius: 50%;
     object-fit: cover;
-
-    /* CENTRATURA PERFETTA */
-    object-position: center center;
-    transform-origin: center center;
-
-    /* ZOOM RIDOTTO → si vede la “i” finale */
-    transform: scale(0.78);
-
+    object-position: center;
+    transform: scale(0.85); /* ZOOM RIDOTTO → si vede la “i” */
     border: 3px solid #ffffff;
     box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
 
-/* LOGO FOOTER — ZOOM RIDOTTO + CENTRATO + DRITTO */
+/* LOGO FOOTER — stesso comportamento */
 footer img {
     position: absolute;
     bottom: 35px;
     right: 25px;
-
     width: 180px;
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-
-    /* CENTRATURA PERFETTA */
-    object-position: center center;
-    transform-origin: center center;
-
-    /* ZOOM RIDOTTO → si vede la “i” finale */
-    transform: scale(0.78);
-
+    object-position: center;
+    transform: scale(0.85); /* ZOOM RIDOTTO → si vede la “i” */
     border: 3px solid #ffffff;
     box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
@@ -113,53 +100,126 @@ footer img {
             <span class="org-domain">Agronomia urbana, diagnostica e consulenza ISO</span>
         </div>
     </div>
+
+    <div class="header-center-images">
+        <img src="1.png" alt="Biodiversità" class="header-mini-img">
+        <img src="2.png" alt="Cibo" class="header-mini-img">
+        <img src="5.png" alt="Compostaggio" class="header-mini-img">
+    </div>
+
+    <div class="header-actions">
+        <a href="#preventivo" class="btn-quote-header">📋 Richiedi Preventivo</a>
+        <a href="https://wa.me/393760189521" target="_blank" class="btn-link-header">🟢 WhatsApp</a>
+    </div>
 </header>
 
 <section class="hero">
     <div class="hero-container">
+        <img src="7.png" alt="Dettaglio agronomico" class="hero-side-img">
+
         <div class="hero-text">
             <h1>Coltiviamo la Biodiversità nelle Nostre Città</h1>
-            <p>Progettiamo ecosistemi urbani, rigeneriamo suoli e offriamo consulenza agronomica e ISO.</p>
+            <p>Progettiamo ecosistemi urbani, rigeneriamo suoli e offriamo consulenza agronomica e di certificazione (ISO 9001/22000).</p>
         </div>
+
+        <img src="8.png" alt="Dettaglio coltivazione" class="hero-side-img">
     </div>
 </section>
 
 <main>
-    <h2 class="section-title">Portfolio Progetti</h2>
+    <h2 class="section-title">Pilastri Rigenerativi & Consulenza ISO</h2>
 
-    <div class="grid-3">
-        <img src="1.png">
-        <img src="2.png">
-        <img src="3.png">
-        <img src="4.png">
-        <img src="5.png">
-        <img src="6.png">
+    <div class="features">
+        <div class="card">
+            <img src="1.png" alt="Biodiversità" class="card-img">
+            <div class="card-content">
+                <h3>1. Biodiversità Integrata</h3>
+                <p>Progettiamo ecosistemi resilienti basati sulla diversificazione delle specie vegetali.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="2.png" alt="Cibo" class="card-img">
+            <div class="card-content">
+                <h3>2. Cibo a Metri Zero</h3>
+                <p>Produzione urbana efficiente e sostenibile.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="5.png" alt="Compostaggio" class="card-img">
+            <div class="card-content">
+                <h3>3. Compostaggio Ecologico</h3>
+                <p>Trasformazione degli scarti organici in ammendanti certificati.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="4.png" alt="Analisi del Suolo" class="card-img">
+            <div class="card-content">
+                <h3>4. Analisi Professionale del Suolo</h3>
+                <p>Valutazioni nutrizionali e strutturali del terreno.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="6.png" alt="Paesaggio" class="card-img">
+            <div class="card-content">
+                <h3>5. Paesaggio Commestibile</h3>
+                <p>Spazi verdi edibili, ornamentali e melliferi.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="3.png" alt="Ispezioni" class="card-img">
+            <div class="card-content">
+                <h3>6. Ispezioni e Controllo</h3>
+                <p>Audit agronomici, HACCP e ISO.</p>
+            </div>
+        </div>
     </div>
 </main>
 
+<section>
+    <h2 class="section-title">Portfolio Progetti</h2>
+    <p style="text-align:center;">Interventi agronomici, diagnostici e rigenerativi.</p>
+
+    <div class="grid-3">
+        <img src="1.png" alt="">
+        <img src="2.png" alt="">
+        <img src="3.png" alt="">
+        <img src="4.png" alt="">
+        <img src="5.png" alt="">
+        <img src="6.png" alt="">
+    </div>
+</section>
+
 <section id="preventivo" class="quote-section">
     <div class="quote-container">
-        <h2 style="text-align: center; color: #1b5e20;">Richiesta di Preventivo Professionale</h2>
+        <h2 style="text-align: center; color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Professionale</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 25px;">
+            Compila i dati per ricevere una proposta tecnica personalizzata.
+        </p>
 
         <form action="https://formsubmit.co/studio.certiforti@gmail.com" method="POST">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" value="https://irenee23.github.io/studio-certiforti/">
-            <input type="hidden" name="_subject" value="Nuova richiesta di preventivo">
+            <input type="hidden" name="_subject" value="Nuova richiesta di preventivo dal sito CertifOrti">
             <input type="hidden" name="_template" value="table">
 
             <div class="form-group">
                 <label>Nome e Cognome</label>
-                <input type="text" name="Nome e Cognome" required>
+                <input type="text" name="Nome e Cognome" required placeholder="Inserisci il tuo nome completo">
             </div>
 
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="Email" required>
+                <input type="email" name="Email" required placeholder="Inserisci la tua email">
             </div>
 
             <div class="form-group">
                 <label>Telefono</label>
-                <input type="text" name="Telefono" required>
+                <input type="text" name="Telefono" required placeholder="Inserisci il tuo numero">
             </div>
 
             <div class="form-group">
@@ -175,7 +235,7 @@ footer img {
 
             <div class="form-group">
                 <label>Descrizione della Richiesta</label>
-                <textarea name="Descrizione" required></textarea>
+                <textarea name="Descrizione" required placeholder="Descrivi il contesto, gli obiettivi e le esigenze principali"></textarea>
             </div>
 
             <button class="btn-submit">Invia Richiesta</button>
