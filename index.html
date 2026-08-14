@@ -1,173 +1,51 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio CertifOrti - Agronomia Urbana Biologica Rigenerativa</title>
-    <style>
-        body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 0; background-color: #f4f7f4; color: #333; line-height: 1.6; scroll-behavior: smooth; }
-        header { background-color: #1b5e20; padding: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 10000; }
-        .logo-container { display: flex; align-items: center; flex: 1; white-space: nowrap; }
-        .logo-container img { height: 110px; width: 110px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.2); border: 2px solid #ffffff; margin-right: 25px; }
-        .text-header-container { display: flex; flex-direction: column; margin-left: 20px; max-width: 60%; }
-        .org-name { color: #ffffff; font-size: 1.7em; font-weight: bold; }
-        .org-domain { color: #c8e6c9; font-size: 0.85em; }
-        .header-actions { display: flex; align-items: center; gap: 12px; margin-left: 20px; }
-        .btn-link-header, .btn-quote-header { padding: 12px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.9em; transition: transform 0.2s; cursor: pointer; }
-        .btn-link-header { background-color: #25d366; color: white; }
-        .btn-quote-header { background-color: #ffffff; color: #1b5e20; border: 1px solid #1b5e20; }
-        .btn-link-header:hover, .btn-quote-header:hover { transform: scale(1.05); }
-        .header-center-images { display: flex; gap: 12px; align-items: center; margin: 0 auto; padding: 0 20px; }
-        .header-mini-img { width: 110px; height: 75px; object-fit: cover; border-radius: 6px; border: 2px solid #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: transform 0.2s; }
-        .header-mini-img:hover { transform: scale(1.08); }
-        .hero { background-color: #e8f5e9; padding: 40px 20px; border-bottom: 3px solid #c8e6c9; }
-        .hero-container { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 20px; }
-        .hero-text { text-align: center; flex: 1; }
-        .hero h1 { color: #1b5e20; font-size: 2.2em; margin-bottom: 15px; margin-top: 0; }
-        .hero-side-img { width: 180px; height: 180px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .section-title { text-align: center; color: #1b5e20; font-size: 2em; margin-top: 40px; margin-bottom: 25px; }
-        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto 40px auto; padding: 0 20px; }
-        .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border-top: 4px solid #2e7d32; }
-        .card-img { width: 100%; height: 180px; object-fit: cover; }
-        .card-content { padding: 20px; }
-        .card h3 { color: #2e7d32; margin-top: 0; font-size: 1.15em; margin-bottom: 12px; }
-        .card p { font-size: 0.9em; margin-bottom: 0; color: #444; }
-        @media (max-width: 1150px) { .header-center-images { display: none; } }
-        @media (max-width: 992px) { .features { grid-template-columns: repeat(2, 1fr); } header { flex-direction: column; text-align: center; gap: 15px; } .text-header-container { margin-left: 0; max-width: 100%; } .hero-side-img { display: none; } }
-        @media (max-width: 650px) { .features { grid-template-columns: 1fr; } }
-        .quote-section { background-color: #ffffff; padding: 50px 20px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; margin: 40px 0; }
-        .quote-container { background: #f9fbf9; border: 2px solid #1b5e20; padding: 30px; border-radius: 12px; max-width: 650px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
-        .form-group label { font-weight: bold; margin-bottom: 8px; color: #1b5e20; font-size: 1.05em; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1.05em; background: white; color: #333; }
-        .form-group textarea { min-height: 140px; resize: vertical; }
-        .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 14px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1em; }
-        .btn-submit:hover { background-color: #2e7d32; }
-        footer { background-color: #113813; color: #ffffff; padding: 30px 20px; text-align: center; font-size: 0.9em; border-top: 4px solid #81c784; }
-    </style>
-</head>
+<div class="features">
 
-<body>
-
-<header>
-    <div class="logo-container">
-        <img src="logo.png" alt="Logo">
-        <div class="text-header-container">
-            <span class="org-name">Studio CertifOrti</span>
-            <span class="org-domain">Agronomia urbana, diagnostica e consulenza ISO</span>
+    <div class="card">
+        <img src="1.png" alt="Biodiversità" class="card-img">
+        <div class="card-content">
+            <h3>1. Biodiversità Integrata</h3>
+            <p>Progettiamo ecosistemi resilienti basati sulla diversificazione delle specie vegetali. La biodiversità aumenta la stabilità ecologica, migliora la salute del suolo e riduce la necessità di interventi correttivi. Applichiamo criteri agronomici certificati per garantire equilibrio, funzionalità e rigenerazione naturale degli spazi verdi.</p>
         </div>
     </div>
 
-    <div class="header-center-images">
-        <img src="1.png" alt="Biodiversità" class="header-mini-img">
-        <img src="2.png" alt="Cibo" class="header-mini-img">
-        <img src="5.png" alt="Compostaggio" class="header-mini-img">
+    <div class="card">
+        <img src="2.png" alt="Cibo" class="card-img">
+        <div class="card-content">
+            <h3>2. Cibo a Metri Zero</h3>
+            <p>Realizziamo sistemi produttivi urbani ad alta efficienza, riducendo drasticamente la distanza tra coltivazione e consumo. Le nostre soluzioni integrano tecniche biologiche, gestione idrica ottimizzata e varietà selezionate per garantire qualità, freschezza e continuità produttiva. Supportiamo famiglie, aziende e comunità nella creazione di micro-filiera sostenibile.</p>
+        </div>
     </div>
 
-    <div class="header-actions">
-        <a href="#preventivo" class="btn-quote-header">📋 Richiedi Preventivo</a>
-        <a href="https://wa.me" target="_blank" class="btn-link-header">🟢 WhatsApp</a>
+    <div class="card">
+        <img src="5.png" alt="Compostaggio" class="card-img">
+        <div class="card-content">
+            <h3>3. Compostaggio Ecologico</h3>
+            <p>Trasformiamo scarti organici in ammendanti certificati, migliorando struttura, fertilità e capacità di ritenzione idrica del suolo. I nostri sistemi di compostaggio seguono protocolli tecnici controllati, assicurando stabilità microbiologica e assenza di contaminanti. Ideale per orti urbani, aziende agricole e progetti di rigenerazione del terreno.</p>
+        </div>
     </div>
-</header>
 
-<section class="hero">
-    <div class="hero-container">
-        <img src="1.png" alt="Dettaglio agronomico" class="hero-side-img">
-        <div class="hero-text">
-            <h1>Coltiviamo la Biodiversità nelle Nostre Città</h1>
-            <p>Progettiamo ecosistemi urbani, rigeneriamo suoli e offriamo consulenza agronomica e di certificazione (ISO 9001/22000).</p>
+    <div class="card">
+        <img src="4.png" alt="Analisi del Suolo" class="card-img">
+        <div class="card-content">
+            <h3>4. Analisi Professionale del Suolo</h3>
+            <p>Ogni terreno ha una storia unica. Le nostre analisi professionali valutano gli elementi nutritivi essenziali del suolo, garantendo coltivazioni equilibrate, produttive e sostenibili. Con strumenti certificati e competenze agronomiche avanzate, supportiamo agricoltori e aziende nel prendere decisioni precise per migliorare fertilità, struttura e resa del terreno.</p>
         </div>
-        <img src="2.png" alt="Dettaglio coltivazione" class="hero-side-img">
     </div>
-</section>
 
-<main>
-    <h2 class="section-title">Pilastri Rigenerativi & Consulenza ISO</h2>
-
-    <div class="features">
-
-        <div class="card">
-            <img src="1.png" alt="Biodiversità" class="card-img">
-            <div class="card-content"><h3>1. Biodiversità Integrata</h3><p>Progettiamo micro-orti e tetti verdi seguendo i principi della permacultura.</p></div>
+    <div class="card">
+        <img src="6.png" alt="Paesaggio" class="card-img">
+        <div class="card-content">
+            <h3>5. Paesaggio Commestibile</h3>
+            <p>Progettiamo ambienti verdi che uniscono estetica, funzionalità e produzione alimentare. Ogni intervento è studiato per valorizzare la biodiversità, migliorare la qualità dell’aria e creare spazi fruibili e rigenerativi. Le nostre soluzioni integrano piante edibili, ornamentali e mellifere per un paesaggio urbano sostenibile e produttivo.</p>
         </div>
-
-        <div class="card">
-            <img src="2.png" alt="Cibo" class="card-img">
-            <div class="card-content"><h3>2. Cibo a Metri Zero</h3><p>Accorciamo la filiera. La produzione biologica urbana garantisce ortaggi freschissimi.</p></div>
-        </div>
-
-        <div class="card">
-            <img src="5.png" alt="Compostaggio" class="card-img">
-            <div class="card-content"><h3>3. Compostaggio Ecologico</h3><p>Trasformiamo i rifiuti in ammendanti biologici di alta qualità per i suoli.</p></div>
-        </div>
-
-        <div class="card">
-            <img src="4.png" alt="Analisi del Suolo" class="card-img">
-            <div class="card-content">
-                <h3>4. Analisi Professionale del Suolo</h3>
-                <p>Ogni terreno ha una storia unica.<br>
-                Le nostre analisi professionali valutano gli elementi nutritivi essenziali del suolo, garantendo coltivazioni equilibrate, produttive e sostenibili.<br>
-                Con strumenti certificati e competenze agronomiche avanzate, supportiamo agricoltori e aziende nel prendere decisioni precise per migliorare fertilità, struttura e resa del terreno.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="6.png" alt="Paesaggio" class="card-img">
-            <div class="card-content"><h3>5. Paesaggio Commestibile</h3><p>Integrazione estetica del verde e produzione alimentare urbana.</p></div>
-        </div>
-
-        <div class="card">
-            <img src="3.png" alt="Ispezioni" class="card-img">
-            <div class="card-content"><h3>6. Ispezioni e Controllo</h3><p>Assistenza agli Audit Biologico, HACCP per aziende, cooperative, strutture HORECA.</p></div>
-        </div>
-
     </div>
-</main>
 
-<section id="preventivo" class="quote-section">
-    <div class="quote-container">
-        <h2 style="text-align: center; color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Gratuito</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 25px;">Compila tutti i dati sottostanti per richiedere un preventivo o uno studio personalizzato.</p>
-
-        <form>
-            <div class="form-group">
-                <label>Nome e Cognome</label>
-                <input type="text" placeholder="Inserisci il tuo nome completo">
-            </div>
-
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" placeholder="Inserisci la tua email">
-            </div>
-
-            <div class="form-group">
-                <label>Telefono</label>
-                <input type="text" placeholder="Inserisci il tuo numero">
-            </div>
-
-            <div class="form-group">
-                <label>Tipo di Servizio</label>
-                <select>
-                    <option>Consulenza Agronomica</option>
-                    <option>Diagnostica del Suolo</option>
-                    <option>Certificazione ISO</option>
-                    <option>Progetto Verde Urbano</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Descrizione della Richiesta</label>
-                <textarea placeholder="Scrivi qui la tua richiesta"></textarea>
-            </div>
-
-            <button class="btn-submit">Invia Richiesta</button>
-        </form>
+    <div class="card">
+        <img src="3.png" alt="Ispezioni" class="card-img">
+        <div class="card-content">
+            <h3>6. Ispezioni e Controllo</h3>
+            <p>Offriamo verifiche tecniche e audit agronomici per garantire conformità ai protocolli biologici, HACCP e ISO. Le ispezioni includono valutazioni strutturali, analisi dei processi, controllo documentale e monitoraggio delle pratiche operative. Supportiamo aziende, cooperative e strutture HORECA nel mantenere standard elevati di sicurezza e qualità.</p>
+        </div>
     </div>
-</section>
 
-<footer>
-    <p>© 2026 Studio CertifOrti — Agronomia Urbana Biologica Rigenerativa</p>
-</footer>
-
-</body>
-</html>
+</div>
