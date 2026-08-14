@@ -1,62 +1,625 @@
-<section style="margin-top: 40px;">
-    <h2 class="section-title">Missione & Visione</h2>
-    <p class="section-subtitle">
-        La nostra attività nasce dall’unione tra agronomia urbana, diagnostica sperimentale e consulenza normativa.
-    </p>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio CertifOrti – Servizi Agronomici & Certificazioni</title>
+    <style>
+        :root {
+            --verde-scuro: #1b5e20;
+            --verde: #2e7d32;
+            --verde-chiaro: #a5d6a7;
+            --terra: #8d6e63;
+            --sfondo: #f4f7f4;
+            --bianco: #ffffff;
+            --grigio: #333333;
+            --grigio-chiaro: #eeeeee;
+        }
 
-    <div class="box">
-        <h3>Missione</h3>
-        <p>
-            Rigenerare suoli, ecosistemi e processi produttivi attraverso soluzioni agronomiche tecniche,
-            sostenibili e certificate. Supportiamo aziende, cooperative e strutture professionali nel migliorare
-            qualità, sicurezza e produttività.
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: var(--sfondo);
+            color: var(--grigio);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--verde-scuro), var(--verde));
+            color: var(--bianco);
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .logo-block {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-block img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--bianco);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text span:first-child {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .logo-text span:last-child {
+            font-size: 0.85rem;
+            color: var(--verde-chiaro);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        .btn-primary {
+            background-color: #25d366;
+            color: var(--bianco);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--bianco);
+            border: 1px solid var(--bianco);
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .hero {
+            padding: 40px 20px 30px;
+            background-color: #e8f5e9;
+            border-bottom: 3px solid var(--verde-chiaro);
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+            gap: 24px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            margin: 0 0 10px;
+            font-size: 2rem;
+            color: var(--verde-scuro);
+        }
+
+        .hero-text p {
+            margin: 0 0 16px;
+            font-size: 1rem;
+        }
+
+        .hero-highlight {
+            background-color: var(--bianco);
+            border-left: 4px solid var(--verde);
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .hero-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .hero-images img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px 40px;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: var(--verde-scuro);
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background-color: var(--bianco);
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border-top: 4px solid var(--verde);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 14px 16px 16px;
+            font-size: 0.9rem;
+        }
+
+        .card-body h3 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+            color: var(--verde);
+        }
+
+        .card-body p {
+            margin: 0;
+            color: #444;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .box {
+            background-color: var(--bianco);
+            border-radius: 10px;
+            padding: 18px 18px 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            font-size: 0.95rem;
+        }
+
+        .box h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: var(--verde-scuro);
+            font-size: 1.05rem;
+        }
+
+        .box ul {
+            margin: 8px 0 0;
+            padding-left: 18px;
+        }
+
+        .box ul li {
+            margin-bottom: 4px;
+        }
+
+        .quote-section {
+            margin-top: 32px;
+            padding: 26px 20px;
+            background-color: var(--bianco);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--verde-scuro);
+        }
+
+        .quote-section h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: var(--verde-scuro);
+            font-size: 1.3rem;
+        }
+
+        .quote-section p {
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.9rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--verde-scuro);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 9px 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            margin-top: 14px;
+            width: 100%;
+            padding: 11px 16px;
+            border-radius: 6px;
+            border: none;
+            background-color: var(--verde-scuro);
+            color: var(--bianco);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--verde);
+        }
+
+        footer {
+            background-color: #113813;
+            color: var(--bianco);
+            padding: 22px 20px 26px;
+            font-size: 0.85rem;
+            border-top: 4px solid var(--verde-chiaro);
+            position: relative;
+        }
+
+        footer .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        footer h3 {
+            margin-top: 0;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        footer p {
+            margin: 0 0 4px;
+        }
+
+        footer img {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--bianco);
+        }
+
+        @media (max-width: 950px) {
+            .hero-inner {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            .hero-images {
+                grid-template-columns: 1fr 1fr;
+            }
+            .grid-3 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .two-column {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            footer .footer-inner {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .header-actions {
+                width: 100%;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+            .hero-images {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            .grid-3,
+            .grid-2 {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            .form-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo-block">
+        <img src="logo.png" alt="Logo CertifOrti">
+        <div class="logo-text">
+            <span>Studio CertifOrti</span>
+            <span>Agronomia urbana, diagnostica & certificazioni ISO</span>
+        </div>
+    </div>
+
+    <div class="header-actions">
+        <a href="https://wa.me/393760189521" target="_blank" class="btn btn-primary">🟢 WhatsApp Diretto</a>
+        <a href="#preventivo" class="btn btn-outline">📋 Richiedi Preventivo</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <h1>Servizi Agronomici & Certificazioni per Aziende, Cooperative e HORECA</h1>
+            <p>
+                Studio CertifOrti integra agronomia urbana biologica rigenerativa, diagnostica sperimentale,
+                assistenza HACCP e consulenza ISO per filiere agroalimentari, progetti urbani e strutture professionali.
+            </p>
+            <div class="hero-highlight">
+                Approccio tecnico, visione rigenerativa e strumenti certificati per trasformare spazi, processi e suoli
+                in sistemi resilienti, produttivi e conformi agli standard internazionali.
+            </div>
+        </div>
+
+        <div class="hero-images">
+            <img src="1.png" alt="Orto urbano">
+            <img src="2.png" alt="Balcone produttivo">
+            <img src="4.png" alt="Analisi del suolo">
+            <img src="6.png" alt="Paesaggio agronomico">
+        </div>
+    </div>
+</section>
+
+<main>
+
+    <section>
+        <h2 class="section-title">Servizi Agronomici Professionali</h2>
+        <p class="section-subtitle">
+            Un set completo di servizi per chi lavora con suolo, cibo, paesaggio e certificazioni.
         </p>
 
-        <h3 style="margin-top: 20px;">Visione</h3>
-        <p>
-            Creare sistemi resilienti, efficienti e conformi agli standard internazionali, integrando biodiversità,
-            innovazione e gestione responsabile delle risorse.
+        <div class="grid-3">
+            <div class="card">
+                <img src="1.png" alt="Biodiversità">
+                <div class="card-body">
+                    <h3>Agronomia Urbana Rigenerativa</h3>
+                    <p>Progettazione e gestione di ecosistemi urbani, orti, giardini produttivi e paesaggi commestibili con approccio biologico e rigenerativo.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="4.png" alt="Analisi del suolo">
+                <div class="card-body">
+                    <h3>Diagnostica del Suolo & Terreno</h3>
+                    <p>Analisi tecniche, valutazioni nutrizionali e strutturali del suolo per coltivazioni equilibrate, sostenibili e ad alta resa.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="5.png" alt="Compostaggio">
+                <div class="card-body">
+                    <h3>Compostaggio & Rigenerazione</h3>
+                    <p>Progettazione di sistemi di compostaggio ecologico e trasformazione degli scarti organici in ammendanti certificati.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="3.png" alt="Ispezioni">
+                <div class="card-body">
+                    <h3>Ispezioni Tecniche & Audit</h3>
+                    <p>Verifiche agronomiche, controllo dei processi, audit su protocolli biologici, HACCP e standard operativi.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="2.png" alt="Produzione urbana">
+                <div class="card-body">
+                    <h3>Cibo a Metri Zero</h3>
+                    <p>Progettazione di sistemi produttivi urbani, balconi, tetti e spazi ridotti con filiera corta e gestione idrica ottimizzata.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="6.png" alt="Paesaggio">
+                <div class="card-body">
+                    <h3>Paesaggio Produttivo & Ornamentale</h3>
+                    <p>Integrazione di piante edibili, ornamentali e mellifere per spazi verdi esteticamente curati e funzionali.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="margin-top: 32px;">
+        <h2 class="section-title">Certificazioni ISO & HACCP</h2>
+        <p class="section-subtitle">
+            Supporto tecnico per strutture che vogliono consolidare qualità, sicurezza e conformità normativa.
         </p>
-    </div>
-</section>
 
-<section style="margin-top: 40px;">
-    <h2 class="section-title">Perché Scegliere CertifOrti</h2>
+        <div class="two-column">
+            <div class="box">
+                <h3>ISO 9001 & ISO 22000</h3>
+                <p>
+                    Consulenza per sistemi di gestione qualità e sicurezza alimentare. Analisi dei processi, definizione delle procedure,
+                    supporto nella documentazione e accompagnamento verso la certificazione.
+                </p>
+                <ul>
+                    <li>Strutturazione del sistema documentale</li>
+                    <li>Analisi dei rischi e punti critici</li>
+                    <li>Formazione del personale</li>
+                    <li>Supporto durante audit esterni</li>
+                </ul>
+            </div>
 
-    <div class="grid-3">
-        <div class="card">
-            <div class="card-body">
-                <h3>Approccio Tecnico</h3>
-                <p>Analisi agronomiche, protocolli certificati e strumenti professionali.</p>
+            <div class="box">
+                <h3>HACCP & Autocontrollo</h3>
+                <p>
+                    Piani di autocontrollo, monitoraggio delle fasi critiche, formazione e verifiche per aziende agroalimentari,
+                    cooperative e strutture HORECA.
+                </p>
+                <ul>
+                    <li>Redazione e aggiornamento piani HACCP</li>
+                    <li>Ispezioni in loco e report tecnici</li>
+                    <li>Verifica delle buone pratiche igieniche</li>
+                    <li>Supporto continuo nel tempo</li>
+                </ul>
             </div>
         </div>
+    </section>
 
-        <div class="card">
-            <div class="card-body">
-                <h3>Esperienza Multidisciplinare</h3>
-                <p>Agronomia, diagnostica, HACCP, ISO e gestione dei processi.</p>
-            </div>
+    <section style="margin-top: 32px;">
+        <h2 class="section-title">Chi Siamo</h2>
+        <p class="section-subtitle">
+            Studio tecnico agronomico con visione rigenerativa e competenze multidisciplinari.
+        </p>
+
+        <div class="box">
+            <h3>Studio CertifOrti</h3>
+            <p>
+                Studio CertifOrti nasce dall’incontro tra agronomia urbana, diagnostica sperimentale e consulenza normativa.
+                Lavoriamo su suolo, paesaggio, cibo e processi, con l’obiettivo di creare sistemi resilienti, produttivi e conformi
+                agli standard di qualità e sicurezza.
+            </p>
+            <p>
+                Collaboriamo con aziende agroalimentari, cooperative, enti pubblici e strutture HORECA, integrando competenze tecniche,
+                visione ecologica e strumenti certificati.
+            </p>
         </div>
+    </section>
 
-        <div class="card">
-            <div class="card-body">
-                <h3>Soluzioni Personalizzate</h3>
-                <p>Progetti su misura per aziende, cooperative e strutture HORECA.</p>
-            </div>
+    <section id="preventivo" style="margin-top: 32px;">
+        <div class="quote-section">
+            <h2>Richiesta di Preventivo</h2>
+            <p>Compila i dati per ricevere una proposta tecnica personalizzata per il tuo progetto o la tua struttura.</p>
+
+            <form>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nome e Cognome</label>
+                        <input type="text" placeholder="Inserisci il tuo nome completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="Inserisci la tua email">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telefono</label>
+                        <input type="text" placeholder="Inserisci il tuo numero">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tipo di Servizio</label>
+                        <select>
+                            <option>Consulenza Agronomica</option>
+                            <option>Diagnostica del Suolo</option>
+                            <option>Certificazione ISO</option>
+                            <option>Piano HACCP</option>
+                            <option>Progetto Verde Urbano</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 10px;">
+                    <label>Descrizione della Richiesta</label>
+                    <textarea placeholder="Descrivi il contesto, gli obiettivi e le esigenze principali"></textarea>
+                </div>
+
+                <button class="btn-submit">Invia Richiesta</button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <img src="logo.png" alt="Logo CertifOrti">
+    <div class="footer-inner">
+        <div>
+            <h3>Studio CertifOrti</h3>
+            <p>Agronomia Urbana Biologica Rigenerativa, Diagnostica Sperimentale, HACCP & Consulenza ISO.</p>
+            <p>© 2026 Studio CertifOrti</p>
+        </div>
+        <div>
+            <h3>Contatti</h3>
+            <p>Tel: +39 376 018 9521</p>
+            <p>Email: studio.certiforti@gmail.com</p>
+            <p>Via Tosco Romagnola 185, 56025 Pontedera (PI)</p>
+            <p>Facebook • Instagram • TikTok • YouTube</p>
         </div>
     </div>
-</section>
+</footer>
 
-<section style="margin-top: 40px;">
-    <h2 class="section-title">Portfolio Progetti</h2>
-    <p class="section-subtitle">Una selezione di interventi agronomici, diagnostici e rigenerativi.</p>
-
-    <div class="grid-3">
-        <img src="1.png" style="width:100%; border-radius:10px;">
-        <img src="2.png" style="width:100%; border-radius:10px;">
-        <img src="3.png" style="width:100%; border-radius:10px;">
-        <img src="4.png" style="width:100%; border-radius:10px;">
-        <img src="5.png" style="width:100%; border-radius:10px;">
-        <img src="6.png" style="width:100%; border-radius:10px;">
-    </div>
-</section>
+</body>
+</html>
