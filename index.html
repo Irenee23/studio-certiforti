@@ -1,100 +1,375 @@
-/* ====== LOGO HEADER MIGLIORATO ====== */
-.logo-container img {
-    height: 180px;
-    width: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: 60% center; /* mostra la parte destra → TI visibile */
-    transform: scale(0.88);      /* zoom-out leggero */
-    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-    border: 3px solid #ffffff;
-    margin-right: 25px;
-}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio CertifOrti – Agronomia Urbana</title>
 
-/* ====== LOGO FOOTER MIGLIORATO + A DESTRA ====== */
-footer img {
-    position: absolute;
-    bottom: 35px;
-    right: 25px;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: 60% center;
-    transform: scale(0.88);
-    border: 3px solid #fff;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-}
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f4;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
 
-/* ====== PORTFOLIO PROGETTI PROFESSIONALE ====== */
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
+        header {
+            background-color: #1b5e20;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+        }
 
-.grid-3 img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease;
-}
+        /* LOGO HEADER — MIGLIORATO, “TI” VISIBILE */
+        .logo-container img {
+            height: 180px;
+            width: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: 60% center;
+            transform: scale(0.88);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+            border: 3px solid #ffffff;
+            margin-right: 25px;
+        }
 
-.grid-3 img:hover {
-    transform: scale(1.03);
-}
+        .logo-container {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            white-space: nowrap;
+        }
 
-/* ====== PIÙ SPAZIO PER IL PREVENTIVO ====== */
-#preventivo {
-    margin-top: 60px;
-}
+        .text-header-container {
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            max-width: 60%;
+        }
 
-/* ====== FORM PREVENTIVO INGRANDITO ====== */
-.quote-container {
-    background: #f9fbf9;
-    border: 3px solid #1b5e20;
-    padding: 40px;
-    border-radius: 16px;
-    max-width: 800px;
-    margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-}
+        .org-name {
+            color: #ffffff;
+            font-size: 1.7em;
+            font-weight: bold;
+        }
 
-.form-group label {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
+        .org-domain {
+            color: #c8e6c9;
+            font-size: 0.85em;
+        }
 
-.form-group input,
-.form-group textarea,
-.form-group select {
-    font-size: 1.15em;
-    padding: 16px;
-    border-radius: 10px;
-    border: 2px solid #ccc;
-}
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-left: 20px;
+        }
 
-.form-group textarea {
-    min-height: 180px;
-}
+        .btn-link-header,
+        .btn-quote-header {
+            padding: 12px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
 
-.btn-submit {
-    font-size: 1.3em;
-    padding: 18px;
-    border-radius: 10px;
-    background-color: #1b5e20;
-    font-weight: bold;
-}
+        .btn-link-header {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .btn-quote-header {
+            background-color: #ffffff;
+            color: #1b5e20;
+            border: 1px solid #1b5e20;
+        }
+
+        .btn-link-header:hover,
+        .btn-quote-header:hover {
+            transform: scale(1.05);
+        }
+
+        .header-center-images {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-mini-img {
+            width: 110px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 2px solid #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        .header-mini-img:hover {
+            transform: scale(1.08);
+        }
+
+        .hero {
+            background-color: #e8f5e9;
+            padding: 40px 20px;
+            border-bottom: 3px solid #c8e6c9;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .hero-text {
+            text-align: center;
+            flex: 1;
+        }
+
+        .hero h1 {
+            color: #1b5e20;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+
+        .hero-side-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1b5e20;
+            font-size: 2em;
+            margin-top: 40px;
+            margin-bottom: 25px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border-top: 4px solid #2e7d32;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            color: #2e7d32;
+            margin-top: 0;
+            font-size: 1.15em;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 0.9em;
+            margin-bottom: 0;
+            color: #444;
+        }
+
+        /* PORTFOLIO PROGETTI — FOTO RIDOTTE, DRITTE, PROFESSIONALI */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 0 10px;
+        }
+
+        .grid-3 img {
+            width: 100%;
+            height: 85px;
+            object-fit: cover;
+            border-radius: 6px;
+            display: block;
+        }
+
+        /* PIÙ SPAZIO PER IL PREVENTIVO + PIÙ GRANDE */
+        #preventivo {
+            margin-top: 100px;
+        }
+
+        .quote-container {
+            background: #f9fbf9;
+            border: 3px solid #1b5e20;
+            padding: 50px;
+            border-radius: 18px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            font-size: 1.25em;
+            padding: 18px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            min-height: 220px;
+        }
+
+        .btn-submit {
+            font-size: 1.4em;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: #1b5e20;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: #145016;
+        }
+
+        /* LOGO FOOTER — MIGLIORATO + A DESTRA */
+        footer img {
+            position: absolute;
+            bottom: 35px;
+            right: 25px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: 60% center;
+            transform: scale(0.88);
+            border: 3px solid #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+        }
+
+        footer {
+            background-color: #113813;
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.9em;
+            border-top: 4px solid #81c784;
+            position: relative;
+        }
+
+        @media (max-width: 992px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .text-header-container {
+                margin-left: 0;
+                max-width: 100%;
+            }
+            .hero-side-img {
+                display: none;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="logo.png" alt="Logo CertifOrti">
+        <div class="text-header-container">
+            <span class="org-name">Studio CertifOrti</span>
+            <span class="org-domain">Agronomia urbana, diagnostica e consulenza ISO</span>
+        </div>
+    </div>
+
+    <div class="header-center-images">
+        <img src="1.png" alt="Biodiversità" class="header-mini-img">
+        <img src="2.png" alt="Cibo" class="header-mini-img">
+        <img src="5.png" alt="Compostaggio" class="header-mini-img">
+    </div>
+
+    <div class="header-actions">
+        <a href="#preventivo" class="btn-quote-header">📋 Richiedi Preventivo</a>
+        <a href="https://wa.me/393760189521" target="_blank" class="btn-link-header">🟢 WhatsApp</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-container">
+        <img src="7.png" alt="Dettaglio agronomico" class="hero-side-img">
+
+        <div class="hero-text">
+            <h1>Coltiviamo la Biodiversità nelle Nostre Città</h1>
+            <p>Progettiamo ecosistemi urbani, rigeneriamo suoli e offriamo consulenza agronomica e di certificazione (ISO 9001/22000).</p>
+        </div>
+
+        <img src="8.png" alt="Dettaglio coltivazione" class="hero-side-img">
+    </div>
+</section>
+
 <main>
     <h2 class="section-title">Pilastri Rigenerativi & Consulenza ISO</h2>
 
     <div class="features">
-
         <div class="card">
             <img src="1.png" alt="Biodiversità" class="card-img">
             <div class="card-content">
@@ -142,21 +417,20 @@ footer img {
                 <p>Audit agronomici, HACCP e ISO.</p>
             </div>
         </div>
-
     </div>
 </main>
 
-<section style="margin-top: 40px;">
+<section>
     <h2 class="section-title">Portfolio Progetti</h2>
-    <p class="section-subtitle" style="text-align:center;">Interventi agronomici, diagnostici e rigenerativi.</p>
+    <p style="text-align:center;">Interventi agronomici, diagnostici e rigenerativi.</p>
 
     <div class="grid-3">
-        <img src="1.png">
-        <img src="2.png">
-        <img src="3.png">
-        <img src="4.png">
-        <img src="5.png">
-        <img src="6.png">
+        <img src="1.png" alt="">
+        <img src="2.png" alt="">
+        <img src="3.png" alt="">
+        <img src="4.png" alt="">
+        <img src="5.png" alt="">
+        <img src="6.png" alt="">
     </div>
 </section>
 
@@ -168,7 +442,6 @@ footer img {
         </p>
 
         <form action="https://formsubmit.co/studio.certiforti@gmail.com" method="POST">
-
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" value="https://irenee23.github.io/studio-certiforti/">
             <input type="hidden" name="_subject" value="Nuova richiesta di preventivo dal sito CertifOrti">
@@ -176,17 +449,17 @@ footer img {
 
             <div class="form-group">
                 <label>Nome e Cognome</label>
-                <input type="text" name="Nome e Cognome" required>
+                <input type="text" name="Nome e Cognome" required placeholder="Inserisci il tuo nome completo">
             </div>
 
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="Email" required>
+                <input type="email" name="Email" required placeholder="Inserisci la tua email">
             </div>
 
             <div class="form-group">
                 <label>Telefono</label>
-                <input type="text" name="Telefono" required>
+                <input type="text" name="Telefono" required placeholder="Inserisci il tuo numero">
             </div>
 
             <div class="form-group">
@@ -202,7 +475,7 @@ footer img {
 
             <div class="form-group">
                 <label>Descrizione della Richiesta</label>
-                <textarea name="Descrizione" required></textarea>
+                <textarea name="Descrizione" required placeholder="Descrivi il contesto, gli obiettivi e le esigenze principali"></textarea>
             </div>
 
             <button class="btn-submit">Invia Richiesta</button>
@@ -218,3 +491,6 @@ footer img {
     <p>Via Tosco Romagnola 185, Pontedera (PI)</p>
     <p>Facebook • Instagram • TikTok • YouTube</p>
 </footer>
+
+</body>
+</html>
