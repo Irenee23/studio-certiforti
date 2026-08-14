@@ -12,29 +12,46 @@
         .text-header-container { display: flex; flex-direction: column; margin-left: 20px; max-width: 60%; }
         .org-name { color: #ffffff; font-size: 1.7em; font-weight: bold; }
         .org-domain { color: #c8e6c9; font-size: 0.85em; }
+        nav { display: flex; gap: 15px; margin-left: 20px; }
+        nav a { color: #e8f5e9; text-decoration: none; font-size: 0.9em; font-weight: 500; }
+        nav a:hover { text-decoration: underline; }
         .header-actions { display: flex; align-items: center; gap: 12px; margin-left: 20px; }
-        .btn-link-header, .btn-quote-header { padding: 12px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.9em; transition: transform 0.2s; cursor: pointer; }
+        .btn-link-header, .btn-quote-header { padding: 10px 18px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.85em; transition: transform 0.2s; cursor: pointer; }
         .btn-link-header { background-color: #25d366; color: white; }
         .btn-quote-header { background-color: #ffffff; color: #1b5e20; border: 1px solid #1b5e20; }
         .btn-link-header:hover, .btn-quote-header:hover { transform: scale(1.05); }
         .header-center-images { display: flex; gap: 12px; align-items: center; margin: 0 auto; padding: 0 20px; }
         .header-mini-img { width: 110px; height: 75px; object-fit: cover; border-radius: 6px; border: 2px solid #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: transform 0.2s; }
         .header-mini-img:hover { transform: scale(1.08); }
+
         .hero { background-color: #e8f5e9; padding: 40px 20px; border-bottom: 3px solid #c8e6c9; }
         .hero-container { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 20px; }
         .hero-text { text-align: center; flex: 1; }
-        .hero h1 { color: #1b5e20; font-size: 2.2em; margin-bottom: 15px; margin-top: 0; }
+        .hero h1 { color: #1b5e20; font-size: 2.3em; margin-bottom: 15px; margin-top: 0; }
+        .hero p { color: #555; font-size: 1em; max-width: 650px; margin: 0 auto; }
         .hero-side-img { width: 180px; height: 180px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .section-title { text-align: center; color: #1b5e20; font-size: 2em; margin-top: 40px; margin-bottom: 25px; }
-        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto 40px auto; padding: 0 20px; }
+
+        .section { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .section-title { text-align: center; color: #1b5e20; font-size: 2em; margin-bottom: 20px; }
+        .section-subtitle { text-align: center; color: #666; font-size: 0.95em; margin-bottom: 25px; }
+
+        .chi-siamo-text { background: #ffffff; border-radius: 10px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); color: #444; font-size: 0.98em; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .service-card { background: #ffffff; border-radius: 10px; padding: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 3px solid #2e7d32; }
+        .service-card h3 { margin-top: 0; color: #2e7d32; font-size: 1.05em; margin-bottom: 10px; }
+        .service-card p { margin: 0; font-size: 0.9em; color: #555; }
+
+        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto 40px auto; padding: 0 20px; }
         .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border-top: 4px solid #2e7d32; }
         .card-img { width: 100%; height: 180px; object-fit: cover; }
         .card-content { padding: 20px; }
-        .card h3 { color: #2e7d32; margin-top: 0; font-size: 1.15em; margin-bottom: 12px; }
+        .card h3 { color: #2e7d32; margin-top: 0; font-size: 1.1em; margin-bottom: 12px; }
         .card p { font-size: 0.9em; margin-bottom: 0; color: #444; }
-        @media (max-width: 1150px) { .header-center-images { display: none; } }
-        @media (max-width: 992px) { .features { grid-template-columns: repeat(2, 1fr); } header { flex-direction: column; text-align: center; gap: 15px; } .text-header-container { margin-left: 0; max-width: 100%; } .hero-side-img { display: none; } }
-        @media (max-width: 650px) { .features { grid-template-columns: 1fr; } }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .gallery-placeholder { background: #ffffff; border-radius: 8px; padding: 25px; text-align: center; color: #777; border: 2px dashed #c8e6c9; font-size: 0.9em; }
+
         .quote-section { background-color: #ffffff; padding: 50px 20px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; margin: 40px 0; }
         .quote-container { background: #f9fbf9; border: 2px solid #1b5e20; padding: 30px; border-radius: 12px; max-width: 650px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
@@ -43,12 +60,33 @@
         .form-group textarea { min-height: 140px; resize: vertical; }
         .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 14px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1em; }
         .btn-submit:hover { background-color: #2e7d32; }
+
+        .contacts-box { background: #ffffff; border-radius: 10px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); font-size: 0.95em; color: #444; }
+        .contacts-box h3 { margin-top: 0; color: #1b5e20; }
+
         footer { background-color: #113813; color: #ffffff; padding: 30px 20px; text-align: center; font-size: 0.9em; border-top: 4px solid #81c784; }
         .footer-container { max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; }
-        .footer-box { min-width: 250px; margin-bottom: 10px; }
+        .footer-box { min-width: 250px; margin-bottom: 10px; text-align: left; }
         .footer-box h4 { color: #c8e6c9; margin-top: 0; margin-bottom: 10px; font-size: 1.1em; }
         .footer-box p { margin: 5px 0; color: #e8f5e9; }
         .footer-bottom { margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); color: #a5d6a7; font-size: 0.8em; }
+
+        @media (max-width: 1150px) { .header-center-images { display: none; } }
+        @media (max-width: 992px) {
+            header { flex-direction: column; text-align: center; gap: 10px; }
+            .text-header-container { margin-left: 0; max-width: 100%; }
+            nav { justify-content: center; margin-left: 0; flex-wrap: wrap; }
+            .hero-container { flex-direction: column; }
+            .hero-side-img { display: none; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .features { grid-template-columns: repeat(2, 1fr); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 650px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .features { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 
@@ -63,11 +101,14 @@
         </div>
     </div>
 
-    <div class="header-center-images">
-        <img src="1.png" alt="Biodiversità" class="header-mini-img">
-        <img src="2.png" alt="Cibo" class="header-mini-img">
-        <img src="5.png" alt="Compostaggio" class="header-mini-img">
-    </div>
+    <nav>
+        <a href="#chi-siamo">Chi siamo</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#pilastri">Pilastri</a>
+        <a href="#galleria">Galleria</a>
+        <a href="#preventivo">Preventivo</a>
+        <a href="#contatti">Contatti</a>
+    </nav>
 
     <div class="header-actions">
         <a href="#preventivo" class="btn-quote-header">📋 Richiedi Preventivo</a>
@@ -80,14 +121,73 @@
         <img src="1.png" alt="Dettaglio agronomico" class="hero-side-img">
         <div class="hero-text">
             <h1>Coltiviamo la Biodiversità nelle Nostre Città</h1>
-            <p>Progettiamo ecosistemi urbani, rigeneriamo suoli e offriamo consulenza agronomica e di certificazione (ISO 9001/22000).</p>
+            <p>
+                Studio CertifOrti unisce agronomia urbana, diagnostica del suolo e consulenza ISO per creare ecosistemi produttivi,
+                rigenerativi e certificabili. Progettiamo spazi verdi che migliorano la qualità della vita, la sicurezza alimentare
+                e la sostenibilità ambientale.
+            </p>
         </div>
         <img src="2.png" alt="Dettaglio coltivazione" class="hero-side-img">
     </div>
 </section>
 
-<main>
+<section id="chi-siamo" class="section">
+    <h2 class="section-title">Chi Siamo</h2>
+    <p class="section-subtitle">Uno studio agronomico dedicato alla rigenerazione dei suoli e alla qualità dei sistemi urbani.</p>
+    <div class="chi-siamo-text">
+        <p>
+            Studio CertifOrti nasce con l’obiettivo di portare l’agronomia professionale dentro le città e nei contesti produttivi
+            che vogliono evolvere verso modelli sostenibili. Uniamo competenze agronomiche avanzate, tecniche di rigenerazione del
+            suolo, protocolli di certificazione ISO e progettazione del verde per creare spazi funzionali, sani e ad alto valore sociale.
+        </p>
+        <p>
+            Lavoriamo su suoli urbani, periurbani e agricoli, con un approccio integrato che considera fertilità, struttura, biodiversità,
+            gestione idrica e resilienza ecologica. Ogni progetto viene sviluppato con criteri tecnici chiari, misurabili e verificabili,
+            per garantire risultati concreti e duraturi.
+        </p>
+        <p>
+            La nostra missione è migliorare la qualità della vita attraverso ecosistemi urbani rigenerativi, filiere corte, suoli sani
+            e processi certificabili. Collaboriamo con aziende, cooperative, enti pubblici, strutture HORECA e comunità locali, offrendo
+            consulenza, diagnosi, formazione e accompagnamento verso standard elevati di qualità e sicurezza.
+        </p>
+    </div>
+</section>
+
+<section id="servizi" class="section">
+    <h2 class="section-title">Servizi</h2>
+    <p class="section-subtitle">Un portafoglio completo di servizi agronomici, diagnostici e di certificazione.</p>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Agronomia Urbana</h3>
+            <p>Progettazione di orti urbani, tetti verdi, giardini produttivi e paesaggi commestibili, con criteri agronomici certificati.</p>
+        </div>
+        <div class="service-card">
+            <h3>Diagnostica del Suolo</h3>
+            <p>Analisi professionali del suolo per valutare fertilità, struttura, elementi nutritivi e capacità di rigenerazione.</p>
+        </div>
+        <div class="service-card">
+            <h3>Compostaggio e Ammendanti</h3>
+            <p>Progettazione di sistemi di compostaggio ecologico e produzione di ammendanti per migliorare la qualità dei terreni.</p>
+        </div>
+        <div class="service-card">
+            <h3>Certificazioni ISO</h3>
+            <p>Supporto ai processi di certificazione ISO (9001, 22000 e affini) per filiere alimentari e sistemi produttivi.</p>
+        </div>
+        <div class="service-card">
+            <h3>Audit HACCP e Controlli</h3>
+            <p>Ispezioni tecniche, audit HACCP e verifiche documentali per aziende, cooperative e strutture HORECA.</p>
+        </div>
+        <div class="service-card">
+            <h3>Progetti Verdi Rigenerativi</h3>
+            <p>Consulenza e progettazione di interventi rigenerativi su suoli degradati, aree urbane e spazi comunitari.</p>
+        </div>
+    </div>
+</section>
+
+<section id="pilastri" class="section">
     <h2 class="section-title">Pilastri Rigenerativi & Consulenza ISO</h2>
+    <p class="section-subtitle">Sei pilastri tecnici che guidano ogni intervento di Studio CertifOrti.</p>
 
     <div class="features">
 
@@ -140,7 +240,25 @@
         </div>
 
     </div>
-</main>
+</section>
+
+<section id="galleria" class="section">
+    <h2 class="section-title">Galleria Foto</h2>
+    <p class="section-subtitle">Spazio dedicato ai progetti, agli orti urbani e ai paesaggi rigenerativi. (In aggiornamento)</p>
+
+    <div class="gallery-grid">
+        <div class="gallery-placeholder">
+            Galleria in fase di allestimento.<br>
+            Le immagini dei progetti verranno inserite prossimamente.
+        </div>
+        <div class="gallery-placeholder">
+            Spazio riservato a orti urbani, tetti verdi e paesaggi commestibili.
+        </div>
+        <div class="gallery-placeholder">
+            Sezione dedicata a interventi di rigenerazione del suolo e consulenze tecniche.
+        </div>
+    </div>
+</section>
 
 <section id="preventivo" class="quote-section">
     <div class="quote-container">
@@ -191,6 +309,24 @@
             <p><strong>Indirizzo:</strong> Via Tosco Romagnola 185, 56025 Pontedera (PI)</p>
             <p><strong>Social:</strong> Facebook • Instagram • TikTok • YouTube</p>
         </div>
+    </div>
+</section>
+
+<section id="contatti" class="section">
+    <h2 class="section-title">Contatti</h2>
+    <p class="section-subtitle">Tutti i riferimenti ufficiali per metterti in comunicazione con Studio CertifOrti.</p>
+
+    <div class="contacts-box">
+        <h3>Studio CertifOrti</h3>
+        <p><strong>Ambito:</strong> Agronomia urbana, diagnostica del suolo, consulenza ISO e audit HACCP.</p>
+        <p><strong>Indirizzo:</strong><br>
+            Via Tosco Romagnola 185<br>
+            56025 Pontedera (PI)
+        </p>
+        <p><strong>Telefono:</strong> +39 376 018 9521</p>
+        <p><strong>Email:</strong> studio.certiforti@gmail.com</p>
+        <p><strong>WhatsApp:</strong> clicca sul pulsante in alto per scrivere direttamente.</p>
+        <p><strong>Social ufficiali:</strong> Facebook • Instagram • TikTok • YouTube</p>
     </div>
 </section>
 
