@@ -25,59 +25,36 @@
             background: var(--white);
             color: var(--stone-gray);
             font-family: 'Poppins', sans-serif;
-            transition: background 0.4s ease, color 0.4s ease;
+            margin: 0;
+            padding: 0;
         }
 
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: var(--stone-gray);
-                color: var(--white);
-            }
-            header {
-                background: var(--leaf-green-dark);
-            }
+        header {
+            background: var(--leaf-green);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         #logo {
             width: 140px;
             filter: drop-shadow(0 0 8px var(--leaf-green));
-            animation: glowPulse 3s infinite ease-in-out;
-        }
-        @keyframes glowPulse {
-            0% { filter: drop-shadow(0 0 4px var(--leaf-green)); }
-            50% { filter: drop-shadow(0 0 12px var(--leaf-green)); }
-            100% { filter: drop-shadow(0 0 4px var(--leaf-green)); }
         }
 
-        #drawer {
-            position: fixed;
-            top: 0;
-            right: -260px;
-            width: 260px;
-            height: 100%;
-            background: var(--leaf-green-dark);
-            color: var(--white);
-            padding: 30px;
-            transition: right 0.4s ease;
-            z-index: 9999;
-        }
-        #drawer.open {
-            right: 0;
-        }
-        #drawer a {
-            display: block;
-            margin: 18px 0;
-            color: var(--white);
-            font-size: 18px;
+        nav a {
+            margin-left: 20px;
+            color: white;
             text-decoration: none;
+            font-weight: 600;
         }
 
         #drawer-btn {
             position: fixed;
             top: 20px;
-            right: 20px;
+            left: 20px;
             background: var(--leaf-green);
-            color: var(--white);
+            color: white;
             border: none;
             padding: 12px 14px;
             border-radius: 50%;
@@ -86,35 +63,34 @@
             z-index: 10000;
         }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 40px;
-            background: var(--leaf-green);
-            color: var(--white);
+        #drawer {
+            position: fixed;
+            top: 0;
+            left: -260px;
+            width: 260px;
+            height: 100%;
+            background: var(--leaf-green-dark);
+            color: white;
+            padding: 30px;
+            transition: left 0.4s ease;
+            z-index: 9999;
         }
 
-        nav a {
-            margin-left: 20px;
-            color: var(--white);
+        #drawer.open {
+            left: 0;
+        }
+
+        #drawer a {
+            display: block;
+            margin: 18px 0;
+            color: white;
             text-decoration: none;
-            font-weight: 600;
+            font-size: 18px;
         }
 
         section {
             padding: 80px 40px;
-        }
-
-        h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: var(--leaf-green-dark);
-        }
-
-        .hero {
             text-align: center;
-            padding: 120px 40px;
         }
 
         .hero h1 {
@@ -127,10 +103,17 @@
             margin-top: 20px;
         }
 
+        h2 {
+            font-size: 32px;
+            color: var(--leaf-green-dark);
+            margin-bottom: 20px;
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
+            margin-top: 40px;
         }
 
         .service-box {
@@ -138,11 +121,6 @@
             padding: 30px;
             border-radius: 12px;
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .service-box:hover {
-            transform: translateY(-6px);
         }
 
         .service-box i {
@@ -222,70 +200,3 @@
         </div>
     </div>
 </section>
-<!-- PROGETTI -->
-<section id="progetti">
-    <h2>Progetti Realizzati</h2>
-    <p>Sezione dedicata ai progetti CertifOrti. Le immagini e descrizioni verranno aggiunte successivamente.</p>
-</section>
-
-<!-- ISO -->
-<section id="iso">
-    <h2>Certificazioni ISO</h2>
-    <ul>
-        <li>ISO 9001 – Qualità</li>
-        <li>ISO 14001 – Ambiente</li>
-        <li>ISO 22000 – Sicurezza Alimentare</li>
-        <li>HACCP – Controllo igienico</li>
-    </ul>
-</section>
-
-<!-- TEAM -->
-<section id="team">
-    <h2>Team</h2>
-    <p>Il nostro team è composto da agronomi, tecnici ambientali e consulenti certificati.</p>
-</section>
-
-<!-- GALLERIA -->
-<section id="galleria">
-    <h2>Galleria</h2>
-    <p>La galleria verrà popolata con immagini dei progetti CertifOrti.</p>
-</section>
-
-<!-- PREVENTIVO -->
-<section id="preventivo">
-    <h2>Richiedi un Preventivo</h2>
-    <p>Contattaci per ricevere una consulenza personalizzata.</p>
-    <a href="https://wa.me/393760189521" style="background: var(--leaf-green); padding: 12px 20px; color: white; border-radius: 8px; text-decoration: none;">
-        Scrivici su WhatsApp
-    </a>
-</section>
-
-<!-- CONTATTI -->
-<section id="contatti">
-    <h2>Contatti</h2>
-    <p><strong>Telefono:</strong> +39 376 018 9521</p>
-    <p><strong>Email:</strong> studio.certiforti@gmail.com</p>
-    <p><strong>Indirizzo:</strong> Via Tosco Romagnola 185, 56025 Pontedera (PI)</p>
-
-    <h3>Social</h3>
-    <ul>
-        <li>Facebook</li>
-        <li>Instagram</li>
-        <li>TikTok</li>
-        <li>YouTube</li>
-    </ul>
-</section>
-
-<!-- FOOTER -->
-<footer style="text-align:center; padding: 40px; background: var(--leaf-green-dark); color:white;">
-    © 2026 CertifOrti – Tutti i diritti riservati
-</footer>
-
-<script>
-function toggleDrawer() {
-    document.getElementById("drawer").classList.toggle("open");
-}
-</script>
-
-</body>
-</html>
