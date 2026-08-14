@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +7,9 @@
     <style>
         body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 0; background-color: #f4f7f4; color: #333; line-height: 1.6; scroll-behavior: smooth; }
         header { background-color: #1b5e20; padding: 20px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 10000; }
-.logo-container { 
-    display: flex !important; 
-    align-items: center !important; 
-    flex: 1 !important; 
-    white-space: nowrap !important;
-    overflow: visible !important;
-}
-.logo-container img { 
-    height: 110px !important; 
-    width: 110px !important; 
-    max-height: 110px !important;
-    max-width: 110px !important;
-    display: block !important; 
-    border-radius: 50% !important; 
-    object-fit: cover !important; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important; 
-    border: 2px solid #ffffff !important; 
-    margin-right: 25px !important;
-}
-
-/* Questa riga protegge il testo CERTIFORTI e gli dà il giusto spazio */
-.logo-container h1, .logo-container span, .logo-container a {
-    white-space: nowrap !important;
-    display: inline-block !important;
-}
+        .logo-container { display: flex !important; align-items: center !important; flex: 1 !important; white-space: nowrap !important; overflow: visible !important; }
+        .logo-container img { height: 110px !important; width: 110px !important; max-height: 110px !important; max-width: 110px !important; display: block !important; border-radius: 50% !important; object-fit: cover !important; box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important; border: 2px solid #ffffff !important; margin-right: 25px !important; }
+        .logo-container h1, .logo-container span, .logo-container a { white-space: nowrap !important; display: inline-block !important; }
         .text-header-container { display: flex; flex-direction: column; margin-left: 20px; max-width: 60%; }
         .org-name { color: #ffffff; font-size: 1.7em; font-weight: bold; }
         .org-domain { color: #c8e6c9; font-size: 0.85em; }
@@ -47,7 +25,7 @@
         .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 22px; border-top: 4px solid #2e7d32; box-sizing: border-box; }
         .card h3 { color: #2e7d32; margin-top: 0; font-size: 1.15em; margin-bottom: 12px; }
         .card p { font-size: 0.9em; margin-bottom: 0; color: #444; }
-        @media (max-width: 992px) { .features { grid-template-columns: repeat(2, 1fr); header { flex-direction: column; text-align: center; gap: 15px; } .text-header-container { margin-left: 0; max-width: 100%; } } }
+        @media (max-width: 992px) { .features { grid-template-columns: repeat(2, 1fr); } header { flex-direction: column; text-align: center; gap: 15px; } .text-header-container { margin-left: 0; max-width: 100%; } }
         @media (max-width: 650px) { .features { grid-template-columns: 1fr; } }
         .quote-section { background-color: #ffffff; padding: 50px 20px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; margin: 40px 0; }
         .quote-container { background: #f9fbf9; border: 2px solid #1b5e20; padding: 30px; border-radius: 12px; max-width: 650px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
@@ -56,44 +34,11 @@
         .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1.05em; background: white; color: #333; }
         .form-group select { cursor: pointer; color: #333; font-weight: 500; }
         .form-group textarea { min-height: 140px; resize: vertical; display: block; }
-        .iso-section { background-color: #ffffff; padding: 40px 20px; margin: 40px 0; }
-        .iso-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
-        .iso-box { background-color: #f9fbf9; border: 2px dashed #81c784; border-radius: 8px; padding: 20px; width: 45%; min-width: 280px; text-align: center; }
-        .iso-badge { background-color: #1b5e20; color: white; padding: 5px 15px; border-radius: 4px; font-weight: bold; }
-        .iso-box h3 { margin-top: 5px; font-size: 1.15em; color: #1b5e20; }
-        .iso-box p { margin: 0; font-size: 0.9em; color: #555; }
         .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 14px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1em; transition: background-color 0.2s; margin-top: 10px; display: block; }
         .btn-submit:hover { background-color: #2e7d32; }
-        .galleria {
-  padding: 2rem 1rem;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.grid-galleria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.grid-galleria img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.btn-galleria {
-  display: block;
-  width: fit-content;
-  margin: 2rem auto;
-  padding: 0.7rem 1.5rem;
-  background: #2e7d32;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
+        .galleria { padding: 2rem 1rem; max-width: 1100px; margin: auto; }
+        .grid-galleria { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+        .grid-galleria img { width: 100%; height: 250px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
     </style>
 </head>
 <body>
@@ -124,63 +69,52 @@
             <div class="card"><h3>5. Paesaggio Commestibile</h3><p>Sviluppiamo progetti di architettura del paesaggio commestibile (edible landscaping) sia per contesti privati sia collettivi, integrando estetica del verde e produzione alimentare urbana.</p></div>
             <div class="card"><h3>6. Ispezioni e Controllo</h3><p>Forniamo assistenza agli Audit di 2°, 3° parte di certificazione Biologico, HACCP per aziende agroalimentari, cooperative, strutture HORECA (ristoranti, caffè, hotel).</p></div>
         </div>
-        <section class="quote-section" id="preventivo">
-            <h2 class="section-title">Richiesta di Preventivo Gratuito</h2>
-            <div class="quote-container">
-                <p style="text-align: center; color: #666; margin-bottom: 25px; font-size: 1.05em;">Compila tutti i dati sottostanti per richiedere un preventivo o uno studio di conformità personalizzato.</p>
-                <form action="#" method="POST">
-                    <div class="form-group"><label>Nome o Ragione Sociale</label><input type="text" name="name" required placeholder="Es. Azienda Agricola Rossi"></div>
-                    <div class="form-group"><label>Email di Contatto</label><input type="email" name="email" required placeholder="Es. nome@azienda.it"></div>
-                    <div class="form-group"><label>Recapito Telefonico</label><input type="tel" name="phone" required placeholder="Es. +39 333 1234567"></div>
-                    <div class="form-group"><label>Città / Località</label><input type="text" name="city" required placeholder="Es. Milano (MI)"></div>
-                    <div class="form-group">
-                        <label>Servizio Richiesto (Tocca per scegliere):</label>
-                        <select name="service" required>
-                            <option value="" disabled selected>-- Scegli un servizio dall'elenco --</option>
-                            <option value="Consulenza ISO: Cooperative, Aziende Agroalimentari">Consulenza ISO: Cooperative, Aziende Agroalimentari</option>
-                            <option value="Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè">Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè</option>
-                            <option value="Agricoltura Urbana: Scuole, Mense, strutture HORECA">Agricoltura Urbana: Scuole, Mense, strutture HORECA</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Descrizione del Progetto / Note aggiuntive</label>
-                        <textarea name="message" placeholder="Fornisci una breve descrizione delle tue necessità..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Invia Richiesta di Preventivo</button>
-                </form>
-            </div>
-        </section>
-        <div class="iso-section">
-            <h2 class="section-title">Qualità e Sicurezza</h2>
-            <div class="iso-container">
-                <div class="iso-box">
-                    <div class="iso-badge">ISO 9001</div>
-                    <h3>Sistema di Gestione Qualità</h3>
-                    <p>Studio CertifOrti applica rigorosi protocolli scientifici internazionali per garantire la massima qualità e precisione nelle analisi agronomiche e nella progettazione di orti biologici urbani.</p>
+    </main>
+
+    <section id="preventivo" class="quote-section">
+        <div class="quote-container">
+            <h2 style="text-align: center; color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Gratuito</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 25px;">Compila tutti i dati sottostanti per richiedere un preventivo o uno studio di conformità personalizzato.</p>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label>Nome Completo / Ragione Sociale</label>
+                    <input type="text" name="name" required placeholder="Es. Azienda Agricola Rossi">
                 </div>
-                <div class="iso-box">
-                    <div class="iso-badge">ISO 22000</div>
-                    <h3>Sicurezza Alimentare</h3>
-                    <p>Garantiamo che ogni fase della produzione agricola urbana rispetti i più rigidi standard di sicurezza alimentare, assicurando ortaggi biologici salubri e controllati per il consumatore finale.</p>
+                <div class="form-group">
+                    <label>Email di Contatto</label>
+                    <input type="email" name="email" required placeholder="Es. nome@azienda.it">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label>Telefono / WhatsApp</label>
+                    <input type="tel" name="phone" required placeholder="Es. +39 333 1234567">
+                </div>
+                <div class="form-group">
+                    <label>Città / Provincia</label>
+                    <input type="text" name="city" required placeholder="Es. Milano (MI)">
+                </div>
+                <div class="form-group">
+                    <label>Ambito di Intervento</label>
+                    <select name="service" required>
+                        <option value="" disabled selected>Seleziona un'opzione...</option>
+                        <option value="iso">Consulenza ISO: Cooperative, Aziende Agroalimentari</option>
+                        <option value="haccp">Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè</option>
+                        <option value="urbana">Agricoltura Urbana: Scuole, Mense, strutture HORECA</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Dettagli del Progetto o Messaggio</label>
+                    <textarea name="message" placeholder="Descrivi brevemente le tue necessità..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Invia Richiesta Preventivo</button>
+            </form>
         </div>
-    </div>
-</div>
-<section id="galleria-home" class="galleria">
-  <h2 class="section-title">Galleria CertifOrti</h2>
-  <p style="text-align:center; max-width:700px; margin:0 auto 30px;">
-    Una selezione di immagini che rappresentano i nostri servizi: agricoltura, analisi del suolo, compostaggio, certificazioni e sostenibilità.
-  </p>
+    </section>
 
-  <div class="grid-galleria">
-    <img src="assets/img1.jpg" alt="Agricoltura professionale">
-    <img src="assets/img2.jpg" alt="Irrigazione tecnologica">
-    <img src="assets/img3.jpg" alt="Certificazioni ISO">
-    <img src="assets/img4.jpg" alt="Analisi del suolo">
-    <img src="assets/img5.jpg" alt="Compostaggio tecnico">
-    <img src="assets/img6.jpg" alt="Agricoltura urbana sostenibile">
-  </div>
-
-  <a href="galleria.html" class="btn-galleria">Vai alla galleria completa</a>
-</section>
+    <section class="galleria">
+        <h2 class="section-title">Galleria CertifOrti</h2>
+        <div class="grid-galleria">
+            <img src="1.png" alt="Agricoltura professionale">
+            <img src="2.png" alt="Irrigazione tecnologica">
+            <img src="3.png" alt="Certificazioni ISO">
+            <img src="4.png" alt="Analisi del suolo">
+            <img src="5.png" alt="Compostaggio tecnico">
