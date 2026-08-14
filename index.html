@@ -18,14 +18,27 @@
         .btn-link-header { background-color: #25d366; color: white; }
         .btn-quote-header { background-color: #ffffff; color: #1b5e20; border: 1px solid #1b5e20; }
         .btn-link-header:hover, .btn-quote-header:hover { transform: scale(1.05); }
-        .hero { background-color: #e8f5e9; padding: 40px 20px; text-align: center; border-bottom: 3px solid #c8e6c9; }
-        .hero h1 { color: #1b5e20; font-size: 2.2em; margin-bottom: 15px; }
+        
+        /* NUOVO STILE PER LA SEZIONE HERO CON IMMAGINI AI LATI */
+        .hero { background-color: #e8f5e9; padding: 40px 20px; border-bottom: 3px solid #c8e6c9; }
+        .hero-container { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 20px; }
+        .hero-text { text-align: center; flex: 1; }
+        .hero h1 { color: #1b5e20; font-size: 2.2em; margin-bottom: 15px; margin-top: 0; }
+        .hero-side-img { width: 180px; height: 180px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        
         .section-title { text-align: center; color: #1b5e20; font-size: 2em; margin-top: 40px; margin-bottom: 25px; }
         .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto 40px auto; padding: 0 20px; }
         .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 22px; border-top: 4px solid #2e7d32; box-sizing: border-box; }
         .card h3 { color: #2e7d32; margin-top: 0; font-size: 1.15em; margin-bottom: 12px; }
         .card p { font-size: 0.9em; margin-bottom: 0; color: #444; }
-        @media (max-width: 992px) { .features { grid-template-columns: repeat(2, 1fr); } header { flex-direction: column; text-align: center; gap: 15px; } .text-header-container { margin-left: 0; max-width: 100%; } }
+        
+        @media (max-width: 992px) { 
+            .features { grid-template-columns: repeat(2, 1fr); } 
+            header { flex-direction: column; text-align: center; gap: 15px; } 
+            .text-header-container { margin-left: 0; max-width: 100%; }
+            /* Nasconde le immagini laterali sui display medio-piccoli per non stringere il testo */
+            .hero-side-img { display: none; }
+        }
         @media (max-width: 650px) { .features { grid-template-columns: 1fr; } }
         .quote-section { background-color: #ffffff; padding: 50px 20px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; margin: 40px 0; }
         .quote-container { background: #f9fbf9; border: 2px solid #1b5e20; padding: 30px; border-radius: 12px; max-width: 650px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
@@ -55,23 +68,36 @@
             <a href="https://wa.me" class="btn-link-header">🟢 WhatsApp</a>
         </div>
     </header>
+    
+    <!-- SEZIONE HERO AGGIORNATA CON IMMAGINI AI LATI -->
     <section class="hero">
-        <h1>Coltiviamo la Biodiversità nelle Nostre Città</h1>
-        <p>Progettiamo ecosistemi urbani, rigeneriamo suoli e offriamo consulenza agronomica e di certificazione (ISO 9001/22000).</p>
+        <div class="hero-container">
+            <!-- Immagine di Sinistra -->
+            <img src="1.png" alt="Dettaglio agronomico" class="hero-side-img">
+            
+            <!-- Testo Centrale -->
+            <div class="hero-text">
+                <h1>Coltiviamo la Biodiversità nelle Nostre Città</h1>
+                <p>Progettiamo ecosistemi urbani, rigeneriamo suoli e offriamo consulenza agronomica e di certificazione (ISO 9001/22000).</p>
+            </div>
+            
+            <!-- Immagine di Destra -->
+            <img src="2.png" alt="Dettaglio coltivazione" class="hero-side-img">
+        </div>
     </section>
+
     <main>
         <h2 class="section-title">Pilastri Rigenerativi & Consulenza ISO</h2>
         <div class="features">
             <div class="card"><h3>1. Biodiversità Integrata</h3><p>Progettiamo micro-orti e tetti verdi seguendo i principi della permacultura. Inseriamo piante nettarifere per attirare impollinatori utili in modo del tutto naturale.</p></div>
             <div class="card"><h3>2. Cibo a Metri Zero</h3><p>Accorciamo la filiera azzerando i trasporti. La produzione biologica urbana garantisce ortaggi freschissimi e ricchi di conti per le comunità locali.</p></div>
-            <div class="card"><h3>3. Compostaggio Ecologico</h3><p>Implementiamo sistemi avanzati di gestione e valorizzazione degli scarti organici urbani, transforming i rifiuti in ammendanti biologici di alta qualità per i suoli cittadini.</p></div>
-            <div class="card"><h3>4. Spazi Comuni ed Educativi</h3><p>Curiamo la rigenerazione di spazi privati, aree comuni condominiali e cortili educativi, strutturando micro-ambienti verdi che favoriscono la socialità e l'apprendimento attivo.</p></div>
-            <div class="card"><h3>5. Paesaggio Commestibile</h3><p>Sviluppiamo progetti di architettura del paesaggio commestibile (edible landscaping) sia per contesti privati sia collettivi, integrando estetica del verde e produzione alimentare urbana.</p></div>
+            <div class="card"><h3>3. Compostaggio Ecologico</h3><p>Implementiamo sistemi avanzati di gestione e valorizzazione degli scarti organici urbani, trasformando i rifiuti in ammendanti biologici di alta qualità per i suoli cittadini.</p></div>
+            <div class="card"><h3>4. Spazi Comuni ed Educativi</h3><p>Curiamo la rigenerazione di spazi privati, areas comuni condominiali e cortili educativi, strutturando micro-ambienti verdi che favoriscono la socialità e l'apprendimento attivo.</p></div>
+            <div class="card"><h3>5. Paesaggio Commestibile</h3><p>Sviluppiamo progetti di architecture del paesaggio commestibile (edible landscaping) sia per contesti privati sia collettivi, integrando estetica del verde e produzione alimentare urbana.</p></div>
             <div class="card"><h3>6. Ispezioni e Controllo</h3><p>Forniamo assistenza agli Audit di 2°, 3° parte di certificazione Biologico, HACCP per aziende agroalimentari, cooperative, strutture HORECA (ristoranti, caffè, hotel).</p></div>
         </div>
     </main>
 
-    <!-- LA GALLERIA ORA PARTE DIRETTAMENTE SENZA SCRITTE DI TITOLO -->
     <section class="galleria">
         <div class="grid-galleria">
             <img src="1.png" alt="Agricoltura professionale">
@@ -102,18 +128,3 @@
                 </div>
                 <div class="form-group">
                     <label>Città / Provincia</label>
-                    <input type="text" name="city" required placeholder="Es. Milano (MI)">
-                </div>
-                <div class="form-group">
-                    <label>Ambito di Intervento</label>
-                    <select name="service" required>
-                        <option value="" disabled selected>Seleziona un'opzione...</option>
-                        <option value="iso">Consulenza ISO: Cooperative, Aziende Agroalimentari</option>
-                        <option value="haccp">Assistenza Audit & HACCP: Cooperative, Ristoranti, Hotel, Cafè</option>
-                        <option value="urbana">Agricoltura Urbana: Scuole, Mense, strutture HORECA</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Dettagli del Progetto o Messaggio</label>
-                    <textarea name="message" placeholder="Descrivi brevemente le tue necessità..."></textarea>
-                </div>
