@@ -4,29 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO -->
     <title>CertifOrti – Agronomia Urbana, Suolo, ISO, HACCP</title>
     <meta name="description" content="Studio CertifOrti – Agronomia urbana, rigenerazione del suolo, consulenze ISO, HACCP, progetti ambientali e sostenibilità.">
     <meta name="keywords" content="agronomia urbana, suolo, ISO 9001, ISO 22000, HACCP, sostenibilità, orti urbani, CertifOrti, consulenze ambientali">
     <meta name="author" content="CertifOrti">
 
-    <!-- Font & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Tema naturale verde foglia + automatic dark mode -->
     <style>
-
         :root {
             --leaf-green: #4CAF50;
             --leaf-green-dark: #2e7d32;
             --stone-gray: #3a3a3a;
             --stone-gray-light: #e8e8e8;
             --white: #ffffff;
-            --black: #000000;
         }
 
-        /* Tema chiaro */
         body {
             background: var(--white);
             color: var(--stone-gray);
@@ -34,27 +28,16 @@
             transition: background 0.4s ease, color 0.4s ease;
         }
 
-        /* Tema scuro automatico */
         @media (prefers-color-scheme: dark) {
             body {
                 background: var(--stone-gray);
                 color: var(--white);
             }
-            header, nav {
+            header {
                 background: var(--leaf-green-dark);
             }
         }
 
-        /* Animazioni leggere */
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1.2s forwards;
-        }
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        /* Logo glow */
         #logo {
             width: 140px;
             filter: drop-shadow(0 0 8px var(--leaf-green));
@@ -66,7 +49,6 @@
             100% { filter: drop-shadow(0 0 4px var(--leaf-green)); }
         }
 
-        /* Drawer mobile da destra */
         #drawer {
             position: fixed;
             top: 0;
@@ -90,7 +72,6 @@
             text-decoration: none;
         }
 
-        /* Pulsante drawer */
         #drawer-btn {
             position: fixed;
             top: 20px;
@@ -103,10 +84,8 @@
             font-size: 20px;
             cursor: pointer;
             z-index: 10000;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
 
-        /* Header */
         header {
             display: flex;
             justify-content: space-between;
@@ -123,18 +102,137 @@
             font-weight: 600;
         }
 
-        /* Bandiere */
         .flags {
             display: flex;
             gap: 12px;
             align-items: center;
         }
-        .flags a {
-            font-size: 20px;
-            text-decoration: none;
+
+        section {
+            padding: 80px 40px;
         }
 
-    </style>
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--leaf-green-dark);
+        }
 
+        .hero {
+            text-align: center;
+            padding: 120px 40px;
+            background: var(--leaf-green-light);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: var(--leaf-green-dark);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .service-box {
+            background: var(--stone-gray-light);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: translateY(-6px);
+        }
+
+        .service-box i {
+            font-size: 40px;
+            color: var(--leaf-green-dark);
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
+
 <body>
+
+<button id="drawer-btn" onclick="toggleDrawer()">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div id="drawer">
+    <h2>Menu</h2>
+    <a href="#home">Home</a>
+    <a href="#chi-siamo">Chi Siamo</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#progetti">Progetti</a>
+    <a href="#iso">Certificazioni ISO</a>
+    <a href="#team">Team</a>
+    <a href="#galleria">Galleria</a>
+    <a href="#contatti">Contatti</a>
+
+    <hr style="margin: 20px 0; border-color: rgba(255,255,255,0.3);">
+
+    <div class="flags">
+        <a href="index.html">🇮🇹</a>
+        <a href="index-en.html">🇬🇧</a>
+    </div>
+</div>
+
+<header id="home">
+    <img id="logo" src="logo.png" alt="CertifOrti Logo">
+    <nav>
+        <a href="#chi-siamo">Chi Siamo</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#progetti">Progetti</a>
+        <a href="#iso">ISO</a>
+        <a href="#team">Team</a>
+        <a href="#contatti">Contatti</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>CertifOrti</h1>
+    <p>Agronomia urbana, rigenerazione del suolo, sostenibilità e certificazioni.</p>
+</section>
+
+<section id="chi-siamo">
+    <h2>Chi Siamo</h2>
+    <p>CertifOrti è uno studio specializzato in agronomia urbana, rigenerazione del suolo, sostenibilità ambientale e consulenze ISO. Lavoriamo con aziende, enti pubblici e privati per migliorare la qualità del suolo, sviluppare progetti verdi e garantire standard certificati.</p>
+</section>
+
+<section id="servizi">
+    <h2>Servizi</h2>
+
+    <div class="services-grid">
+        <div class="service-box">
+            <i class="fas fa-seedling"></i>
+            <h3>Agronomia Urbana</h3>
+            <p>Progetti di verde urbano, orti, suolo e biodiversità.</p>
+        </div>
+
+        <div class="service-box">
+            <i class="fas fa-flask"></i>
+            <h3>Analisi del Suolo</h3>
+            <p>Valutazioni agronomiche, chimiche e biologiche.</p>
+        </div>
+
+        <div class="service-box">
+            <i class="fas fa-certificate"></i>
+            <h3>Certificazioni ISO</h3>
+            <p>ISO 9001, ISO 14001, ISO 22000, HACCP.</p>
+        </div>
+
+        <div class="service-box">
+            <i class="fas fa-leaf"></i>
+            <h3>Sostenibilità</h3>
+            <p>Progetti ambientali e strategie green.</p>
+        </div>
+    </div>
+</section>
