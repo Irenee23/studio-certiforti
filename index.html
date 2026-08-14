@@ -46,8 +46,6 @@
         .galleria { padding: 2rem 1rem; max-width: 1100px; margin: auto; }
         .grid-galleria { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
         .grid-galleria img { width: 100%; height: 250px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-        
-        /* STILE PER IL FOOTER AZIENDALE */
         footer { background-color: #113813; color: #ffffff; padding: 30px 20px; text-align: center; font-size: 0.9em; border-top: 4px solid #81c784; }
         .footer-container { max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; }
         .footer-box { min-width: 250px; margin-bottom: 10px; }
@@ -67,14 +65,13 @@
                 <span class="org-domain">Agronomia urbana, diagnostica e consulenza ISO</span>
             </div>
         </div>
-        <div class="header-actions">
+        <div class="header-center-images">
             <img src="3.png" alt="Certificazioni" class="header-mini-img">
             <img src="4.png" alt="Analisi" class="header-mini-img">
             <img src="5.png" alt="Compostaggio" class="header-mini-img">
         </div>
         <div class="header-actions">
             <a href="#preventivo" class="btn-quote-header">📋 Richiedi Preventivo</a>
-            <!-- LINK WHATSAPP CONFIGURATO COL TUO NUMERO UFFICIALE -->
             <a href="https://wa.me" target="_blank" class="btn-link-header">🟢 WhatsApp</a>
         </div>
     </header>
@@ -101,14 +98,21 @@
     </main>
     <section class="galleria">
         <div class="grid-galleria">
-            <img src="1.png" alt="Agricoltura"><img src="2.png" alt="Irrigazione"><img src="3.png" alt="Certificazioni"><img src="4.png" alt="Analisi"><img src="5.png" alt="Compostaggio"><img src="6.png" alt="Urbana">
+            <img src="1.png" alt="Agricoltura">
+            <img src="2.png" alt="Irrigazione">
+            <img src="3.png" alt="Certificazioni">
+            <img src="4.png" alt="Analisi">
+            <img src="5.png" alt="Compostaggio">
+            <img src="6.png" alt="Urbana">
         </div>
     </section>
     <section id="preventivo" class="quote-section">
         <div class="quote-container">
             <h2 style="text-align: center; color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Gratuito</h2>
             <p style="text-align: center; color: #666; margin-bottom: 25px;">Compila tutti i dati sottostanti per richiedere un preventivo o uno studio personalizzato.</p>
-            
-            <!-- FORM CONFIGURATO SULLA TUA EMAIL UFFICIALE -->
             <form action="https://formsubmit.co" method="POST">
                 <input type="text" name="_gotcha" style="display:none">
+                <input type="hidden" name="_subject" value="Nuova richiesta preventivo dal sito Studio CertifOrti!">
+                
+                <div class="form-group">
+                    <label>Nome Completo / Ragione Sociale</label>
