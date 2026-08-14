@@ -72,7 +72,6 @@
         <a href="https://wa.me/393760189521" target="_blank" class="btn-link-header">🟢 WhatsApp</a>
     </div>
 </header>
-
 <section class="hero">
     <div class="hero-container">
         <img src="1.png" alt="Dettaglio agronomico" class="hero-side-img">
@@ -234,35 +233,74 @@
     </div>
 </section>
 
+<!-- ⭐⭐ FORM PROFESSIONALE FUNZIONANTE ⭐⭐ -->
+
 <section id="preventivo" class="quote-section">
     <div class="quote-container">
-        <h2 style="text-align: center; color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Gratuito</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 25px;">Compila tutti i dati sottostanti per richiedere un preventivo o uno studio personalizzato.</p>
+        <h2 style="text-align: center; color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Professionale</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 25px;">
+            Compila i dati per ricevere una proposta tecnica personalizzata.
+        </p>
 
-        <form>
+        <form action="https://formsubmit.co/studio.certiforti@gmail.com" method="POST">
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://irenee23.github.io/studio-certiforti/">
+            <input type="hidden" name="_subject" value="Nuova richiesta di preventivo dal sito CertifOrti">
+            <input type="hidden" name="_template" value="table">
+
             <div class="form-group">
                 <label>Nome e Cognome</label>
-                <input type="text" placeholder="Inserisci il tuo nome completo">
+                <input type="text" name="Nome e Cognome" required placeholder="Inserisci il tuo nome completo">
             </div>
 
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" placeholder="Inserisci la tua email">
+                <input type="email" name="Email" required placeholder="Inserisci la tua email">
             </div>
 
             <div class="form-group">
                 <label>Telefono</label>
-                <input type="text" placeholder="Inserisci il tuo numero">
+                <input type="text" name="Telefono" required placeholder="Inserisci il tuo numero">
             </div>
 
             <div class="form-group">
                 <label>Tipo di Servizio</label>
-                <select>
-                    <option>Consulenza Agronomica</option>
-                    <option>Diagnostica del Suolo</option>
-                    <option>Certificazione ISO</option>
-                    <option>Progetto Verde Urbano</option>
+                <select name="Servizio Richiesto" required>
+                    <option value="Consulenza Agronomica">Consulenza Agronomica</option>
+                    <option value="Diagnostica del Suolo">Diagnostica del Suolo</option>
+                    <option value="Certificazione ISO">Certificazione ISO</option>
+                    <option value="Piano HACCP">Piano HACCP</option>
+                    <option value="Progetto Verde Urbano">Progetto Verde Urbano</option>
                 </select>
             </div>
 
             <div class="form-group">
+                <label>Descrizione della Richiesta</label>
+                <textarea name="Descrizione" required placeholder="Descrivi il contesto, gli obiettivi e le esigenze principali"></textarea>
+            </div>
+
+            <button class="btn-submit">Invia Richiesta</button>
+        </form>
+
+        <div style="text-align:center; margin-top:20px;">
+            <a href="https://wa.me/393760189521" 
+               style="background:#25d366; color:white; padding:12px 20px; border-radius:25px; text-decoration:none; font-weight:bold;">
+               🟢 Contatto WhatsApp Diretto
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <img src="logo.png" alt="Logo CertifOrti">
+    <p><strong>Studio CertifOrti</strong></p>
+    <p>Tel: +39 376 018 9521</p>
+    <p>Email: studio.certiforti@gmail.com</p>
+    <p>Via Tosco Romagnola 185, Pontedera (PI)</p>
+    <p>Facebook • Instagram • TikTok • YouTube</p>
+</footer>
+
+</body>
+</html>
