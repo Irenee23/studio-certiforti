@@ -7,8 +7,20 @@
     <style>
         body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 0; background-color: #f4f7f4; color: #333; line-height: 1.6; scroll-behavior: smooth; }
         header { background-color: #1b5e20; padding: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 10000; }
+
+        /* ⭐ LOGO HEADER CORRETTO */
+        .logo-container img {
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            border: 2px solid #ffffff;
+            margin-right: 25px;
+        }
+
         .logo-container { display: flex; align-items: center; flex: 1; white-space: nowrap; }
-        .logo-container img { height: 110px; width: 110px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.2); border: 2px solid #ffffff; margin-right: 25px; }
         .text-header-container { display: flex; flex-direction: column; margin-left: 20px; max-width: 60%; }
         .org-name { color: #ffffff; font-size: 1.7em; font-weight: bold; }
         .org-domain { color: #c8e6c9; font-size: 0.85em; }
@@ -20,11 +32,13 @@
         .header-center-images { display: flex; gap: 12px; align-items: center; margin: 0 auto; padding: 0 20px; }
         .header-mini-img { width: 110px; height: 75px; object-fit: cover; border-radius: 6px; border: 2px solid #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: transform 0.2s; }
         .header-mini-img:hover { transform: scale(1.08); }
+
         .hero { background-color: #e8f5e9; padding: 40px 20px; border-bottom: 3px solid #c8e6c9; }
         .hero-container { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 20px; }
         .hero-text { text-align: center; flex: 1; }
         .hero h1 { color: #1b5e20; font-size: 2.2em; margin-bottom: 15px; margin-top: 0; }
         .hero-side-img { width: 180px; height: 180px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+
         .section-title { text-align: center; color: #1b5e20; font-size: 2em; margin-top: 40px; margin-bottom: 25px; }
         .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto 40px auto; padding: 0 20px; }
         .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border-top: 4px solid #2e7d32; }
@@ -32,26 +46,23 @@
         .card-content { padding: 20px; }
         .card h3 { color: #2e7d32; margin-top: 0; font-size: 1.15em; margin-bottom: 12px; }
         .card p { font-size: 0.9em; margin-bottom: 0; color: #444; }
+
         @media (max-width: 1150px) { .header-center-images { display: none; } }
         @media (max-width: 992px) { .features { grid-template-columns: repeat(2, 1fr); } header { flex-direction: column; text-align: center; gap: 15px; } .text-header-container { margin-left: 0; max-width: 100%; } .hero-side-img { display: none; } }
         @media (max-width: 650px) { .features { grid-template-columns: 1fr; } }
+
         .quote-section { background-color: #ffffff; padding: 50px 20px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; margin: 40px 0; }
         .quote-container { background: #f9fbf9; border: 2px solid #1b5e20; padding: 30px; border-radius: 12px; max-width: 650px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
-        .form-group label { font-weight: bold; margin-bottom: 8px; color: #1b5e20; font-size: 1.05em; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1.05em; background: white; color: #333; }
-        .form-group textarea { min-height: 140px; resize: vertical; }
-        .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 14px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1em; }
-        .btn-submit:hover { background-color: #2e7d32; }
 
         /* ⭐ LOGO FOOTER CORRETTO */
         footer img {
             position: absolute;
-            bottom: 20px;      /* alzato leggermente */
+            bottom: 28px;
             left: 10px;
-            width: 80px;
-            height: 80px;      /* proporzioni perfette */
-            object-fit: cover; /* centrato nel cerchio */
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            object-position: center;
             border-radius: 50%;
             border: 2px solid #fff;
         }
@@ -183,8 +194,6 @@
     </div>
 </section>
 
-<!-- ⭐⭐ NUOVE SEZIONI AGGIUNTE ⭐⭐ -->
-
 <section style="margin-top: 40px;">
     <h2 class="section-title">Missione & Visione</h2>
     <p class="section-subtitle" style="text-align:center;">
@@ -246,8 +255,6 @@
         <img src="6.png" style="width:100%; border-radius:10px;">
     </div>
 </section>
-
-<!-- ⭐⭐ FORM PROFESSIONALE FUNZIONANTE ⭐⭐ -->
 
 <section id="preventivo" class="quote-section">
     <div class="quote-container">
