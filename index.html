@@ -19,10 +19,10 @@
         .btn-quote-header { background-color: #ffffff; color: #1b5e20; border: 1px solid #1b5e20; }
         .btn-link-header:hover, .btn-quote-header:hover { transform: scale(1.05); }
         
-        /* NUOVO STILE PER LE 3 IMMAGINI AL CENTRO DEL MENU */
-        .header-center-images { display: flex; gap: 15px; align-items: center; margin: 0 auto; padding: 0 20px; }
-        .header-mini-img { width: 55px; height: 55px; object-fit: cover; border-radius: 50%; border: 2px solid #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: transform 0.2s; }
-        .header-mini-img:hover { transform: scale(1.1); }
+        /* STILE AGGIORNATO: IMMAGINI DEL MENU PIÙ GRANDI E RETTANGOLARI */
+        .header-center-images { display: flex; gap: 12px; align-items: center; margin: 0 auto; padding: 0 20px; }
+        .header-mini-img { width: 110px; height: 75px; object-fit: cover; border-radius: 6px; border: 2px solid #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: transform 0.2s; }
+        .header-mini-img:hover { transform: scale(1.08); }
 
         .hero { background-color: #e8f5e9; padding: 40px 20px; border-bottom: 3px solid #c8e6c9; }
         .hero-container { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 20px; }
@@ -36,13 +36,15 @@
         .card h3 { color: #2e7d32; margin-top: 0; font-size: 1.15em; margin-bottom: 12px; }
         .card p { font-size: 0.9em; margin-bottom: 0; color: #444; }
         
+        @media (max-width: 1150px) {
+            /* Nasconde le immagini centrali se la finestra si stringe, per proteggere i pulsanti */
+            .header-center-images { display: none; }
+        }
         @media (max-width: 992px) { 
             .features { grid-template-columns: repeat(2, 1fr); } 
             header { flex-direction: column; text-align: center; gap: 15px; } 
             .text-header-container { margin-left: 0; max-width: 100%; }
             .hero-side-img { display: none; }
-            /* Nasconde le immagini al centro della barra sui telefoni per non rompere il layout */
-            .header-center-images { display: none; }
         }
         @media (max-width: 650px) { .features { grid-template-columns: 1fr; } }
         .quote-section { background-color: #ffffff; padding: 50px 20px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; margin: 40px 0; }
@@ -69,11 +71,10 @@
             </div>
         </div>
         
-        <!-- NUOVO BLOCCO: LE 3 IMMAGINI AL CENTRO DELLA BARRA VERDE -->
         <div class="header-center-images">
-            <img src="3.png" alt="Miniatura Certificazioni" class="header-mini-img">
-            <img src="4.png" alt="Miniatura Analisi" class="header-mini-img">
-            <img src="5.png" alt="Miniatura Compostaggio" class="header-mini-img">
+            <img src="3.png" alt="Certificazioni" class="header-mini-img">
+            <img src="4.png" alt="Analisi" class="header-mini-img">
+            <img src="5.png" alt="Compostaggio" class="header-mini-img">
         </div>
 
         <div class="header-actions">
@@ -123,3 +124,4 @@
             <form action="#" method="POST">
                 <div class="form-group">
                     <label>Nome Completo / Ragione Sociale</label>
+                    <input type="text" name="name" required placeholder="Es. Azienda Agricola Rossi">
