@@ -43,8 +43,20 @@
         .form-group textarea { min-height: 140px; resize: vertical; }
         .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 14px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1em; }
         .btn-submit:hover { background-color: #2e7d32; }
+
+        /* ⭐ LOGO FOOTER CORRETTO */
+        footer img {
+            position: absolute;
+            bottom: 20px;      /* alzato leggermente */
+            left: 10px;
+            width: 80px;
+            height: 80px;      /* proporzioni perfette */
+            object-fit: cover; /* centrato nel cerchio */
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
         footer { background-color: #113813; color: #ffffff; padding: 30px 20px; text-align: center; font-size: 0.9em; border-top: 4px solid #81c784; position: relative; }
-        footer img { position: absolute; bottom: 10px; left: 10px; width: 80px; border-radius: 50%; border: 2px solid #fff; }
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: auto; padding: 0 20px; }
         .box { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); max-width: 900px; margin: auto; }
     </style>
