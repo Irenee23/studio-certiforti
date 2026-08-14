@@ -46,6 +46,16 @@
         .galleria { padding: 2rem 1rem; max-width: 1100px; margin: auto; }
         .grid-galleria { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
         .grid-galleria img { width: 100%; height: 250px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        
+        /* STILE PER IL FOOTER AZIENDALE */
+        footer { background-color: #113813; color: #ffffff; padding: 30px 20px; text-align: center; font-size: 0.9em; border-top: 4px solid #81c784; }
+        .footer-container { max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; }
+        .footer-box { min-width: 250px; margin-bottom: 10px; }
+        .footer-box h4 { color: #c8e6c9; margin-top: 0; margin-bottom: 10px; font-size: 1.1em; }
+        .footer-box p { margin: 5px 0; color: #e8f5e9; }
+        .footer-box a { color: #81c784; text-decoration: none; }
+        .footer-box a:hover { text-decoration: underline; }
+        .footer-bottom { margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); color: #a5d6a7; font-size: 0.8em; }
     </style>
 </head>
 <body>
@@ -57,14 +67,15 @@
                 <span class="org-domain">Agronomia urbana, diagnostica e consulenza ISO</span>
             </div>
         </div>
-        <div class="header-center-images">
+        <div class="header-actions">
             <img src="3.png" alt="Certificazioni" class="header-mini-img">
             <img src="4.png" alt="Analisi" class="header-mini-img">
             <img src="5.png" alt="Compostaggio" class="header-mini-img">
         </div>
         <div class="header-actions">
             <a href="#preventivo" class="btn-quote-header">📋 Richiedi Preventivo</a>
-            <a href="https://wa.me" class="btn-link-header">🟢 WhatsApp</a>
+            <!-- LINK WHATSAPP CONFIGURATO COL TUO NUMERO UFFICIALE -->
+            <a href="https://wa.me" target="_blank" class="btn-link-header">🟢 WhatsApp</a>
         </div>
     </header>
     <section class="hero">
@@ -97,11 +108,7 @@
         <div class="quote-container">
             <h2 style="text-align: center; color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Gratuito</h2>
             <p style="text-align: center; color: #666; margin-bottom: 25px;">Compila tutti i dati sottostanti per richiedere un preventivo o uno studio personalizzato.</p>
-            <form action="#" method="POST">
-                <div class="form-group"><label>Nome Completo / Ragione Sociale</label><input type="text" name="name" required placeholder="Es. Azienda Agricola Rossi"></div>
-                <div class="form-group"><label>Email di Contatto</label><input type="email" name="email" required placeholder="Es. nome@azienda.it"></div>
-                <div class="form-group"><label>Telefono / WhatsApp</label><input type="tel" name="phone" required placeholder="Es. +39 333 1234567"></div>
-                <div class="form-group"><label>Città / Provincia</label><input type="text" name="city" required placeholder="Es. Milano (MI)"></div>
-                <div class="form-group"><label>Ambito di Intervento</label><select name="service" required><option value="" disabled selected>Seleziona...</option><option value="iso">Consulenza ISO</option><option value="haccp">Assistenza HACCP</option><option value="urbana">Agricoltura Urbana</option></select></div>
-                <div class="form-group"><label>Dettagli del Progetto</label><textarea name="message" placeholder="Descrivi brevemente le tue necessità..."></textarea></div>
-                <button type="submit" class="btn-submit">Invia Richiesta Preventivo</button>
+            
+            <!-- FORM CONFIGURATO SULLA TUA EMAIL UFFICIALE -->
+            <form action="https://formsubmit.co" method="POST">
+                <input type="text" name="_gotcha" style="display:none">
