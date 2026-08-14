@@ -44,6 +44,11 @@
         .btn-submit { background-color: #1b5e20; color: white; border: none; padding: 14px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1em; }
         .btn-submit:hover { background-color: #2e7d32; }
         footer { background-color: #113813; color: #ffffff; padding: 30px 20px; text-align: center; font-size: 0.9em; border-top: 4px solid #81c784; }
+        .footer-container { max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; }
+        .footer-box { min-width: 250px; margin-bottom: 10px; }
+        .footer-box h4 { color: #c8e6c9; margin-top: 0; margin-bottom: 10px; font-size: 1.1em; }
+        .footer-box p { margin: 5px 0; color: #e8f5e9; }
+        .footer-bottom { margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); color: #a5d6a7; font-size: 0.8em; }
     </style>
 </head>
 
@@ -66,7 +71,7 @@
 
     <div class="header-actions">
         <a href="#preventivo" class="btn-quote-header">📋 Richiedi Preventivo</a>
-        <a href="https://wa.me" target="_blank" class="btn-link-header">🟢 WhatsApp</a>
+        <a href="https://wa.me/393760189521" target="_blank" class="btn-link-header">🟢 WhatsApp</a>
     </div>
 </header>
 
@@ -140,7 +145,10 @@
 <section id="preventivo" class="quote-section">
     <div class="quote-container">
         <h2 style="text-align: center; color: #1b5e20; margin-top: 0;">Richiesta di Preventivo Gratuito</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 25px;">Compila tutti i dati sottostanti per richiedere un preventivo o uno studio personalizzato.</p>
+        <p style="text-align: center; color: #666; margin-bottom: 25px;">
+            Compila tutti i dati sottostanti per richiedere un preventivo o uno studio personalizzato.
+            Puoi anche contattarci direttamente ai recapiti ufficiali riportati sotto.
+        </p>
 
         <form>
             <div class="form-group">
@@ -175,11 +183,46 @@
 
             <button class="btn-submit">Invia Richiesta</button>
         </form>
+
+        <div style="margin-top: 30px; text-align: center; color: #1b5e20;">
+            <h3>Contatti Ufficiali Studio CertifOrti</h3>
+            <p><strong>Telefono:</strong> +39 376 018 9521</p>
+            <p><strong>Email:</strong> studio.certiforti@gmail.com</p>
+            <p><strong>Indirizzo:</strong> Via Tosco Romagnola 185, 56025 Pontedera (PI)</p>
+            <p><strong>Social:</strong> Facebook • Instagram • TikTok • YouTube</p>
+        </div>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Studio CertifOrti — Agronomia Urbana Biologica Rigenerativa</p>
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h4>Studio CertifOrti</h4>
+            <p>Agronomia urbana, diagnostica e consulenza ISO</p>
+            <p>Via Tosco Romagnola 185</p>
+            <p>56025 Pontedera (PI)</p>
+        </div>
+
+        <div class="footer-box">
+            <h4>Contatti</h4>
+            <p>Telefono: +39 376 018 9521</p>
+            <p>Email: studio.certiforti@gmail.com</p>
+        </div>
+
+        <div class="footer-box">
+            <h4>Social</h4>
+            <p>Facebook</p>
+            <p>Instagram</p>
+            <p>TikTok</p>
+            <p>YouTube</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Studio CertifOrti — Agronomia Urbana Biologica Rigenerativa
+    </div>
 </footer>
 
 </body>
