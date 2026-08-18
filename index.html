@@ -9,21 +9,20 @@
     <meta name="keywords" content="agronomia urbana, suolo, ISO 9001, ISO 14001, ISO 22000, HACCP, sostenibilità, orti urbani, CertifOrti, consulenze ambientali">
     <meta name="author" content="CertifOrti">
 
-    <!-- COERENZA TIPOGRAFICA ED ELEGANZA VISIVA -->
+    <!-- FONT -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link href="https://cloudflare.com" rel="stylesheet">
 
     <style>
         :root {
-            --leaf-green: #1e5e1a;          
-            --leaf-green-light: #4CAF50;    
-            --leaf-green-dark: #113813;     
-            --oro-satinato: #c59b27;         
-            --panna-chiaro: #fdfbf7;         
-            --stone-gray: #2b3a2a;          
-            --stone-gray-light: #fafbfa;    
+            --leaf-green: #1e5e1a;
+            --leaf-green-light: #4CAF50;
+            --leaf-green-dark: #113813;
+            --oro-satinato: #c59b27;
+            --panna-chiaro: #fdfbf7;
+            --stone-gray: #2b3a2a;
+            --stone-gray-light: #fafbfa;
         }
 
         body {
@@ -159,121 +158,6 @@
             color: #3b4d3a;
         }
 
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4em;
-            color: var(--leaf-green);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .section-desc {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .service-box {
-            background: var(--stone-gray-light);
-            padding: 40px 30px;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            border-top: 4px solid var(--oro-satinato);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(27, 94, 32, 0.08);
-        }
-
-        .service-box i {
-            font-size: 44px;
-            color: var(--leaf-green-light);
-            margin-bottom: 20px;
-        }
-
-        .service-box h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4em;
-            margin: 0 0 15px 0;
-            color: var(--leaf-green);
-        }
-
-        .quote-form-container {
-            background: #ffffff;
-            max-width: 700px;
-            margin: 50px auto 0 auto;
-            padding: 45px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-            text-align: left;
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-
-        .form-group {
-            margin-bottom: 22px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 0.95em;
-            color: var(--leaf-green);
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #dcdfdc;
-            background: #fafbfa;
-            font-family: inherit;
-            font-size: 1em;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--leaf-green-light);
-            background: #fff;
-            box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1);
-        }
-
-        .btn-whatsapp {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: #25d366;
-            color: white;
-            padding: 16px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
-            transition: all 0.3s ease;
-            margin-top: 20px;
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-        }
-
         footer {
             background: var(--leaf-green-dark);
             color: white;
@@ -281,15 +165,6 @@
             padding: 40px 20px;
             font-size: 0.95em;
             border-top: 4px solid var(--oro-satinato);
-        }
-
-        .gallery-placeholder {
-            background: #f0f3f0;
-            border: 2px dashed #cbd5cb;
-            padding: 60px;
-            border-radius: 12px;
-            color: #778876;
-            font-weight: 500;
         }
 
         @media (max-width: 992px) {
@@ -313,12 +188,10 @@
             .hero h1 {
                 font-size: 2.4em;
             }
-            .quote-form-container {
-                padding: 30px 20px;
-            }
         }
     </style>
 </head>
+
 <body>
 
 <button id="drawer-btn" onclick="toggleDrawer()">
@@ -340,6 +213,23 @@
     <div class="logo-wrapper">
         <div class="brand-text">CertifOrti</div>
     </div>
+
     <nav>
         <a href="#chi-siamo">Chi Siamo</a>
         <a href="#servizi">Servizi</a>
+        <a href="#progetti">Progetti</a>
+        <a href="#iso">Certificazioni ISO</a>
+        <a href="#team">Team</a>
+        <a href="#preventivi">Preventivi</a>
+    </nav>
+</header>
+
+<script>
+function toggleDrawer() {
+    const drawer = document.getElementById("drawer");
+    drawer.classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
