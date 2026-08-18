@@ -1,163 +1,270 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>CertifOrti – Consulenza Agronomica e Certificazioni</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f5f5; color:#222; }
-    header { background:#1b5e20; color:#fff; padding:30px 20px; text-align:center; }
-    header img { width:140px; margin-bottom:10px; }
-    nav { background:#144016; padding:10px; text-align:center; }
-    nav a { color:#fff; margin:0 10px; text-decoration:none; }
-    section { background:#fff; margin:20px auto; padding:30px; max-width:1000px; border-radius:8px; }
-    h2 { color:#1b5e20; }
-    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-    .card { background:#fafafa; padding:15px; border-radius:8px; border:1px solid #ddd; }
-    .card img { width:100%; border-radius:6px; margin-bottom:10px; }
-    .price { font-weight:bold; color:#c62828; }
-    footer { text-align:center; padding:20px; font-size:0.8rem; color:#555; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CertifOrti – Agronomia Urbana, Suolo, ISO, HACCP</title>
+    <meta name="description" content="Studio CertifOrti – Agronomia urbana, rigenerazione del suolo, consulenze ISO, HACCP, progetti ambientali e sostenibilità.">
+    <meta name="keywords" content="agronomia urbana, suolo, ISO 9001, ISO 14001, ISO 22000, HACCP, sostenibilità, orti urbani, CertifOrti, consulenze ambientali">
+    <meta name="author" content="CertifOrti">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --leaf-green: #4CAF50;
+            --leaf-green-dark: #2e7d32;
+            --stone-gray: #3a3a3a;
+            --stone-gray-light: #e8e8e8;
+            --white: #ffffff;
+        }
+
+        body {
+            background: var(--white);
+            color: var(--stone-gray);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+TEST KOKUVI
+        header {
+            background: var(--leaf-green);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo {
+            width: 140px;
+            filter: drop-shadow(0 0 8px var(--leaf-green));
+        }
+
+        nav a {
+            margin-left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        #drawer-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--leaf-green);
+            color: white;
+            border: none;
+            padding: 12px 14px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        #drawer {
+            position: fixed;
+            top: 0;
+            left: -260px;
+            width: 260px;
+            height: 100%;
+            background: var(--leaf-green-dark);
+            color: white;
+            padding: 30px;
+            transition: left 0.4s ease;
+            z-index: 9999;
+        }
+
+        #drawer.open {
+            left: 0;
+        }
+
+        #drawer a {
+            display: block;
+            margin: 18px 0;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: var(--leaf-green-dark);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: var(--leaf-green-dark);
+            margin-bottom: 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-box {
+            background: var(--stone-gray-light);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .service-box i {
+            font-size: 40px;
+            color: var(--leaf-green-dark);
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
+
 <body>
 
-  <!-- LOGO -->
-  <header>
-    <img src="logo.png" alt="Logo CertifOrti">
-    <h1>CertifOrti – Consulenza Agronomica e Certificazioni</h1>
-    <p>Soluzioni professionali per cooperative, aziende agroalimentari e agricoltura urbana.</p>
-  </header>
+<button id="drawer-btn" onclick="toggleDrawer()">
+    <i class="fas fa-bars"></i>
+</button>
 
-  <nav>
+<div id="drawer">
+    <h2>Menu</h2>
+    <a href="#home">Home</a>
+    <a href="#chi-siamo">Chi Siamo</a>
     <a href="#servizi">Servizi</a>
-    <a href="#audit">Audit ISO</a>
-    <a href="#haccp">HACCP</a>
-    <a href="#preventivi">Preventivi</a>
+    <a href="#progetti">Progetti</a>
+    <a href="#iso">Certificazioni ISO</a>
+    <a href="#team">Team</a>
+    <a href="#galleria">Galleria</a>
     <a href="#contatti">Contatti</a>
-  </nav>
+</div>
 
-  <!-- SERVIZI AGRONOMICI -->
-  <section id="servizi">
-    <h2>Servizi Agronomici</h2>
-    <div class="cards">
+<header id="home">
+    <img id="logo" src="logo.png" alt="CertifOrti Logo">
+    <nav>
+        <a href="#chi-siamo">Chi Siamo</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#progetti">Progetti</a>
+        <a href="#iso">ISO</a>
+        <a href="#team">Team</a>
+        <a href="#contatti">Contatti</a>
+    </nav>
+</header>
 
-      <div class="card">
-        <img src="1.png" alt="Agronomia Urbana">
-        <h3>Agronomia Urbana</h3>
-        <p>Progettazione e gestione di orti urbani, terrazze e serre.</p>
-      </div>
+<section class="hero">
+    <h1>CertifOrti</h1>
+    <p>Agronomia urbana, rigenerazione del suolo, sostenibilità e certificazioni.</p>
+</section>
 
-      <div class="card">
-        <img src="2.png" alt="Diagnostica Sperimentimentale">
-        <h3>Diagnostica Sperimentale</h3>
-        <p>Analisi tecniche, monitoraggio con sensori e valutazioni agronomiche.</p>
-      </div>
+<section id="chi-siamo">
+    <h2>Chi Siamo</h2>
+    <p>CertifOrti è uno studio specializzato in agronomia urbana, rigenerazione del suolo, sostenibilità ambientale e consulenze ISO.</p>
+</section>
 
-      <div class="card">
-        <img src="3.png" alt="Certificazioni">
-        <h3>Certificazioni</h3>
-        <p>Supporto nella preparazione alla verifica e audit.</p>
-      </div>
+<section id="servizi">
+    <h2>Servizi</h2>
 
+    <div class="services-grid">
+        <div class="service-box">
+            <i class="fas fa-seedling"></i>
+            <h3>Agronomia Urbana</h3>
+            <p>Progetti di verde urbano, orti, suolo e biodiversità.</p>
+        </div>
+
+        <div class="service-box">
+            <i class="fas fa-flask"></i>
+            <h3>Analisi del Suolo</h3>
+            <p>Valutazioni agronomiche, chimiche e biologiche.</p>
+        </div>
+
+        <div class="service-box">
+            <i class="fas fa-certificate"></i>
+            <h3>Certificazioni ISO</h3>
+            <p>ISO 9001, ISO 14001, ISO 22000, HACCP.</p>
+        </div>
+
+        <div class="service-box">
+            <i class="fas fa-leaf"></i>
+            <h3>Sostenibilità</h3>
+            <p>Progetti ambientali e strategie green.</p>
+        </div>
     </div>
-  </section>
+</section>
+<!-- PROGETTI -->
+<section id="progetti">
+    <h2>Progetti Realizzati</h2>
+    <p>Sezione dedicata ai progetti CertifOrti. Le immagini e descrizioni verranno aggiunte successivamente.</p>
+</section>
 
-  <!-- AUDIT ISO -->
-  <section id="audit">
-    <h2>Audit ISO 22000 & ISO 9001</h2>
-    <div class="cards">
+<!-- ISO -->
+<section id="iso">
+    <h2>Certificazioni ISO</h2>
+    <ul style="list-style:none; padding:0;">
+        <li>ISO 9001 – Qualità</li>
+        <li>ISO 14001 – Ambiente</li>
+        <li>ISO 22000 – Sicurezza Alimentare</li>
+        <li>HACCP – Controllo igienico</li>
+    </ul>
+</section>
 
-      <div class="card">
-        <img src="4.png" alt="Audit ISO 22000">
-        <h3>ISO 22000</h3>
-        <p>Preparazione completa all’audit di sicurezza alimentare.</p>
-      </div>
+<!-- TEAM -->
+<section id="team">
+    <h2>Team</h2>
+    <p>Il nostro team è composto da agronomi, tecnici ambientali e consulenti certificati.</p>
+</section>
 
-      <div class="card">
-        <img src="5.png" alt="Audit ISO 9001">
-        <h3>ISO 9001</h3>
-        <p>Ottimizzazione dei processi e gestione qualità.</p>
-      </div>
+<!-- GALLERIA -->
+<section id="galleria">
+    <h2>Galleria</h2>
+    <p>La galleria verrà popolata con immagini dei progetti CertifOrti.</p>
+</section>
 
-      <div class="card">
-        <img src="7.png" alt="Cooperative Agroalimentari">
-        <h3>Cooperative Agroalimentari</h3>
-        <p>Accompagnamento dedicato alle realtà collettive.</p>
-      </div>
+<!-- PREVENTIVO -->
+<section id="preventivo">
+    <h2>Richiedi un Preventivo</h2>
+    <p>Contattaci per ricevere una consulenza personalizzata.</p>
+    <a href="https://wa.me/393760189521" 
+       style="background: var(--leaf-green); padding: 12px 20px; color: white; border-radius: 8px; text-decoration: none;">
+        Scrivici su WhatsApp
+    </a>
+</section>
 
-    </div>
-  </section>
-
-  <!-- HACCP -->
-  <section id="haccp">
-    <h2>Formazione ed Esame HACCP</h2>
-    <div class="cards">
-
-      <div class="card">
-        <img src="6.png" alt="Corso HACCP">
-        <h3>Corso HACCP</h3>
-        <p>Formazione chiara e pratica per operatori e aziende.</p>
-      </div>
-
-      <div class="card">
-        <img src="6.png" alt="Preparazione Esame HACCP">
-        <h3>Preparazione all’Esame</h3>
-        <p>Simulazioni, quiz e supporto mirato.</p>
-      </div>
-
-      <div class="card">
-        <img src="6.png" alt="HACCP Cooperative">
-        <h3>HACCP per Cooperative</h3>
-        <p>Percorsi dedicati per gruppi di lavoro.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PREVENTIVI -->
-  <section id="preventivi">
-    <h2>Preventivi</h2>
-    <div class="cards">
-
-      <div class="card">
-        <h3>Audit ISO 22000</h3>
-        <p>Analisi dei processi e preparazione alla certificazione.</p>
-        <span class="price">Preventivo su richiesta</span>
-      </div>
-
-      <div class="card">
-        <h3>Audit ISO 9001</h3>
-        <p>Gestione qualità e ottimizzazione dei flussi.</p>
-        <span class="price">Preventivo su richiesta</span>
-      </div>
-
-      <div class="card">
-        <h3>Formazione HACCP</h3>
-        <p>Corso completo con attestato.</p>
-        <span class="price">Da € 35</span>
-      </div>
-
-      <div class="card">
-        <h3>Consulenza Agronomica</h3>
-        <p>Supporto tecnico per coltivazioni sostenibili.</p>
-        <span class="price">Preventivo personalizzato</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONTATTI -->
-  <section id="contatti">
+<!-- CONTATTI -->
+<section id="contatti">
     <h2>Contatti</h2>
-    <p><strong>Sede Legale:</strong> Via Tosco Romagnola 185, CAP 56025, Pontedera (PI)</p>
     <p><strong>Telefono:</strong> +39 376 018 9521</p>
-    <p><strong>Email:</strong> studio@certiforti.it</p>
-    <p><strong>Social:</strong> Facebook | Instagram | TikTok</p>
-  </section>
+    <p><strong>Email:</strong> studio.certiforti@gmail.com</p>
+    <p><strong>Indirizzo:</strong> Via Tosco Romagnola 185, 56025 Pontedera (PI)</p>
 
-  <footer>
-    © CertifOrti – Consulenza Agronomica e Certificazioni
-  </footer>
+    <h3>Social</h3>
+    <ul style="list-style:none; padding:0;">
+        <li>Facebook</li>
+        <li>Instagram</li>
+        <li>TikTok</li>
+        <li>YouTube</li>
+    </ul>
+</section>
+
+<!-- FOOTER -->
+<footer style="text-align:center; padding: 40px; background: var(--leaf-green-dark); color:white;">
+    © 2026 CertifOrti – Tutti i diritti riservati
+</footer>
+
+<script>
+function toggleDrawer() {
+    document.getElementById("drawer").classList.toggle("open");
+}
+</script>
 
 </body>
 </html>
