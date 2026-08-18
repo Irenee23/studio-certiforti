@@ -26,9 +26,9 @@
             position: sticky;
             top: 0;
             z-index: 10000;
-            height: 60px; /* Altezza fissa per gestire l'effetto fluttuante */
+            height: 60px;
         }
-<img src="PERCORSO_DEL_TUO_LOGO.png" alt="Logo Studio CertifOrti">
+
         .logo-container {
             display: flex;
             align-items: center;
@@ -39,37 +39,34 @@
         }
 
         .logo-container img {
-            height: 150px; /* Dimensione imponente e visibile */
+            height: 150px;
             width: 150px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center;
-            
-            /* EFFETTO FLUTTUANTE: Il logo esce dall'header e sbottona sulla pagina */
+
             position: absolute;
-            top: -45px; /* Spinto verso l'alto per centrarlo a cavallo del bordo */
+            top: -45px;
             left: 10px;
-            z-index: 99999; /* Sempre sopra ogni elemento */
-            
-            /* CURA DEI DETTAGLI ARTISTICI */
-            background-color: #fdfbf7; /* Sfondo panna coordinato */
-            border: 5px solid #ffffff; /* Cornice bianca spessa stile sigillo */
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Ombra morbida per effetto 3D */
-            
-            /* ANIMAZIONE ORGANICA AL PASSAGGIO MOUSE */
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            z-index: 99999;
+
+            background-color: #fdfbf7;
+            border: 5px solid #ffffff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                        box-shadow 0.4s ease;
         }
 
         .logo-container img:hover {
-            transform: scale(1.06) rotate(3deg); /* Si solleva e ruota leggermente con classe */
-            box-shadow: 0 14px 32px rgba(27, 94, 32, 0.35); /* L'ombra si espande con alone verde bosco */
+            transform: scale(1.06) rotate(3deg);
+            box-shadow: 0 14px 32px rgba(27, 94, 32, 0.35);
         }
 
-        /* SPAZIO SACRO PER IL TESTO ACCANTO AL LOGO FLUTTUANTE */
         .text-header-container {
             display: flex;
             flex-direction: column;
-            margin-left: 180px; /* Evita sovrapposizioni visive */
+            margin-left: 180px;
             max-width: 60%;
         }
 
@@ -123,10 +120,9 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         }
 
-        /* HERO SECTON — CORRETTO IL PADDING PER IL LOGO */
         .hero {
             background-color: #e8f5e9;
-            padding: 60px 20px 40px 20px; /* Più spazio in alto per dare respiro al logo fluttuante */
+            padding: 60px 20px 40px 20px;
             border-bottom: 3px solid #c8e6c9;
         }
 
@@ -266,7 +262,6 @@
             background-color: #145016;
         }
 
-        /* FOOTER — ELEGANTE E PULITO SENZA DUPLICAZIONI */
         footer {
             background-color: #113813;
             color: #ffffff;
@@ -277,7 +272,6 @@
             margin-top: 60px;
         }
 
-        /* RESPONSIVE DESIGN */
         @media (max-width: 992px) {
             header {
                 flex-direction: column;
@@ -322,11 +316,11 @@
         }
     </style>
 </head>
+
 <body>
 
 <header>
     <div class="logo-container">
-        <!-- Il puntamento al tuo file logo è ottimizzato e centrato -->
         <img src="PERCORSO_DEL_TUO_LOGO.png" alt="Logo Studio CertifOrti">
         <div class="text-header-container">
             <span class="org-name">Studio CertifOrti</span>
@@ -340,8 +334,14 @@
     </div>
 </header>
 
-<!-- SEZIONE HERO -->
 <section class="hero">
     <div class="hero-container">
         <div class="hero-text">
             <h1>Consulenza Agronomica e Certificazioni per l'Agricoltura Urbana</h1>
+            <p>Soluzioni professionali per orti urbani, terrazze, serre e coltivazioni sostenibili.</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
