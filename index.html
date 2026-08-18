@@ -1,253 +1,188 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio CertifOrti – Agronomia Urbana</title>
+  <meta charset="UTF-8">
+  <title>CertifOrti – Consulenza Agronomica e Certificazioni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; color:#222; background:#f5f5f5; }
+    header { background:#1b5e20; color:#fff; padding:30px 20px; text-align:center; }
+    header h1 { margin:0; font-size:2rem; }
+    header p { margin:10px 0 0; font-size:1rem; }
 
-    <style>
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7f4;
-            color: #333;
-            line-height: 1.6;
-        }
+    nav { background:#144016; padding:10px 20px; text-align:center; }
+    nav a { color:#fff; margin:0 10px; text-decoration:none; font-size:0.9rem; }
+    nav a:hover { text-decoration:underline; }
 
-        /* HEADER */
-        header {
-            background-color: #1b5e20;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-        }
+    section { padding:40px 20px; max-width:1000px; margin:0 auto; background:#fff; margin-bottom:20px; border-radius:8px; }
+    h2 { margin-top:0; color:#1b5e20; }
+    .intro { margin-bottom:20px; }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .card { background:#fafafa; border-radius:8px; padding:15px; border:1px solid #ddd; }
+    .card h3 { margin-top:0; color:#2e7d32; }
+    .price { display:inline-block; margin-top:10px; font-weight:bold; color:#c62828; }
 
-        .logo-container img {
-            height: 120px;
-            width: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center;
-            background-color: #fff;
-            border: 4px solid #ffffff;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            margin-right: 18px;
-        }
+    .preventivi-section .preventivi-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
 
-        .text-header-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .org-name {
-            color: #ffffff;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
-        .org-domain {
-            color: #c8e6c9;
-            font-size: 0.9em;
-            margin-top: 3px;
-        }
-
-        .header-actions {
-            display: flex;
-            gap: 12px;
-        }
-
-        .btn-link-header,
-        .btn-quote-header {
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9em;
-        }
-
-        .btn-link-header {
-            background-color: #25d366;
-            color: white;
-        }
-
-        .btn-quote-header {
-            background-color: #ffffff;
-            color: #1b5e20;
-            border: 1px solid #ffffff;
-        }
-
-        /* HERO */
-        .hero {
-            background-color: #e8f5e9;
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 3px solid #c8e6c9;
-        }
-
-        .hero h1 {
-            color: #1b5e20;
-            font-size: 2.4em;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.1em;
-            color: #444;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* SERVIZI */
-        .section-title {
-            text-align: center;
-            color: #1b5e20;
-            font-size: 2em;
-            margin-top: 50px;
-            margin-bottom: 30px;
-        }
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            overflow: hidden;
-            border-top: 5px solid #2e7d32;
-        }
-
-        .service-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .service-card .content {
-            padding: 20px;
-        }
-
-        .service-card h3 {
-            color: #2e7d32;
-            margin-top: 0;
-        }
-
-        /* PREVENTIVO */
-        #preventivo {
-            margin-top: 80px;
-            padding: 20px;
-        }
-
-        .quote-container {
-            background: #f9fbf9;
-            border: 2px solid #1b5e20;
-            padding: 40px;
-            border-radius: 18px;
-            max-width: 750px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 22px;
-        }
-
-        .form-group label {
-            font-size: 1.1em;
-            margin-bottom: 8px;
-            display: block;
-            color: #1b5e20;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            font-size: 1.1em;
-            padding: 14px;
-            border-radius: 8px;
-            border: 1px solid #bbb;
-            width: 100%;
-            background-color: #fff;
-        }
-
-        .btn-submit {
-            font-size: 1.3em;
-            padding: 16px;
-            border-radius: 10px;
-            background-color: #1b5e20;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #113813;
-            color: #ffffff;
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 60px;
-        }
-    </style>
+    footer { text-align:center; padding:20px; font-size:0.8rem; color:#555; }
+  </style>
 </head>
-
 <body>
 
-<header>
-    <div class="logo-container">
-        <img src="logo.png" alt="Logo Studio CertifOrti">
-        <div class="text-header-container">
-            <span class="org-name">Studio CertifOrti</span>
-            <span class="org-domain">Agronomia Urbana & Certificazioni</span>
-        </div>
-    </div>
-
-    <div class="header-actions">
-        <a href="https://wa.me" class="btn-link-header" target="_blank">WhatsApp</a>
-        <a href="#preventivo" class="btn-quote-header">Richiedi Preventivo</a>
-    </div>
-</header>
-
-<section class="hero">
+  <!-- HERO -->
+  <header>
     <h1>Consulenza Agronomica e Certificazioni per l'Agricoltura Urbana</h1>
-    <p>Soluzioni professionali per orti urbani, terrazze, serre e coltivazioni sostenibili.</p>
-</section>
+    <p>Soluzioni professionali per orti urbani, cooperative, aziende agroalimentari e società in percorso di certificazione.</p>
+  </header>
 
-<h2 class="section-title">I Nostri Servizi</h2>
+  <nav>
+    <a href="#servizi">Servizi Agronomici</a>
+    <a href="#audit">Audit ISO 22000 & 9001</a>
+    <a href="#haccp">Esame HACCP</a>
+    <a href="#preventivi">Preventivi</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
 
-<div class="services">
-    <div class="service-card">
-        <img src="1.png" alt="Servizio 1">
-        <div class="content">
-            <h3>Agronomia Urbana</h3>
-            <p>Progettazione e gestione di orti urbani, terrazze e serre.</p>
-        </div>
+  <!-- SERVIZI AGRONOMICI -->
+  <section id="servizi">
+    <h2>I Nostri Servizi</h2>
+    <p class="intro">
+      Supportiamo orti urbani, terrazze, serre e progetti di agricoltura sostenibile con consulenza agronomica,
+      diagnostica sperimentale e accompagnamento alle certificazioni.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Agronomia Urbana</h3>
+        <p>Progettazione e gestione di orti urbani, terrazze e serre. Soluzioni su misura per spazi cittadini e cooperative.</p>
+      </div>
+      <div class="card">
+        <h3>Diagnostica Sperimentale</h3>
+        <p>Analisi tecniche, monitoraggio con sensori, valutazioni agronomiche professionali per coltivazioni sostenibili.</p>
+      </div>
+      <div class="card">
+        <h3>Certificazioni e Audit</h3>
+        <p>Supporto nella preparazione alla verifica, organizzazione documentale e accompagnamento durante gli audit.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="service-card">
-        <img src="2.png" alt="Servizio 2">
-        <div class="content">
-            <h3>Diagnostica Sperimentale</h3>
-            <p>Analisi tecniche e valutazioni agronomiche professionali.</p>
-        </div>
+  <!-- AUDIT ISO -->
+  <section id="audit">
+    <h2>Audit ISO 22000 & ISO 9001</h2>
+    <p class="intro">
+      Aiutiamo cooperative, aziende e società agroalimentari a prepararsi in modo strutturato agli audit ISO 22000
+      (sicurezza alimentare) e ISO 9001 (gestione della qualità), trasformando la normativa in procedure chiare e applicabili.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Supporto all'Audit ISO 22000</h3>
+        <p>
+          Analisi dei processi di sicurezza alimentare, identificazione dei punti critici, revisione delle procedure e
+          preparazione alla visita ispettiva.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Supporto all'Audit ISO 9001</h3>
+        <p>
+          Valutazione del sistema di gestione qualità, ottimizzazione dei flussi, documentazione e accompagnamento alla certificazione.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Accompagnamento alle Cooperative</h3>
+        <p>
+          Percorsi dedicati a cooperative e realtà collettive, con strumenti semplici per rendere la conformità un lavoro quotidiano.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <div class="service-card">
-        <img src="3.png" alt="Servizio 3">
-        <div class="content">
-            <h3>
+  <!-- HACCP -->
+  <section id="haccp">
+    <h2>Formazione ed Esame HACCP</h2>
+    <p class="intro">
+      La sicurezza alimentare parte dalle persone. Offriamo percorsi formativi HACCP per operatori, cooperative e aziende
+      agroalimentari, con preparazione mirata all’esame e alla gestione pratica dei rischi.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Corso HACCP</h3>
+        <p>
+          Formazione chiara, pratica e aggiornata sulla normativa HACCP, con esempi reali e casi dal settore agroalimentare.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Preparazione all'Esame</h3>
+        <p>
+          Supporto mirato per superare l’esame HACCP con sicurezza: simulazioni, quiz e spiegazioni operative.
+        </p>
+      </div>
+      <div class="card">
+        <h3>HACCP per Cooperative e Aziende</h3>
+        <p>
+          Percorsi dedicati a gruppi di lavoro, con focus su responsabilità condivise, procedure interne e tracciabilità.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREVENTIVI -->
+  <section id="preventivi" class="preventivi-section">
+    <h2>Preventivi Professionali per Cooperative, Aziende e Società Agroalimentari</h2>
+    <p class="intro">
+      Offriamo preventivi chiari, completi e personalizzati per audit ISO 22000, ISO 9001, formazione HACCP,
+      consulenza agronomica e certificazioni per l’agricoltura urbana. Ogni preventivo è costruito in base alle
+      esigenze reali della tua organizzazione.
+    </p>
+
+    <div class="preventivi-cards">
+
+      <div class="card">
+        <h3>Audit ISO 22000</h3>
+        <p>Valutazione completa dei processi di sicurezza alimentare, analisi dei punti critici, documentazione e preparazione all’audit.</p>
+        <span class="price">Preventivo su richiesta</span>
+      </div>
+
+      <div class="card">
+        <h3>Audit ISO 9001</h3>
+        <p>Analisi dei processi aziendali, gestione qualità, procedure operative e preparazione alla certificazione.</p>
+        <span class="price">Preventivo su richiesta</span>
+      </div>
+
+      <div class="card">
+        <h3>Formazione HACCP</h3>
+        <p>Corso completo per operatori, cooperative e aziende agroalimentari. Preparazione all’esame e rilascio attestato.</p>
+        <span class="price">Da € 35 a partecipante</span>
+      </div>
+
+      <div class="card">
+        <h3>Consulenza Agronomica</h3>
+        <p>Supporto tecnico per orti urbani, serre, terrazze, coltivazioni sostenibili e diagnostica sperimentale.</p>
+        <span class="price">Preventivo personalizzato</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti">
+    <h2>Contatti</h2>
+    <p class="intro">
+      Per informazioni, preventivi o per organizzare un percorso di audit o formazione:
+    </p>
+    <p>
+      Email: <strong>info@certiforti.it</strong><br>
+      Telefono: <strong>+39 000 0000000</strong><br>
+      Disponibili per cooperative, aziende agroalimentari, società di servizi e progetti di agricoltura urbana.
+    </p>
+  </section>
+
+  <footer>
+    © CertifOrti – Consulenza Agronomica, Audit ISO e Formazione HACCP.
+  </footer>
+
+</body>
+</html>
