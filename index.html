@@ -9,104 +9,170 @@
     <meta name="keywords" content="agronomia urbana, suolo, ISO 9001, ISO 14001, ISO 22000, HACCP, sostenibilità, orti urbani, CertifOrti, consulenze ambientali">
     <meta name="author" content="CertifOrti">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- COERENZA TIPOGRAFICA ED ELEGANZA VISIVA -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://cloudflare.com" rel="stylesheet">
 
     <style>
         :root {
-            --leaf-green: #4CAF50;
-            --leaf-green-dark: #2e7d32;
-            --stone-gray: #3a3a3a;
-            --stone-gray-light: #e8e8e8;
-            --white: #ffffff;
+            --leaf-green: #1e5e1a;          /* Verde foresta scuro preso dal logo */
+            --leaf-green-light: #4CAF50;    /* Verde brillante per dettagli e icone */
+            --leaf-green-dark: #113813;     /* Verde profondo per footer e sfondi scuri */
+            --oro-satinato: #c59b27;         /* Oro coordinato con il sigillo */
+            --panna-chiaro: #fdfbf7;         /* Sfondo elegante caldo */
+            --stone-gray: #2b3a2a;          /* Testo scuro ad alta leggibilità */
+            --stone-gray-light: #fafbfa;    /* Sfondo delle schede */
         }
 
         body {
-            background: var(--white);
+            background: var(--panna-chiaro);
             color: var(--stone-gray);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', system-ui, sans-serif;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
 
         header {
             background: var(--leaf-green);
-            padding: 20px 40px;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            height: 70px;
+            box-sizing: border-box;
         }
 
-        #logo {
-            width: 140px;
-            filter: drop-shadow(0 0 8px var(--leaf-green));
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .brand-text {
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         nav a {
-            margin-left: 20px;
+            margin-left: 24px;
             color: white;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--oro-satinato);
         }
 
         #drawer-btn {
             position: fixed;
-            top: 20px;
-            left: 20px;
-            background: var(--leaf-green);
+            top: 15px;
+            right: 20px;
+            background: var(--leaf-green-light);
             color: white;
             border: none;
             padding: 12px 14px;
             border-radius: 50%;
             font-size: 20px;
             cursor: pointer;
-            z-index: 10000;
+            z-index: 10001;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            display: none;
         }
 
         #drawer {
             position: fixed;
             top: 0;
-            left: -260px;
-            width: 260px;
+            left: -280px;
+            width: 280px;
             height: 100%;
             background: var(--leaf-green-dark);
             color: white;
-            padding: 30px;
+            padding: 40px 30px;
+            box-sizing: border-box;
             transition: left 0.4s ease;
-            z-index: 9999;
+            z-index: 10000;
+            box-shadow: 5px 0 25px rgba(0,0,0,0.3);
         }
 
         #drawer.open {
             left: 0;
         }
 
+        #drawer h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--oro-satinato);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+
         #drawer a {
             display: block;
-            margin: 18px 0;
+            margin: 20px 0;
             color: white;
             text-decoration: none;
             font-size: 18px;
+            transition: color 0.2s;
+        }
+
+        #drawer a:hover {
+            color: var(--oro-satinato);
         }
 
         section {
-            padding: 80px 40px;
+            padding: 90px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            max-width: 100%;
+            padding: 100px 40px 80px 40px;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 48px;
-            color: var(--leaf-green-dark);
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2em;
+            color: var(--leaf-green);
+            margin: 0;
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: 1.25em;
             margin-top: 20px;
+            color: #3b4d3a;
         }
 
         h2 {
-            font-size: 32px;
-            color: var(--leaf-green-dark);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4em;
+            color: var(--leaf-green);
             margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-desc {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            font-size: 1.1em;
+            color: #555;
         }
 
         .services-grid {
@@ -118,15 +184,138 @@
 
         .service-box {
             background: var(--stone-gray-light);
-            padding: 30px;
-            border-radius: 12px;
+            padding: 40px 30px;
+            border-radius: 16px;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            border-top: 4px solid var(--oro-satinato);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(27, 94, 32, 0.08);
         }
 
         .service-box i {
-            font-size: 40px;
-            color: var(--leaf-green-dark);
-            margin-bottom: 15px;
+            font-size: 44px;
+            color: var(--leaf-green-light);
+            margin-bottom: 20px;
+        }
+
+        .service-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            margin: 0 0 15px 0;
+            color: var(--leaf-green);
+        }
+
+        .quote-form-container {
+            background: #ffffff;
+            max-width: 700px;
+            margin: 50px auto 0 auto;
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            text-align: left;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+            color: var(--leaf-green);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #dcdfdc;
+            background: #fafbfa;
+            font-family: inherit;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--leaf-green-light);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1);
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25d366;
+            color: white;
+            padding: 16px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        footer {
+            background: var(--leaf-green-dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.95em;
+            border-top: 4px solid var(--oro-satinato);
+        }
+
+        .gallery-placeholder {
+            background: #f0f3f0;
+            border: 2px dashed #cbd5cb;
+            padding: 60px;
+            border-radius: 12px;
+            color: #778876;
+            font-weight: 500;
+        }
+
+        @media (max-width: 992px) {
+            header {
+                height: auto;
+                padding: 20px;
+                justify-content: center;
+            }
+            .logo-wrapper {
+                text-align: center;
+            }
+            .brand-text {
+                font-size: 2em;
+            }
+            nav {
+                display: none;
+            }
+            #drawer-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.4em;
+            }
+            .quote-form-container {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
@@ -138,169 +327,10 @@
 </button>
 
 <div id="drawer">
-    <h2>Menu</h2>
-    <a href="#home">Home</a>
-    <a href="#chi-siamo">Chi Siamo</a>
-    <a href="#servizi">Servizi</a>
-    <a href="#progetti">Progetti</a>
-    <a href="#iso">Certificazioni ISO</a>
-    <a href="#team">Team</a>
-    <a href="#galleria">Galleria</a>
-    <a href="#preventivi">Preventivi</a>
-    <a href="#contatti">Contatti</a>
-</div>
-
-<header id="home">
-    <img id="logo" src="logo.png" alt="CertifOrti Logo">
-    <nav>
-        <a href="#chi-siamo">Chi Siamo</a>
-        <a href="#servizi">Servizi</a>
-        <a href="#progetti">Progetti</a>
-        <a href="#iso">ISO</a>
-        <a href="#team">Team</a>
-        <a href="#contatti">Contatti</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <h1>CertifOrti</h1>
-    <p>Agronomia urbana, rigenerazione del suolo, sostenibilità e certificazioni.</p>
-</section>
-
-<section id="chi-siamo">
-    <h2>Chi Siamo</h2>
-    <p>CertifOrti è uno studio specializzato in agronomia urbana, rigenerazione del suolo, sostenibilità ambientale e consulenze ISO.</p>
-</section>
-
-<section id="servizi">
-    <h2>Servizi</h2>
-
-    <div class="services-grid">
-        <div class="service-box">
-            <i class="fas fa-seedling"></i>
-            <h3>Agronomia Urbana</h3>
-            <p>Progetti di verde urbano, orti, suolo e biodiversità.</p>
-        </div>
-
-        <div class="service-box">
-            <i class="fas fa-flask"></i>
-            <h3>Analisi del Suolo</h3>
-            <p>Valutazioni agronomiche, chimiche e biologiche.</p>
-        </div>
-
-        <div class="service-box">
-            <i class="fas fa-certificate"></i>
-            <h3>Certificazioni ISO</h3>
-            <p>ISO 9001, ISO 14001, ISO 22000, HACCP.</p>
-        </div>
-
-        <div class="service-box">
-            <i class="fas fa-leaf"></i>
-            <h3>Sostenibilità</h3>
-            <p>Progetti ambientali e strategie green.</p>
-        </div>
-    </div>
-</section>
-
-<section id="progetti">
-    <h2>Progetti Realizzati</h2>
-    <p>Sezione dedicata ai progetti CertifOrti. Le immagini e descrizioni verranno aggiunte successivamente.</p>
-</section>
-
-<section id="iso">
-    <h2>Certificazioni ISO</h2>
-    <ul style="list-style:none; padding:0;">
-        <li>ISO 9001 – Qualità</li>
-        <li>ISO 14001 – Ambiente</li>
-        <li>ISO 22000 – Sicurezza Alimentare</li>
-        <li>HACCP – Controllo igienico</li>
-    </ul>
-</section>
-
-<section id="team">
-    <h2>Team</h2>
-    <p>Il nostro team è composto da agronomi, tecnici ambientali e consulenti certificati.</p>
-</section>
-
-<section id="galleria">
-    <h2>Galleria</h2>
-    <p>La galleria verrà popolata con immagini dei progetti CertifOrti.</p>
-</section>
-
-<section id="preventivi" style="padding:80px 40px; text-align:center;">
-    <h2 style="color:#2e7d32; font-size:32px; margin-bottom:20px;">
-        Preventivi e Servizi Professionali
-    </h2>
-
-    <p style="max-width:700px; margin:0 auto 40px;">
-        CertifOrti offre consulenze professionali in ambito agronomico, ambientale e certificazioni ISO.
-        Seleziona il servizio che ti interessa per ricevere un preventivo personalizzato.
-    </p>
-
-    <div class="services-grid">
-
-        <div class="service-box">
-            <i class="fas fa-certificate" style="font-size:40px; color:#2e7d32;"></i>
-            <h3>Audit ISO 9001</h3>
-            <p>Analisi dei processi aziendali, gestione qualità, preparazione alla certificazione.</p>
-            <strong>Preventivo su richiesta</strong>
-        </div>
-
-        <div class="service-box">
-            <i class="fas fa-shield-alt" style="font-size:40px; color:#2e7d32;"></i>
-            <h3>Audit ISO 22000</h3>
-            <p>Sicurezza alimentare, controllo dei rischi, documentazione e procedure.</p>
-            <strong>Preventivo su richiesta</strong>
-        </div>
-
-        <div class="service-box">
-            <i class="fas fa-utensils" style="font-size:40px; color:#2e7d32;"></i>
-            <h3>Formazione HACCP</h3>
-            <p>Corso completo con attestato valido su tutto il territorio nazionale.</p>
-            <strong>Da € 35</strong>
-        </div>
-
-        <div class="service-box">
-            <i class="fas fa-seedling" style="font-size:40px; color:#2e7d32;"></i>
-            <h3>Consulenza Agronomica</h3>
-            <p>Supporto tecnico per coltivazioni, suolo, fertilità, sostenibilità e biodiversità.</p>
-            <strong>Preventivo personalizzato</strong>
-        </div>
-
-    </div>
-
-    <br><br>
-
-    <a href="https://wa.me/393760189521"
-       style="background:#4CAF50; padding:14px 24px; color:white; border-radius:8px; text-decoration:none; font-weight:600;">
-        Richiedi Preventivo su WhatsApp
-    </a>
-</section>
-
-<section id="contatti">
-    <h2>Contatti</h2>
-    <p><strong>Telefono:</strong> +39 376 018 9521</p>
-    <p><strong>Email:</strong> studio.certiforti@gmail.com</p>
-    <p><strong>Indirizzo:</strong> Via Tosco Romagnola 185, 56025 Pontedera (PI)</p>
-
-    <h3>Social</h3>
-    <ul style="list-style:none; padding:0;">
-        <li>Facebook</li>
-        <li>Instagram</li>
-        <li>TikTok</li>
-        <li>YouTube</li>
-    </ul>
-</section>
-
-<footer style="text-align:center; padding: 40px; background: var(--leaf-green-dark); color:white;">
-    © 2026 CertifOrti – Tutti i diritti riservati
-</footer>
-
-<script>
-function toggleDrawer() {
-    document.getElementById("drawer").classList.toggle("open");
-}
-</script>
-
-</body>
-</html>
+    <h2>CertifOrti</h2>
+    <a href="#home" onclick="toggleDrawer()">Home</a>
+    <a href="#chi-siamo" onclick="toggleDrawer()">Chi Siamo</a>
+    <a href="#servizi" onclick="toggleDrawer()">Servizi</a>
+    <a href="#progetti" onclick="toggleDrawer()">Progetti</a>
+    <a href="#iso" onclick="toggleDrawer()">Certificazioni ISO</a>
+    <a href="#team" onclick="toggleDrawer()">Team</a>
