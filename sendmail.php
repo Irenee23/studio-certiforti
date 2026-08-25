@@ -1,5 +1,5 @@
 $mail->Username   = 'studio.certiforti@gmail.com';
-$mail->Password   = 'vvwx eoai rjuq bjxf';
+$mail->Password   = 'vvwxeoairjuqbjxf';
 $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
