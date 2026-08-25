@@ -1,3 +1,3 @@
-$mail->Username   = 'stuio.certiforti@gmail.com';
-$mail->Password   = 'fxjvizikxwjycmqd';
+$mail->Username   = 'studio.certiforti@gmail.com';
+$mail->Password   = 'vvwx eoai rjuq bjxf';
 
