@@ -506,8 +506,7 @@
         <img src="logo.png" alt="Logo Studio CertifOrti">
         <div class="brand-text">Studio CertifOrti</div>
     </div>
-
-    <nav>
+ <nav>
         <a href="#chi-siamo">Chi Siamo</a>
         <a href="#servizi">Servizi</a>
         <a href="#progetti">Progetti</a>
@@ -549,11 +548,11 @@
             <div class="hero-cta">
                 <a href="#preventivi" class="btn-primary">Richiedi un preventivo</a>
                 <a href="#servizi" class="btn-outline">Scopri tutti i servizi</a>
-            </div>
-        </div>
         <div class="hero-image">
             <img src="1.png" alt="Progetto di agronomia urbana CertifOrti">
         </div>
+        <!-- Logo rimosso -->
+
     </section>
 
     <section id="chi-siamo">
@@ -658,12 +657,12 @@
                 </div>
             </div>
             <div class="project-card">
-                <img src="3.png" alt="Rigenerazione del suolo in ambito urbano">
+                <img src="3.png" alt="ISO per filiere HORECA">
                 <div class="project-card-body">
-                    <h3>Rigenerazione del suolo urbano</h3>
+                    <h3>ISO per filiere HORECA</h3>
                     <p>
-                        Interventi di rigenerazione del suolo in aree degradate, con tecniche
-                        agroecologiche e monitoraggio continuo.
+                        Percorsi di certificazione ISO per realtà HORECA che vogliono valorizzare qualità,
+                        sicurezza e sostenibilità dei propri servizi.
                     </p>
                 </div>
             </div>
@@ -678,12 +677,12 @@
                 </div>
             </div>
             <div class="project-card">
-                <img src="5.png" alt="Consulenza ISO per filiere HORECA">
+                <img src="5.png" alt="Rigenerazione del suolo urbano">
                 <div class="project-card-body">
-                    <h3>ISO per filiere HORECA</h3>
+                    <h3>Rigenerazione del suolo urbano</h3>
                     <p>
-                        Percorsi di certificazione ISO per realtà HORECA che vogliono valorizzare
-                        qualità, sicurezza e sostenibilità dei propri servizi.
+                        Interventi di rigenerazione del suolo in aree degradate, con tecniche agroecologiche
+                        e monitoraggio continuo.
                     </p>
                 </div>
             </div>
@@ -754,7 +753,12 @@
         </p>
         <div class="quote-form-container">
             <h3>Richiedi un preventivo</h3>
-            <form>
+            <form action="https://formsubmit.co/studio.certiforti@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+
+<input type="hidden" name="_subject" value="Nuova richiesta preventivo Studio CertifOrti">
+
+<input type="hidden" name="_next" value="https://www.studiocertiforti.it">
                 <div class="form-group">
                     <label for="nome">Nome e cognome</label>
                     <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome">
@@ -821,8 +825,11 @@
         © <span id="year"></span> Studio CertifOrti – Agronomia urbana, rigenerativa, HACCP e consulenza ISO.
         Sito ufficiale pubblicato tramite GitHub Pages.
     </p>
-</footer>
-
+    
+    <p>
+        © <span id="year"></span> Studio CertifOrti – Agronomia urbana, rigenerativa, HACCP e consulenza ISO.
+        Sito ufficiale pubblicato tramite GitHub Pages.
+    </p>
 <script>
 function toggleDrawer() {
     const drawer = document.getElementById('drawer');
