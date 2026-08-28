@@ -46,6 +46,30 @@
             top: 0;
             z-index: 1000;
         }
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px; /* spazio tra testo e foto */
+    padding: 60px 80px; /* margine interno per respirare */
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 50%; /* metà larghezza */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
 
         .logo-wrapper {
             display: flex;
