@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio CertifOrti – Agronomia Urbana, HACCP, ISO</title>
-    <meta name="description" content="Studio CertifOrti – Agronomia urbana biologica, agronomia rigenerativa, supporto diagnostico, HACCP e consulenza ISO per cooperative agroalimentari e HORECA.">
+    <meta name="description" content="Studio CertifOrti – Agronomia urbana biologica, agronomia rigenerativa, supporto diagnostico, HACCP e consulenza ISO per cooperative agroalimentari e realtà HORECA.">
     <meta name="keywords" content="CertifOrti, agronomia urbana, agronomia rigenerativa, HACCP, ISO, cooperative agroalimentari, HORECA, consulenza, suolo, sicurezza alimentare">
     <meta name="author" content="Studio CertifOrti">
 
@@ -53,10 +53,22 @@
             gap: 12px;
         }
 
-        .logo-wrapper img {
-            height: 40px;
-            width: auto;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            padding: 6px 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            margin-right: 8px;
         }
+
+       .logo-img {
+    height: 90px;
+    width: auto;
+    display: block;
+}
 
         .brand-text {
             color: #fff;
@@ -496,17 +508,28 @@
             header {
                 padding: 10px 18px;
             }
-        }
+  .contact-logo {
+    text-align: right;
+}
+
+.contact-logo img {
+    width: 40px;
+    height: 40px;
+}
+           
     </style>
 </head>
 <body>
 
 <header id="home">
     <div class="logo-wrapper">
-        <img src="logo.png" alt="Logo Studio CertifOrti">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo Studio CertifOrti" class="logo-img">
+        </div>
         <div class="brand-text">Studio CertifOrti</div>
     </div>
- <nav>
+
+    <nav>
         <a href="#chi-siamo">Chi Siamo</a>
         <a href="#servizi">Servizi</a>
         <a href="#progetti">Progetti</a>
@@ -647,17 +670,7 @@
         </p>
         <div class="projects-grid">
             <div class="project-card">
-               <div class="project-card">
-    <div class="project-card-body">
-        <img src="2.png" alt="Progetto orti urbani cooperativi">
-        <h3>Orti urbani cooperativi</h3>
-        <p>
-            Progettazione e gestione di orti urbani condivisi, con cooperative e cittadini,
-            per filiere corte e educazione alimentare.
-        </p>
-    </div>
-</div>
-
+                <img src="2.png" alt="Progetto orti urbani cooperativi">
                 <div class="project-card-body">
                     <h3>Orti urbani cooperativi</h3>
                     <p>
@@ -763,12 +776,7 @@
         </p>
         <div class="quote-form-container">
             <h3>Richiedi un preventivo</h3>
-            <form action="https://formsubmit.co/studio.certiforti@gmail.com" method="POST">
-                <input type="hidden" name="_captcha" value="false">
-
-<input type="hidden" name="_subject" value="Nuova richiesta preventivo Studio CertifOrti">
-
-<input type="hidden" name="_next" value="https://www.studiocertiforti.it">
+            <form>
                 <div class="form-group">
                     <label for="nome">Nome e cognome</label>
                     <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome">
