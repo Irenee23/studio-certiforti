@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio CertifOrti – Agronomia Urbana, HACCP, ISO</title>
-    <meta name="description" content="Studio CertifOrti – Agronomia urbana biologica, agronomia rigenerativa, supporto diagnostico, HACCP e consulenza ISO per cooperative agroalimentari e realtà HORECA.">
+    <meta name="description" content="Studio CertifOrti – Agronomia urbana biologica, agronomia rigenerativa, supporto diagnostico, HACCP e consulenza ISO per cooperative agroalimentari e HORECA.">
     <meta name="keywords" content="CertifOrti, agronomia urbana, agronomia rigenerativa, HACCP, ISO, cooperative agroalimentari, HORECA, consulenza, suolo, sicurezza alimentare">
     <meta name="author" content="Studio CertifOrti">
 
@@ -53,22 +53,10 @@
             gap: 12px;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #fff;
-            padding: 6px 10px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            margin-right: 8px;
+        .logo-wrapper img {
+            height: 40px;
+            width: auto;
         }
-
-       .logo-img {
-    height: 90px;
-    width: auto;
-    display: block;
-}
 
         .brand-text {
             color: #fff;
@@ -508,24 +496,14 @@
             header {
                 padding: 10px 18px;
             }
-  .contact-logo {
-    text-align: right;
-}
-
-.contact-logo img {
-    width: 40px;
-    height: 40px;
-}
-           
+        }
     </style>
 </head>
 <body>
 
 <header id="home">
     <div class="logo-wrapper">
-        <div class="logo-container">
-            <img src="logo.png" alt="Logo Studio CertifOrti" class="logo-img">
-        </div>
+        <img src="logo.png" alt="Logo Studio CertifOrti">
         <div class="brand-text">Studio CertifOrti</div>
     </div>
 
@@ -571,11 +549,11 @@
             <div class="hero-cta">
                 <a href="#preventivi" class="btn-primary">Richiedi un preventivo</a>
                 <a href="#servizi" class="btn-outline">Scopri tutti i servizi</a>
+            </div>
+        </div>
         <div class="hero-image">
             <img src="1.png" alt="Progetto di agronomia urbana CertifOrti">
         </div>
-        <!-- Logo rimosso -->
-
     </section>
 
     <section id="chi-siamo">
@@ -680,12 +658,12 @@
                 </div>
             </div>
             <div class="project-card">
-                <img src="3.png" alt="ISO per filiere HORECA">
+                <img src="3.png" alt="Rigenerazione del suolo in ambito urbano">
                 <div class="project-card-body">
-                    <h3>ISO per filiere HORECA</h3>
+                    <h3>Rigenerazione del suolo urbano</h3>
                     <p>
-                        Percorsi di certificazione ISO per realtà HORECA che vogliono valorizzare qualità,
-                        sicurezza e sostenibilità dei propri servizi.
+                        Interventi di rigenerazione del suolo in aree degradate, con tecniche
+                        agroecologiche e monitoraggio continuo.
                     </p>
                 </div>
             </div>
@@ -700,12 +678,12 @@
                 </div>
             </div>
             <div class="project-card">
-                <img src="5.png" alt="Rigenerazione del suolo urbano">
+                <img src="5.png" alt="Consulenza ISO per filiere HORECA">
                 <div class="project-card-body">
-                    <h3>Rigenerazione del suolo urbano</h3>
+                    <h3>ISO per filiere HORECA</h3>
                     <p>
-                        Interventi di rigenerazione del suolo in aree degradate, con tecniche agroecologiche
-                        e monitoraggio continuo.
+                        Percorsi di certificazione ISO per realtà HORECA che vogliono valorizzare
+                        qualità, sicurezza e sostenibilità dei propri servizi.
                     </p>
                 </div>
             </div>
@@ -843,11 +821,8 @@
         © <span id="year"></span> Studio CertifOrti – Agronomia urbana, rigenerativa, HACCP e consulenza ISO.
         Sito ufficiale pubblicato tramite GitHub Pages.
     </p>
-    
-    <p>
-        © <span id="year"></span> Studio CertifOrti – Agronomia urbana, rigenerativa, HACCP e consulenza ISO.
-        Sito ufficiale pubblicato tramite GitHub Pages.
-    </p>
+</footer>
+
 <script>
 function toggleDrawer() {
     const drawer = document.getElementById('drawer');
