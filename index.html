@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <html lang="it">
-    <<div class="galleria-progetti">
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLVJRPVQTS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GLVJRPVQTS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio CertifOrti – Agronomia Urbana, HACCP, ISO</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-    associazione colture.png
+    <!-- Qui teniamo la grafica della galleria al sicuro -->
+    <style>
+        .galleria-progetti {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        .img-progetto {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .img-progetto:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+        }
+        @media (max-width: 768px) {
+            .galleria-progetti {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
 
-    audit di certificazione.png
-
-    certiforti compost.png
-
-    ciclo produttivo.png
-
-    compost cycle.png
-
-    foto progetto.png
-
-    industria compost.png
-
-</div>
+    <!-- 📌 QUESTO È IL MODO CORRETTO DI SCRIVERE LA GALLERIA DENTRO IL BODY -->
+    <div class="galleria-progetti">
+        <img src="associazione colture.png" alt="Associazione colture - Studio CertifOrti" class="img-progetto">
+        <img src="audit di certificazione.png" alt="Audit di certificazione - Studio CertifOrti" class="img-progetto">
+        <img src="certiforti compost.png" alt="Certiforti compost - Studio CertifOrti" class="img-progetto">
+        <img src="ciclo produttivo.png" alt="Ciclo produttivo - Studio CertifOrti" class="img-progetto">
+        <img src="compost cycle.png" alt="Compost cycle - Studio CertifOrti" class="img-progetto">
+        <img src="foto progetto.png" alt="Foto progetto - Studio CertifOrti" class="img-progetto">
+        <img src="industria compost.png" alt="Industria compost - Studio CertifOrti" class="img-progetto">
+    </div>
+<!-- Da qui in poi può continuare il resto del codice vecchio del tuo sito... -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLVJRPVQTS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
