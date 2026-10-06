@@ -533,23 +533,26 @@
 
 <header id="home" style="padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; min-height: 90px; background-color: #1e4620;">
     
-    <!-- Blocco Logo (Sinistra) -->
-    <div class="logo-wrapper" style="display: flex; align-items: center; gap: 12px;">
-        <img src="logo.png" alt="Logo Studio CertifOrti" class="logo-img" style="height: 75px; width: auto; display: block;">
-        <div class="brand-text" style="color: white; font-weight: bold;">Studio CertifOrti</div>
-    </div>
+        <!-- Blocco Logo (Sinistra) -->
+    <a href="#home" style="display: flex; align-items: center; gap: 16px; text-decoration: none;">
+        <img src="logo.png" alt="Icona Studio CertifOrti" class="logo-img" style="height: 85px; width: auto; display: block; object-fit: contain;">
+        <div class="brand-text" style="color: #ffffff; font-size: 28px; font-weight: 700; font-family: 'Playfair Display', 'Georgia', serif; letter-spacing: 0.5px; white-space: nowrap;">
+            Studio CertifOrti
+        </div>
+    </a>
 
     <!-- Blocco Menu di Navigazione (Destra) -->
-    <nav style="display: flex; gap: 20px;">
-        <a href="#chi-siamo" style="color: white; text-decoration: none;">Chi Siamo</a>
-        <a href="#servizi" style="color: white; text-decoration: none;">Servizi</a>
-        <a href="#progetti" style="color: white; text-decoration: none;">Progetti</a>
-        <a href="#iso" style="color: white; text-decoration: none;">Certificazioni ISO</a>
-        <a href="#team" style="color: white; text-decoration: none;">Team</a>
-        <a href="#preventivi" style="color: white; text-decoration: none;">Preventivi</a>
-        <a href="#contatti" style="color: white; text-decoration: none;">Contatti</a>
+    <nav style="display: flex; gap: 24px; align-items: center;">
+        <a href="#chi-siamo" style="color: white; text-decoration: none; font-weight: 600; font-size: 15px;">Chi Siamo</a>
+        <a href="#servizi" style="color: white; text-decoration: none; font-weight: 600; font-size: 15px;">Servizi</a>
+        <a href="#progetti" style="color: white; text-decoration: none; font-weight: 600; font-size: 15px;">Progetti</a>
+        <a href="#iso" style="color: white; text-decoration: none; font-weight: 600; font-size: 15px;">Certificazioni ISO</a>
+        <a href="#team" style="color: white; text-decoration: none; font-weight: 600; font-size: 15px;">Team</a>
+        <a href="#preventivi" style="color: white; text-decoration: none; font-weight: 600; font-size: 15px;">Preventivi</a>
+        <a href="#contatti" style="color: white; text-decoration: none; font-weight: 600; font-size: 15px;">Contatti</a>
     </nav>
 
+    <button id="drawer-btn" onclick="toggleDrawer()">☰</button>
 </header>
 
 <div id="drawer">
