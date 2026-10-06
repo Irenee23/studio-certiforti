@@ -528,21 +528,23 @@
 }
 /* Pulsante menu solo per telefono */
 .menu-btn {
-    display: none;
+    display: none !important;
+
 }
 
 @media (max-width: 768px) {
-.menu-btn {
-display: block;
-background: transparent;
-border: none;
-color: white;
-font-size: 30px;
-cursor: pointer;
-margin-left: auto;
-}
-}
-``           
+    .menu-btn {
+        display: block !important;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 30px;
+    }
+}         
     </style>
 </head>
 <body>
