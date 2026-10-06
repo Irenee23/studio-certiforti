@@ -526,7 +526,22 @@
     width: 40px;
     height: 40px;
 }
-           
+/* Pulsante menu solo per telefono */
+.menu-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+``           
     </style>
 </head>
 <body>
