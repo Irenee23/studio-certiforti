@@ -43,6 +43,7 @@
             font-family: 'Inter', system-ui, sans-serif;
             scroll-behavior: smooth;
         }
+
         header {
             background: var(--leaf-green);
             padding: 12px 40px;
@@ -159,41 +160,7 @@
             margin: 0 auto;
             padding: 60px 20px 40px;
         }
-/* Stile per i sottomenu del menu in alto */
-.nav-dropdown {
-    position: relative;
-}
 
-.nav-dropdown .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #ffffff;
-    min-width: 240px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
-    border-radius: 6px;
-    padding: 8px 0;
-    z-index: 1000;
-}
-
-.nav-dropdown .dropdown-content a {
-    color: #2b3a2a !important;
-    padding: 10px 16px;
-    text-decoration: none;
-    display: block;
-    font-size: 14px;
-    transition: background-color 0.2s ease;
-}
-
-.nav-dropdown .dropdown-content a:hover {
-    background-color: #f4f7f4;
-    color: #1b5e20 !important;
-}
-
-.nav-dropdown:hover .dropdown-content {
-    display: block;
-}
         .hero {
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             border-radius: 20px;
@@ -608,84 +575,19 @@
 <button id="drawer-btn" onclick="toggleDrawer()" aria-label="Apri menu">☰</button>
 
     <!-- Blocco Menu di Navigazione (Destra) -->
-<nav class="desktop-menu" style="display: flex; gap: 20px; align-items: center;">
-      <a href="#chi-siamo" style="color: white; text-decoration: none;">Chi Siamo</a>
+   <nav class="desktop-menu" style="display: flex; gap: 20px;">
 
-      <!-- Dropdown Servizi (Tutti gli 8 servizi della griglia) -->
-      <div class="nav-dropdown" style="position: relative;">
-        <a href="#servizi" style="color: white; text-decoration: none;">Servizi ▾</a>
-        <div class="dropdown-content">
-          <a href="#servizi">Agronomia urbana biologica</a>
-          <a href="#servizi">Agronomia rigenerativa</a>
-          <a href="#servizi">Supporto diagnostico</a>
-          <a href="#servizi">HACCP e sicurezza alimentare</a>
-          <a href="#servizi">Consulenza ISO per agroalimentare</a>
-          <a href="#servizi">Progetti ambientali e sostenibilità</a>
-          <a href="#servizi">Produzione di compost di qualità certificata</a>
-          <a href="#servizi">Diagnostica nutrizionale e analisi del suolo</a>
-        </div>
-      </div>
-
-      <!-- Dropdown Progetti -->
-      <div class="nav-dropdown" style="position: relative;">
-        <a href="#progetti" style="color: white; text-decoration: none;">Progetti ▾</a>
-        <div class="dropdown-content">
-          <a href="#progetti">Agronomia Urbana</a>
-          <a href="#progetti">Riqualificazione Verde & Filiere</a>
-          <a href="#progetti">Progetti Cooperativi</a>
-          <a href="#progetti">Sviluppo Sostenibile HORECA</a>
-        </div>
-      </div>
-
-      <!-- Dropdown Certificazioni ISO & HACCP (Tutte e 9 le voci) -->
-      <div class="nav-dropdown" style="position: relative;">
-        <a href="#iso" style="color: white; text-decoration: none;">Certificazioni ISO & HACCP ▾</a>
-        <div class="dropdown-content">
-          <a href="#iso">ISO 9001 – Qualità</a>
-          <a href="#iso">ISO 14001 – Ambiente</a>
-          <a href="#iso">ISO 22000 – Sicurezza alimentare</a>
-          <a href="#iso">Manuale HACCP e Autocontrollo</a>
-          <a href="#iso">Programmi di Prerequisito (GMP/GHP)</a>
-          <a href="#iso">Etichettatura (Reg. UE 1169/2011)</a>
-          <a href="#iso">Rintracciabilità e Pratiche Sanitarie</a>
-          <a href="#iso">Analisi, Shelf Life e Audit</a>
-          <a href="#iso">Assistenza Controlli e Formazione</a>
-        </div>
-      </div>
-
-      <a href="#team" style="color: white; text-decoration: none;">Team</a>
-      <a href="#preventivi" style="color: white; text-decoration: none;">Preventivi</a>
-      <a href="#contatti" style="color: white; text-decoration: none;">Contatti</a>
+        <a href="#chi-siamo" style="color: white; text-decoration: none;">Chi Siamo</a>
+        <a href="#servizi" style="color: white; text-decoration: none;">Servizi</a>
+        <a href="#progetti" style="color: white; text-decoration: none;">Progetti</a>
+        <a href="#iso" style="color: white; text-decoration: none;">Certificazioni ISO & HACCP</a>
+        <a href="#team" style="color: white; text-decoration: none;">Team</a>
+        <a href="#preventivi" style="color: white; text-decoration: none;">Preventivi</a>
+        <a href="#contatti" style="color: white; text-decoration: none;">Contatti</a>
     </nav>
 
-      <a href="#team" style="color: white; text-decoration: none;">Team</a>
-      <a href="#preventivi" style="color: white; text-decoration: none;">Preventivi</a>
-      <a href="#contatti" style="color: white; text-decoration: none;">Contatti</a>
-    </nav>
-      <!-- Dropdown Team -->
-      <div class="nav-dropdown" style="position: relative;">
-        <a href="#team" style="color: white; text-decoration: none;">Team ▾</a>
-        <div class="dropdown-content">
-          <a href="#team">Agronomia urbana</a>
-          <a href="#team">CERTIFORTI COMPOST</a>
-          <a href="#team">HACCP & ISO</a>
-        </div>
-      </div>
+</header>
 
-     <!-- Dropdown Preventivi -->
-      <div class="nav-dropdown" style="position: relative;">
-        <a href="#preventivi" style="color: white; text-decoration: none;">Preventivi ▾</a>
-        <div class="dropdown-content">
-          <a href="#preventivi">Preventivi</a>
-          <a href="#contatti">Scrivici su WhatsApp</a>
-        </div>
-      </div>
-
-      <a href="#contatti" style="color: white; text-decoration: none;">Contatti</a>
-    </nav>
-
-      <a href="#contatti" style="color: white; text-decoration: none;">Contatti</a>
-    </nav>
 <div id="drawer">
     <h2>Studio CertifOrti</h2>
     <a href="#home" onclick="toggleDrawer()">Home</a>
@@ -1079,92 +981,67 @@
 <p class="section-desc subtitolo-iso">
     <strong>Mantenimento del sistema:</strong> Eseguiamo audit interni, riesami della direzione, aggiornamento documentale e formazione continua del personale. Puoi gestire queste attività internamente, se possiedi le competenze necessarie, oppure affidarle interamente al nostro Studio come partner strategico.
 </p>
-      <div class="iso-grid">
-      <!-- Box 1: ISO 9001 -->
-      <div class="iso-box interactive-box">
+       <div class="iso-grid">
+      <div class="iso-box">
         <h3>ISO 9001 – Qualità</h3>
-        <div class="box-content">
-          <p>
-            Sistemi di gestione per la qualità orientati a processi agroalimentari cooperativi,
-            con attenzione a tracciabilità e soddisfazione del cliente.
-          </p>
-        </div>
+        <p>
+          Sistemi di gestione per la qualità orientati a processi agroalimentari cooperativi,
+          con attenzione a tracciabilità e soddisfazione del cliente.
+        </p>
       </div>
-      <!-- Box 2: ISO 14001 -->
-      <div class="iso-box interactive-box">
+      <div class="iso-box">
         <h3>ISO 14001 – Ambiente</h3>
-        <div class="box-content">
-          <p>
-            Gestione ambientale integrata, con focus su uso del suolo, risorse idriche e
-            impatti delle filiere urbane e cooperative.
-          </p>
-        </div>
+        <p>
+          Gestione ambientale integrata, con focus su uso del suolo, risorse idriche e
+          impatti delle filiere urbane e cooperative.
+        </p>
       </div>
-      <!-- Box 3: ISO 22000 -->
-      <div class="iso-box interactive-box">
+      <div class="iso-box">
         <h3>ISO 22000 – Sicurezza alimentare</h3>
-        <div class="box-content">
-          <p>
-            Sistemi di gestione per la sicurezza alimentare che dialogano con HACCP e
-            specificità delle filiere cooperative e HORECA.
-          </p>
-        </div>
+        <p>
+          Sistemi di gestione per la sicurezza alimentare che dialogano con HACCP e
+          specificità delle filiere cooperative e HORECA.
+        </p>
       </div>
-      <!-- Box 4: Manuale HACCP -->
-      <div class="iso-box interactive-box">
+      <div class="iso-box">
         <h3>Manuale HACCP e Autocontrollo</h3>
-        <div class="box-content">
-          <p>
-            Piano scritto su misura sui tuoi locali, processi e fornitori. Analisi dei pericoli phase-by-phase, CCP, monitoraggi e azioni correttive.
-          </p>
-        </div>
+        <p>
+          Piano scritto su misura sui tuoi locali, processi e fornitori. Analisi dei pericoli phase-by-phase, CCP, monitoraggi e azioni correttive.
+        </p>
       </div>
-      <!-- Box 5: Programmi di Prerequisito -->
-      <div class="iso-box interactive-box">
+      <div class="iso-box">
         <h3>Programmi di Prerequisito (GMP/GHP)</h3>
-        <div class="box-content">
-          <p>
-            Layout e flussi di lavorazione, pulizia e sanificazione, gestione allergeni, lotta agli infestanti, catena del freddo e potabilità acqua.
-          </p>
-        </div>
+        <p>
+          Layout e flussi di lavorazione, pulizia e sanificazione, gestione allergeni, lotta agli infestanti, catena del freddo e potabilità acqua.
+        </p>
       </div>
-      <!-- Box 6: Etichettatura -->
-      <div class="iso-box interactive-box">
+      <div class="iso-box">
         <h3>Etichettatura (Reg. UE 1169/2011)</h3>
-        <div class="box-content">
-          <p>
-            Verifica prima della stampa: allergeni, tabella nutrizionale, scadenze, origine e claim per evitare sprechi e sanzioni.
-          </p>
-        </div>
+        <p>
+          Verifica prima della stampa: allergeni, tabella nutrizionale, scadenze, origine e claim per evitare sprechi e sanzioni.
+        </p>
       </div>
-      <!-- Box 7: Rintracciabilità -->
-      <div class="iso-box interactive-box">
+      <div class="iso-box">
         <h3>Rintracciabilità e Pratiche Sanitarie</h3>
-        <div class="box-content">
-          <p>
-            Procedura di ritiro/richiamo (Reg. CE 178/2002), pratiche SUAP, SCIA, notifiche sanitarie e registrazioni (Reg. CE 852/853).
-          </p>
-        </div>
+        <p>
+          Procedura di ritiro/richiamo (Reg. CE 178/2002), pratiche SUAP, SCIA, notifiche sanitarie e registrazioni (Reg. CE 852/853).
+        </p>
       </div>
-      <!-- Box 8: Analisi e Shelf Life -->
-      <div class="iso-box interactive-box">
+      <div class="iso-box">
         <h3>Analisi, Shelf Life e Audit</h3>
-        <div class="box-content">
-          <p>
-            Piani di campionamento con laboratori accreditati, challenge test per la data di scadenza e ispezioni simulate non annunciate.
-          </p>
-        </div>
+        <p>
+          Piani di campionamento con laboratori accreditati, challenge test per la data di scadenza e ispezioni simulate non annunciate.
+        </p>
       </div>
-      <!-- Box 9: Assistenza e Formazione -->
-      <div class="iso-box interactive-box">
+      <div class="iso-box">
         <h3>Assistenza Controlli e Formazione</h3>
-        <div class="box-content">
-          <p>
-            Affiancamento durante i controlli ASL/NAS, gestione sicurezza sul lavoro (celle, macchinari) e corsi formazione alimentari con Emmess Learning Hub.
-          </p>
-        </div>
+        <p>
+          Affiancamento durante i controlli ASL/NAS, gestione sicurezza sul lavoro (celle, macchinari) e corsi formazione alimentari con Emmess Learning Hub.
+        </p>
       </div>
     </div>
+    </section>
+
     <section id="team" style="scroll-margin-top: 160px;">
         <h2>Team</h2>
         <p class="section-desc">
