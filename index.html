@@ -609,7 +609,16 @@
 
     <!-- Blocco Menu di Navigazione (Destra) -->
 <nav class="desktop-menu" style="display: flex; gap: 20px; align-items: center;">
-      <a href="#chi-siamo" style="color: white; text-decoration: none;">Chi Siamo</a>
+      <!-- Dropdown Chi Siamo -->
+      <div class="nav-dropdown" style="position: relative;">
+        <a href="#chi-siamo" style="color: white; text-decoration: none;">Chi Siamo ▾</a>
+        <div class="dropdown-content">
+          <a href="#chi-siamo">La Direzione Scientifica</a>
+          <a href="#chi-siamo">Il Core Business delle Certificazioni e dell'Auditing Agroalimentare</a>
+          <a href="#chi-siamo">CERTIFORTI COMPOST: Il Nostro Asset di Innovazione Industriale</a>
+          <a href="#chi-siamo">I Nostri Pilastri Strategici</a>
+        </div>
+      </div>
 
       <!-- Dropdown Servizi (8 voci) -->
       <div class="nav-dropdown" style="position: relative;">
@@ -653,10 +662,6 @@
         </div>
       </div>
 
-      <a href="#team" style="color: white; text-decoration: none;">Team</a>
-      <a href="#preventivi" style="color: white; text-decoration: none;">Preventivi</a>
-      <a href="#contatti" style="color: white; text-decoration: none;">Contatti</a>
-    </nav>
       <!-- Dropdown Team -->
       <div class="nav-dropdown" style="position: relative;">
         <a href="#team" style="color: white; text-decoration: none;">Team ▾</a>
