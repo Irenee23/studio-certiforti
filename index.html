@@ -43,29 +43,6 @@
             font-family: 'Inter', system-ui, sans-serif;
             scroll-behavior: smooth;
         }
-/* Effetto dinamico al passaggio del mouse sui box */
-    .interactive-box {
-        transition: all 0.4s ease-in-out;
-        cursor: pointer;
-        overflow: hidden;
-    }
-
-    .interactive-box .box-content {
-        max-height: 0;
-        opacity: 0;
-        transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
-    }
-
-    .interactive-box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    }
-
-    .interactive-box:hover .box-content {
-        max-height: 250px;
-        opacity: 1;
-        margin-top: 10px;
-    }
         header {
             background: var(--leaf-green);
             padding: 12px 40px;
@@ -182,7 +159,41 @@
             margin: 0 auto;
             padding: 60px 20px 40px;
         }
+/* Stile per i sottomenu del menu in alto */
+.nav-dropdown {
+    position: relative;
+}
 
+.nav-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 240px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    padding: 8px 0;
+    z-index: 1000;
+}
+
+.nav-dropdown .dropdown-content a {
+    color: #2b3a2a !important;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.nav-dropdown .dropdown-content a:hover {
+    background-color: #f4f7f4;
+    color: #1b5e20 !important;
+}
+
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
         .hero {
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             border-radius: 20px;
@@ -597,15 +608,44 @@
 <button id="drawer-btn" onclick="toggleDrawer()" aria-label="Apri menu">☰</button>
 
     <!-- Blocco Menu di Navigazione (Destra) -->
-   <nav class="desktop-menu" style="display: flex; gap: 20px;">
+   <nav class="desktop-menu" style="display: flex; gap: 20px; align-items: center;">
+      <a href="#chi-siamo" style="color: white; text-decoration: none;">Chi Siamo</a>
 
-        <a href="#chi-siamo" style="color: white; text-decoration: none;">Chi Siamo</a>
-        <a href="#servizi" style="color: white; text-decoration: none;">Servizi</a>
-        <a href="#progetti" style="color: white; text-decoration: none;">Progetti</a>
-        <a href="#iso" style="color: white; text-decoration: none;">Certificazioni ISO & HACCP</a>
-        <a href="#team" style="color: white; text-decoration: none;">Team</a>
-        <a href="#preventivi" style="color: white; text-decoration: none;">Preventivi</a>
-        <a href="#contatti" style="color: white; text-decoration: none;">Contatti</a>
+      <!-- Dropdown Servizi -->
+      <div class="nav-dropdown" style="position: relative;">
+        <a href="#servizi" style="color: white; text-decoration: none;">Servizi ▾</a>
+        <div class="dropdown-content">
+          <a href="#servizi">Consulenza Agronomica</a>
+          <a href="#servizi">Igiene e Sicurezza Alimentare</a>
+          <a href="#servizi">Sicurezza sul Lavoro</a>
+        </div>
+      </div>
+
+      <!-- Dropdown Progetti -->
+      <div class="nav-dropdown" style="position: relative;">
+        <a href="#progetti" style="color: white; text-decoration: none;">Progetti ▾</a>
+        <div class="dropdown-content">
+          <a href="#progetti">Agronomia Urbana</a>
+          <a href="#progetti">Riqualificazione Verde & Filiere</a>
+          <a href="#progetti">Progetti Cooperativi</a>
+        </div>
+      </div>
+
+      <!-- Dropdown Certificazioni ISO & HACCP -->
+      <div class="nav-dropdown" style="position: relative;">
+        <a href="#iso" style="color: white; text-decoration: none;">Certificazioni ISO & HACCP ▾</a>
+        <div class="dropdown-content">
+          <a href="#iso">ISO 9001 – Qualità</a>
+          <a href="#iso">ISO 14001 – Ambiente</a>
+          <a href="#iso">ISO 22000 – Sicurezza Alimentare</a>
+          <a href="#iso">Manuale HACCP e Autocontrollo</a>
+          <a href="#iso">Etichettatura & Pratiche Sanitarie</a>
+        </div>
+      </div>
+
+      <a href="#team" style="color: white; text-decoration: none;">Team</a>
+      <a href="#preventivi" style="color: white; text-decoration: none;">Preventivi</a>
+      <a href="#contatti" style="color: white; text-decoration: none;">Contatti</a>
     </nav>
 
 </header>
