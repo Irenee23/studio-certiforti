@@ -43,7 +43,29 @@
             font-family: 'Inter', system-ui, sans-serif;
             scroll-behavior: smooth;
         }
+/* Effetto dinamico al passaggio del mouse sui box */
+    .interactive-box {
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        overflow: hidden;
+    }
 
+    .interactive-box .box-content {
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .interactive-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .interactive-box:hover .box-content {
+        max-height: 250px;
+        opacity: 1;
+        margin-top: 10px;
+    }
         header {
             background: var(--leaf-green);
             padding: 12px 40px;
@@ -982,65 +1004,91 @@
     <strong>Mantenimento del sistema:</strong> Eseguiamo audit interni, riesami della direzione, aggiornamento documentale e formazione continua del personale. Puoi gestire queste attività internamente, se possiedi le competenze necessarie, oppure affidarle interamente al nostro Studio come partner strategico.
 </p>
        <div class="iso-grid">
-      <div class="iso-box">
+      <!-- Box 1: ISO 9001 -->
+      <div class="iso-box interactive-box">
         <h3>ISO 9001 – Qualità</h3>
-        <p>
-          Sistemi di gestione per la qualità orientati a processi agroalimentari cooperativi,
-          con attenzione a tracciabilità e soddisfazione del cliente.
-        </p>
+        <div class="box-content">
+          <p>
+            Sistemi di gestione per la qualità orientati a processi agroalimentari cooperativi,
+            con attenzione a tracciabilità e soddisfazione del cliente.
+          </p>
+        </div>
       </div>
-      <div class="iso-box">
+      <!-- Box 2: ISO 14001 -->
+      <div class="iso-box interactive-box">
         <h3>ISO 14001 – Ambiente</h3>
-        <p>
-          Gestione ambientale integrata, con focus su uso del suolo, risorse idriche e
-          impatti delle filiere urbane e cooperative.
-        </p>
+        <div class="box-content">
+          <p>
+            Gestione ambientale integrata, con focus su uso del suolo, risorse idriche e
+            impatti delle filiere urbane e cooperative.
+          </p>
+        </div>
       </div>
-      <div class="iso-box">
+      <!-- Box 3: ISO 22000 -->
+      <div class="iso-box interactive-box">
         <h3>ISO 22000 – Sicurezza alimentare</h3>
-        <p>
-          Sistemi di gestione per la sicurezza alimentare che dialogano con HACCP e
-          specificità delle filiere cooperative e HORECA.
-        </p>
+        <div class="box-content">
+          <p>
+            Sistemi di gestione per la sicurezza alimentare che dialogano con HACCP e
+            specificità delle filiere cooperative e HORECA.
+          </p>
+        </div>
       </div>
-      <div class="iso-box">
+      <!-- Box 4: Manuale HACCP -->
+      <div class="iso-box interactive-box">
         <h3>Manuale HACCP e Autocontrollo</h3>
-        <p>
-          Piano scritto su misura sui tuoi locali, processi e fornitori. Analisi dei pericoli phase-by-phase, CCP, monitoraggi e azioni correttive.
-        </p>
+        <div class="box-content">
+          <p>
+            Piano scritto su misura sui tuoi locali, processi e fornitori. Analisi dei pericoli phase-by-phase, CCP, monitoraggi e azioni correttive.
+          </p>
+        </div>
       </div>
-      <div class="iso-box">
+      <!-- Box 5: Programmi di Prerequisito -->
+      <div class="iso-box interactive-box">
         <h3>Programmi di Prerequisito (GMP/GHP)</h3>
-        <p>
-          Layout e flussi di lavorazione, pulizia e sanificazione, gestione allergeni, lotta agli infestanti, catena del freddo e potabilità acqua.
-        </p>
+        <div class="box-content">
+          <p>
+            Layout e flussi di lavorazione, pulizia e sanificazione, gestione allergeni, lotta agli infestanti, catena del freddo e potabilità acqua.
+          </p>
+        </div>
       </div>
-      <div class="iso-box">
+      <!-- Box 6: Etichettatura -->
+      <div class="iso-box interactive-box">
         <h3>Etichettatura (Reg. UE 1169/2011)</h3>
-        <p>
-          Verifica prima della stampa: allergeni, tabella nutrizionale, scadenze, origine e claim per evitare sprechi e sanzioni.
-        </p>
+        <div class="box-content">
+          <p>
+            Verifica prima della stampa: allergeni, tabella nutrizionale, scadenze, origine e claim per evitare sprechi e sanzioni.
+          </p>
+        </div>
       </div>
-      <div class="iso-box">
+      <!-- Box 7: Rintracciabilità -->
+      <div class="iso-box interactive-box">
         <h3>Rintracciabilità e Pratiche Sanitarie</h3>
-        <p>
-          Procedura di ritiro/richiamo (Reg. CE 178/2002), pratiche SUAP, SCIA, notifiche sanitarie e registrazioni (Reg. CE 852/853).
-        </p>
+        <div class="box-content">
+          <p>
+            Procedura di ritiro/richiamo (Reg. CE 178/2002), pratiche SUAP, SCIA, notifiche sanitarie e registrazioni (Reg. CE 852/853).
+          </p>
+        </div>
       </div>
-      <div class="iso-box">
+      <!-- Box 8: Analisi e Shelf Life -->
+      <div class="iso-box interactive-box">
         <h3>Analisi, Shelf Life e Audit</h3>
-        <p>
-          Piani di campionamento con laboratori accreditati, challenge test per la data di scadenza e ispezioni simulate non annunciate.
-        </p>
+        <div class="box-content">
+          <p>
+            Piani di campionamento con laboratori accreditati, challenge test per la data di scadenza e ispezioni simulate non annunciate.
+          </p>
+        </div>
       </div>
-      <div class="iso-box">
+      <!-- Box 9: Assistenza e Formazione -->
+      <div class="iso-box interactive-box">
         <h3>Assistenza Controlli e Formazione</h3>
-        <p>
-          Affiancamento durante i controlli ASL/NAS, gestione sicurezza sul lavoro (celle, macchinari) e corsi formazione alimentari con Emmess Learning Hub.
-        </p>
+        <div class="box-content">
+          <p>
+            Affiancamento durante i controlli ASL/NAS, gestione sicurezza sul lavoro (celle, macchinari) e corsi formazione alimentari con Emmess Learning Hub.
+          </p>
+        </div>
       </div>
     </div>
-    </section>
 
     <section id="team" style="scroll-margin-top: 160px;">
         <h2>Team</h2>
