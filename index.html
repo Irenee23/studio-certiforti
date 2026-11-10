@@ -575,16 +575,9 @@
 <button id="drawer-btn" onclick="toggleDrawer()" aria-label="Apri menu">☰</button>
 
     <!-- Blocco Menu di Navigazione (Destra) -->
-   <nav class="desktop-menu" style="display: flex; gap: 20px;">
-
-        <a href="#chi-siamo" style="color: white; text-decoration: none;">Chi Siamo</a>
-        <a href="#servizi" style="color: white; text-decoration: none;">Servizi</a>
-        <a href="#progetti" style="color: white; text-decoration: none;">Progetti</a>
-        <a href="#iso" style="color: white; text-decoration: none;">Certificazioni ISO & HACCP</a>
-        <a href="#team" style="color: white; text-decoration: none;">Team</a>
-        <a href="#preventivi" style="color: white; text-decoration: none;">Preventivi</a>
-        <a href="#contatti" style="color: white; text-decoration: none;">Contatti</a>
-    </nav>
+  <nav class="desktop-menu" style="display: flex; gap: 20px;">
+    ...
+</nav>
 
 </header>
 
@@ -653,7 +646,45 @@
         gap: 15px;
         margin: 35px 0;
         font-family: system-ui, -apple-system, sans-serif;
-    }
+        font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Stile per i menu a tendina desktop */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+  z-index: 1000;
+  border-radius: 4px;
+  padding: 8px 0;
+}
+
+.nav-dropdown .dropdown-content a {
+  color: #333333 !important;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.nav-dropdown .dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #2e7d32 !important;
+}
+
+.nav-dropdown:hover .dropdown-content {
+  display: block;
+}
     .certiforti-row {
         display: flex;
         justify-content: center;
