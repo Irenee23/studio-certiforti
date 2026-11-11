@@ -782,7 +782,20 @@
   background-color: #f1f1f1;
   color: #2e7d32 !important;
 }
+@media screen and (max-width: 768px) {
+    .nav-dropdown:hover .dropdown-content,
+    .nav-dropdown:active .dropdown-content,
+    .nav-dropdown:focus-within .dropdown-content {
+        display: block !important;
+        position: relative;
+        box-shadow: none;
+        padding-left: 15px;
+    }
+}
 
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
 .nav-dropdown:hover .dropdown-content {
   display: block;
 }
