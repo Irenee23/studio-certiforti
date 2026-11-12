@@ -784,9 +784,14 @@
 }
 @media screen and (max-width: 768px) {
 
-    .nav-dropdown {
-        display:block;
-        width:100%;
+    .nav-dropdown:hover .dropdown-content,
+    .nav-dropdown:active .dropdown-content,
+    .nav-dropdown:focus-within .dropdown-content {
+
+        display: block !important;
+        position: relative;
+        box-shadow: none;
+        padding-left: 15px;
     }
 
     .nav-dropdown .dropdown-content{
