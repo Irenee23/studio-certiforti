@@ -784,17 +784,30 @@
 }
 @media screen and (max-width: 768px) {
 
-    .dropdown-content{
+    .nav-dropdown {
+        display:block;
+        width:100%;
+    }
+
+    .nav-dropdown .dropdown-content{
         display:block !important;
         position:relative !important;
-        width:100% !important;
+        top:auto;
+        left:auto;
+        width:100%;
+        min-width:100%;
         box-shadow:none !important;
+        background:transparent;
         padding-left:15px;
     }
 
-}
+    .nav-dropdown .dropdown-content a{
+        display:block;
+        padding:8px 0;
+        color:white !important;
+        font-size:15px;
+        white-space:normal;
     }
-}
 
 .nav-dropdown:hover .dropdown-content {
     display: block;
