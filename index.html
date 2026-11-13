@@ -581,6 +581,38 @@
         float: none !important;
         text-align: left !important;
     }
+        /* Pulsante Hamburger Proposta 1: Pillola Verde Scuro & Oro con scritta MENU */
+    #drawer-btn,
+    .menu-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        width: auto !important;
+        height: auto !important;
+        background: var(--leaf-green-dark, #1b5e20) !important;
+        color: #ffffff !important;
+        border: 2px solid var(--oro-satinato, #c5a059) !important;
+        border-radius: 999px !important;
+        padding: 8px 16px !important;
+        font-size: 18px !important;
+        font-weight: bold !important;
+        line-height: 1 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+        cursor: pointer !important;
+        z-index: 1000 !important;
+    }
+
+    #drawer-btn::after,
+    .menu-btn::after {
+        content: "MENU";
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: sans-serif;
+        color: #ffffff;
+    }
+
 }/* <--- Chiusura ufficiale della media query @media screen and (max-width: 768px) */
 /* Pulsante hamburger per mobile */
 .menu-btn {
