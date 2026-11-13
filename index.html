@@ -532,32 +532,34 @@
 }
  Telefono */
 /* Media query per dispositivi mobili (fino a 768px) */
-@media screen and (max-width: 768px) {
-    /* Nasconde i titoli desktop in alto a destra */
-    .desktop-menu {
+/* 1. Spegne totalmente il menu orizzontale desktop su mobile */
+    nav.desktop-menu,
+    .desktop-menu.flex {
         display: none !important;
     }
-    .desktop-menu {
-        display: none !important;
-    }
-   /* 1. Forzatura assoluta del contenitore mobile in colonna */
+
+    /* 2. Forza il contenitore mobile a disposizione verticale in colonna */
     div#drawer.mobile-menu,
     #drawer {
         display: flex !important;
         flex-direction: column !important;
-        align-items: stretch !important;
+        align-items: flex-start !important;
         justify-content: flex-start !important;
     }
-    /* 2. Sradicamento di qualsiasi float o inline precedente su ogni elemento */
-    #drawer div.nav-dropdown {
+
+    /* 3. Neutralizza i contenitori interni e i link mettendoli al 100% in verticale */
+    #drawer div.nav-dropdown,
+    .mobile-menu .nav-dropdown,
+    #drawer a,
+    .mobile-menu a {
         display: block !important;
         width: 100% !important;
         float: none !important;
         clear: both !important;
-        margin: 0 0 15px 0 !important;
-        padding: 0 !important;
+        text-align: left !important;
+        margin-bottom: 12px !important;
+        box-sizing: border-box !important;
     }
-
     /* 3. Imposizione del blocco verticale totale sui link */
     #drawer a,
     #drawer div.nav-dropdown a {
