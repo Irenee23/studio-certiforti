@@ -537,6 +537,28 @@
     .desktop-menu {
         display: none !important;
     }
+    .desktop-menu {
+        display: none !important;
+    }
+    /* <--- INCOLLA QUI TRA LA RIGA 539 E LA 540: */
+    #drawer {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    #drawer .nav-dropdown,
+    #drawer > a {
+        display: block !important;
+        width: 100% !important;
+        float: none !important;
+        margin-bottom: 12px !important;
+    }
+
+    #drawer .nav-dropdown > a {
+        display: block !important;
+        width: 100% !important;
+    }
 }
     /* Mostra il pulsante hamburger/menu */
     .menu-btn {
