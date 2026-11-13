@@ -517,10 +517,11 @@
                 display: inline-block;
             }
 
-            header {
-                padding: 10px 18px;
-            }
-  .contact-logo {
+    header {
+        padding: 10px 18px;
+    }
+}
+.contact-logo {
     text-align: right;
 }
 
@@ -612,28 +613,27 @@
         font-family: sans-serif;
         color: #ffffff;
     }
-    /* Centra perfettamente audit-di-certificazione.png e il contenitore hero-image su smartphone */
-       /* Centra SOLO la prima foto (audit-di-certificazione.png) senza toccare quella sotto */
-    .hero-image:has(img[src="audit-di-certificazione.png"]) {
+       /* Centra la prima immagine (audit-di-certificazione.png) */
+    .hero {
+        grid-template-columns: minmax(0, 1fr) !important;
+        padding: 30px 16px !important;
+    }
+
+    .hero-image {
         width: 100% !important;
         max-width: 100% !important;
         margin: 15px auto !important;
         padding: 0 !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        position: relative !important;
-        left: 0 !important;
-        right: 0 !important;
-        transform: none !important;
+        text-align: center !important;
+        display: block !important;
     }
 
-    img[src="audit-di-certificazione.png"] {
+    img[src*="audit-di-certificazione.png"] {
         display: block !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        left: 0 !important;
-        transform: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 0 auto !important;
     }
 
 }/* <--- Chiusura ufficiale della media query @media screen and (max-width: 768px) */
