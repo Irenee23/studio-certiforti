@@ -532,7 +532,9 @@
 }
  
 /* Media query per dispositivi mobili (fino a 768px) */
-/* 1. Spegne totalmente il menu orizzontale desktop su mobile */
+            
+@media screen and (max-width: 768px) {
+    /* 1. Spegne totalmente il menu orizzontale desktop su mobile */
     nav.desktop-menu,
     .desktop-menu.flex {
         display: none !important;
@@ -541,7 +543,6 @@
     /* 2. Forza il contenitore mobile a disposizione verticale in colonna */
     div#drawer.mobile-menu,
     #drawer {
-        display: flex;
         flex-direction: column !important;
         align-items: flex-start !important;
         justify-content: flex-start !important;
