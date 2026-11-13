@@ -533,14 +533,6 @@
  Telefono */
 /* Media query per dispositivi mobili (fino a 768px) */
 /* 1. Spegne totalmente il menu orizzontale desktop su mobile */
-    @media screen and (max-width: 768px) {
-    /* Nasconde il menu orizzontale desktop */
-    .desktop-menu {
-        display: none !important;
-    }
-
-    /* Ripristina il contenitore mobile in colonna con scorrimento se necessario */
-    /* 1. Spegne totalmente il menu orizzontale desktop su mobile */
     nav.desktop-menu,
     .desktop-menu.flex {
         display: none !important;
@@ -568,19 +560,23 @@
         margin-bottom: 12px !important;
         box-sizing: border-box !important;
     }
-    #drawer .dropdown-content a {
-        color: #ffffff !important;
-        font-size: 14px !important;
-        padding: 6px 0 !important;
-    }
-} /* <--- Chiusura ufficiale della media query @media screen and (max-width: 768px) */    /* Stile per i link interni del sottomenu */
-    /* Stile corretto per i link interni del sottomenu (testo bianco e leggibile) */
-    #drawer .nav-dropdown .dropdown-content a {
-        color: #ffffff !important;
-        font-size: 14px !important;
-        padding: 8px 0 !important;
+    /* 3. Imposizione del blocco verticale totale sui link */
+    #drawer a,
+    #drawer div.nav-dropdown a {
         display: block !important;
-        background: transparent !important;
+        width: 100% !important;
+        float: none !important;
+        clear: both !important;
+        text-align: left !important;
+        box-sizing: border-box !important;
+    }
+    #drawer > a,
+    #drawer .nav-dropdown > a {
+        display: block !important;
+        width: 100% !important;
+        clear: both !important;
+        float: none !important;
+        text-align: left !important;
     }
 } /* <--- Chiusura ufficiale della media query @media screen and (max-width: 768px) */
 /* Pulsante hamburger per mobile */
