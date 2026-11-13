@@ -802,10 +802,58 @@
 <div id="drawer">
     <h2>Studio CertifOrti</h2>
     <a href="#home" onclick="toggleDrawer()">Home</a>
-    <a href="#chi-siamo" onclick="toggleDrawer()">Chi Siamo</a>
-    <a href="#servizi" onclick="toggleDrawer()">Servizi</a>
-    <a href="#progetti" onclick="toggleDrawer()">Progetti</a>
-    <a href="#iso" onclick="toggleDrawer()">Certificazioni ISO & HACCP</a>
+
+    <!-- 1. Chi Siamo con sottomenu -->
+    <div class="nav-dropdown">
+        <a href="#chi-siamo">Chi Siamo ▾</a>
+        <div class="dropdown-content">
+            <a href="#direzione-scientifica" onclick="toggleDrawer()">La Direzione Scientifica</a>
+            <a href="#core-business" onclick="toggleDrawer()">Il Core Business delle Certificazioni e dell'Auditing Agroalimentare</a>
+            <a href="#pilastri-strategici" onclick="toggleDrawer()">I Nostri Pilastri Strategici</a>
+        </div>
+    </div>
+
+    <!-- 2. Servizi con sottomenu -->
+    <div class="nav-dropdown">
+        <a href="#servizi">Servizi ▾</a>
+        <div class="dropdown-content">
+            <a href="#agronomia-urbana" onclick="toggleDrawer()">Agronomia urbana biologica</a>
+            <a href="#agronomia-rigenerativa" onclick="toggleDrawer()">Agronomia rigenerativa</a>
+            <a href="#supporto-diagnostico" onclick="toggleDrawer()">Supporto diagnostico</a>
+            <a href="#haccp-sicurezza" onclick="toggleDrawer()">HACCP e sicurezza alimentare</a>
+            <a href="#consulenza-iso" onclick="toggleDrawer()">Consulenza ISO per agroalimentare</a>
+            <a href="#progetti-ambientali" onclick="toggleDrawer()">Progetti ambientali e sostenibilità</a>
+            <a href="#produzione-compost" onclick="toggleDrawer()">Produzione di compost di qualità certificata</a>
+            <a href="#diagnostica-nutrizionale" onclick="toggleDrawer()">Diagnostica nutrizionale e analisi del suolo</a>
+        </div>
+    </div>
+
+    <!-- 3. Progetti con sottomenu -->
+    <div class="nav-dropdown">
+        <a href="#progetti">Progetti ▾</a>
+        <div class="dropdown-content">
+            <a href="#progetti-agronomia-urbana" onclick="toggleDrawer()">Agronomia Urbana</a>
+            <a href="#riqualificazione-verde" onclick="toggleDrawer()">Riqualificazione Verde & Filiere</a>
+            <a href="#progetti-cooperativi" onclick="toggleDrawer()">Progetti Cooperativi</a>
+        </div>
+    </div>
+
+    <!-- 4. Certificazioni ISO & HACCP con sottomenu -->
+    <div class="nav-dropdown">
+        <a href="#iso">Certificazioni ISO & HACCP ▾</a>
+        <div class="dropdown-content">
+            <a href="#iso-9001" onclick="toggleDrawer()">ISO 9001 – Qualità</a>
+            <a href="#iso-14001" onclick="toggleDrawer()">ISO 14001 – Ambiente</a>
+            <a href="#iso-22000" onclick="toggleDrawer()">ISO 22000 – Sicurezza alimentare</a>
+            <a href="#manuale-haccp" onclick="toggleDrawer()">Manuale HACCP e Autocontrollo</a>
+            <a href="#programmi-gmp" onclick="toggleDrawer()">Programmi di Prerequisito (GMP/GHP)</a>
+            <a href="#etichettatura" onclick="toggleDrawer()">Etichettatura (Reg. UE 1169/2011)</a>
+            <a href="#rintracciabilità" onclick="toggleDrawer()">Rintracciabilità e Pratiche Sanitarie</a>
+            <a href="#analisi-shelf" onclick="toggleDrawer()">Analisi, Shelf Life e Audit</a>
+            <a href="#assistenza-controlli" onclick="toggleDrawer()">Assistenza Controlli e Formazione</a>
+        </div>
+    </div>
+
     <a href="#team" onclick="toggleDrawer()">Team</a>
     <a href="#preventivi" onclick="toggleDrawer()">Preventivi</a>
     <a href="#contatti" onclick="toggleDrawer()">Contatti</a>
