@@ -540,30 +540,34 @@
     .desktop-menu {
         display: none !important;
     }
-   
-    #drawer {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-    }
-    /* 1. Configurazione pulita del drawer in verticale forzata */
+   /* 1. Forzatura assoluta del contenitore mobile in colonna */
+    div#drawer.mobile-menu,
     #drawer {
         display: flex !important;
         flex-direction: column !important;
         align-items: stretch !important;
         justify-content: flex-start !important;
     }
-
-    /* 2. Forza ogni voce del menu e contenitore a occupare l'intera riga uno sotto l'altro */
-    #drawer .nav-dropdown {
+    /* 2. Sradicamento di qualsiasi float o inline precedente su ogni elemento */
+    #drawer div.nav-dropdown {
         display: block !important;
         width: 100% !important;
-        clear: both !important;
         float: none !important;
-        margin-bottom: 12px !important;
-        text-align: left !important;
+        clear: both !important;
+        margin: 0 0 15px 0 !important;
+        padding: 0 !important;
     }
 
+    /* 3. Imposizione del blocco verticale totale sui link */
+    #drawer a,
+    #drawer div.nav-dropdown a {
+        display: block !important;
+        width: 100% !important;
+        float: none !important;
+        clear: both !important;
+        text-align: left !important;
+        box-sizing: border-box !important;
+    }
     #drawer > a,
     #drawer .nav-dropdown > a {
         display: block !important;
@@ -573,7 +577,6 @@
         text-align: left !important;
     }
 } /* <--- Chiusura ufficiale della media query @media screen and (max-width: 768px) */
-
 /* Pulsante hamburger per mobile */
 .menu-btn {
     display: block !important;
@@ -1219,7 +1222,7 @@
                     Analisi del suolo, diagnosi agronomica, progettazione integrata e accompagnamento
                     normativo continuo, dalla fase di studio alla certificazione.
                 </p>
-            </div>
+  </div>
             <div class="service-box">
                 <h3>Partner</h3>
                 <p>
