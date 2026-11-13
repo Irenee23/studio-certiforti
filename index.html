@@ -613,7 +613,8 @@
         color: #ffffff;
     }
     /* Centra perfettamente audit-di-certificazione.png e il contenitore hero-image su smartphone */
-    .hero-image {
+       /* Centra SOLO la prima foto (audit-di-certificazione.png) senza toccare quella sotto */
+    .hero-image:has(img[src="audit-di-certificazione.png"]) {
         width: 100% !important;
         max-width: 100% !important;
         margin: 15px auto !important;
@@ -621,18 +622,18 @@
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
-        box-sizing: border-box !important;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
     }
 
-        .hero-image img,
     img[src="audit-di-certificazione.png"] {
         display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        margin: 0 auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: 0 !important;
         transform: none !important;
-        position: static !important;
     }
 
 }/* <--- Chiusura ufficiale della media query @media screen and (max-width: 768px) */
