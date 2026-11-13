@@ -546,52 +546,62 @@
         flex-direction: column !important;
         align-items: flex-start !important;
     }
+    /* 1. Configurazione pulita del drawer in verticale forzata */
+    #drawer {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+    }
 
-    /* Forza ogni elemento del menu a occupare il 100% della larghezza e andare a capo */
-    #drawer a {
+    /* 2. Forza ogni voce del menu e contenitore a occupare l'intera riga uno sotto l'altro */
+    #drawer .nav-dropdown {
+        display: block !important;
+        width: 100% !important;
+        clear: both !important;
+        float: none !important;
+        margin-bottom: 12px !important;
+        text-align: left !important;
+    }
+
+    #drawer > a,
+    #drawer .nav-dropdown > a {
         display: block !important;
         width: 100% !important;
         clear: both !important;
         float: none !important;
         text-align: left !important;
-        margin-bottom: 10px !important;
     }
+} /* <--- Chiusura ufficiale della media query @media screen and (max-width: 768px) */
 
-    #drawer .nav-dropdown {
-        display: block !important;
-        width: 100% !important;
-        clear: both !important;
-    }    /* Mostra il pulsante hamburger/menu */
-    .menu-btn {
-        display: block !important;
-        position: absolute;
-        right: 20px;
-        top: 30px;
-        background: transparent;
-        border: none;
-        color: white;
-        font-size: 30px;
-        cursor: pointer;
-        z-index: 1000;
-    }
+/* Pulsante hamburger per mobile */
+.menu-btn {
+    display: block !important;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
 
-    /* Pannello del menu mobile a comparsa */
-    .mobile-menu {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(10, 30, 15, 0.98);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-        overflow-y: auto;
-        padding: 40px 20px;
-    }
-
+/* Pannello del menu mobile a comparsa */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(10, 30, 15, 0.98);
+    /* Rimosso justify-content e align-items center che spiazzavano gli elementi in orizzontale */
+    z-index: 999;
+    overflow-y: auto;
+    padding: 40px 20px;
+}
     .mobile-menu.active {
         display: flex;
     }
