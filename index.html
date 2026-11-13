@@ -560,9 +560,10 @@
         margin-bottom: 12px !important;
         box-sizing: border-box !important;
     }
-    /* 3. Imposizione del blocco verticale totale sui link */
+   /* 3. Imposizione del blocco verticale totale sui link e gestione dei sottomenu */
     #drawer a,
-    #drawer div.nav-dropdown a {
+    #drawer div.nav-dropdown a,
+    #drawer .nav-dropdown > a {
         display: block !important;
         width: 100% !important;
         float: none !important;
@@ -570,13 +571,28 @@
         text-align: left !important;
         box-sizing: border-box !important;
     }
-    #drawer > a,
-    #drawer .nav-dropdown > a {
-        display: block !important;
-        width: 100% !important;
-        clear: both !important;
+
+    /* 4. Rende visibili i sottomenu di Team e Preventivi all'interno del drawer mobile */
+    #drawer .nav-dropdown .dropdown-content {
+        display: none !important;
+        position: static !important;
         float: none !important;
-        text-align: left !important;
+        width: 100% !important;
+        background-color: rgba(0, 0, 0, 0.2) !important;
+        padding-left: 15px !important;
+        box-shadow: none !important;
+    }
+
+    /* Mostra il sottomenu quando si passa il mouse o se viene attivato */
+    #drawer .nav-dropdown:hover .dropdown-content,
+    #drawer .nav-dropdown.active .dropdown-content {
+        display: block !important;
+    }
+
+    /* Stile per i link interni del sottomenu */
+    #drawer .nav-dropdown .dropdown-content a {
+        font-size: 14px !important;
+        padding: 8px 0 !important;
     }
 } /* <--- Chiusura ufficiale della media query @media screen and (max-width: 768px) */
 /* Pulsante hamburger per mobile */
