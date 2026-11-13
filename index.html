@@ -541,25 +541,29 @@
         display: none !important;
     }
     /* <--- INCOLLA QUI TRA LA RIGA 539 E LA 540: */
+   /* Forza il drawer in colonna verticale al 100% */
     #drawer {
         display: flex !important;
         flex-direction: column !important;
         align-items: stretch !important;
     }
 
-    #drawer .nav-dropdown,
-    #drawer > a {
+    /* Forza ogni elemento del menu a occupare l'intera riga */
+    #drawer .nav-dropdown {
         display: block !important;
         width: 100% !important;
         float: none !important;
-        margin-bottom: 12px !important;
+        clear: both !important;
+        margin-bottom: 15px !important;
     }
 
+    /* Forza i link principali a mettersi in colonna */
+    #drawer > a,
     #drawer .nav-dropdown > a {
         display: block !important;
         width: 100% !important;
+        text-align: left !important;
     }
-}
     /* Mostra il pulsante hamburger/menu */
     .menu-btn {
         display: block !important;
