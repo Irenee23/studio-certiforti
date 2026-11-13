@@ -533,69 +533,56 @@
  Telefono */
 /* Media query per dispositivi mobili (fino a 768px) */
 /* 1. Spegne totalmente il menu orizzontale desktop su mobile */
-    nav.desktop-menu,
-    .desktop-menu.flex {
+    @media screen and (max-width: 768px) {
+    /* Nasconde il menu orizzontale desktop */
+    .desktop-menu {
         display: none !important;
     }
 
-    /* 2. Forza il contenitore mobile a disposizione verticale in colonna */
-    div#drawer.mobile-menu,
+    /* Ripristina il contenitore mobile in colonna con scorrimento se necessario */
     #drawer {
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-start !important;
         justify-content: flex-start !important;
+        overflow-y: auto !important;
     }
 
-    /* 3. Neutralizza i contenitori interni e i link mettendoli al 100% in verticale */
-    #drawer div.nav-dropdown,
-    .mobile-menu .nav-dropdown,
-    #drawer a,
-    .mobile-menu a {
+    /* Allinea tutte le voci principali una sotto l'altra */
+    #drawer .nav-dropdown,
+    #drawer > a {
         display: block !important;
         width: 100% !important;
         float: none !important;
         clear: both !important;
-        text-align: left !important;
         margin-bottom: 12px !important;
-        box-sizing: border-box !important;
-    }
-   /* 3. Imposizione del blocco verticale totale sui link e gestione dei sottomenu */
-    #drawer a,
-    #drawer div.nav-dropdown a,
-    #drawer .nav-dropdown > a {
-        display: block !important;
-        width: 100% !important;
-        float: none !important;
-        clear: both !important;
         text-align: left !important;
-        box-sizing: border-box !important;
     }
 
-    /* 4. Rende visibili i sottomenu di Team e Preventivi all'interno del drawer mobile */
-    #drawer .nav-dropdown .dropdown-content {
-        display: none !important;
-        position: static !important;
-        float: none !important;
+    /* Link principali bianchi */
+    #drawer a {
+        display: block !important;
         width: 100% !important;
-        background-color: rgba(0, 0, 0, 0.2) !important;
-        padding-left: 15px !important;
-        box-shadow: none !important;
+        color: #ffffff !important;
+        text-align: left !important;
     }
 
-    /* Mostra il sottomenu quando si passa il mouse o se viene attivato */
-   /* Forza l'apertura immediata e visibile dei sottomenu di Team e Preventivi su mobile */
-    #drawer .nav-dropdown .dropdown-content {
+    /* Sottovoci visibili in colonna con testo bianco */
+    #drawer .dropdown-content {
         display: block !important;
         position: static !important;
-        float: none !important;
         width: 100% !important;
-        background-color: rgba(0, 0, 0, 0.2) !important;
         padding-left: 15px !important;
+        background: transparent !important;
         box-shadow: none !important;
     }
 
-    /* Stile per i link interni del sottomenu */
+    #drawer .dropdown-content a {
+        color: #ffffff !important;
+        font-size: 14px !important;
+        padding: 6px 0 !important;
+    }
+} /* <--- Chiusura ufficiale della media query @media screen and (max-width: 768px) */    /* Stile per i link interni del sottomenu */
     /* Stile corretto per i link interni del sottomenu (testo bianco e leggibile) */
     #drawer .nav-dropdown .dropdown-content a {
         color: #ffffff !important;
