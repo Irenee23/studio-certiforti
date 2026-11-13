@@ -584,9 +584,15 @@
     }
 
     /* Mostra il sottomenu quando si passa il mouse o se viene attivato */
-    #drawer .nav-dropdown:hover .dropdown-content,
-    #drawer .nav-dropdown.active .dropdown-content {
+   /* Forza l'apertura immediata e visibile dei sottomenu di Team e Preventivi su mobile */
+    #drawer .nav-dropdown .dropdown-content {
         display: block !important;
+        position: static !important;
+        float: none !important;
+        width: 100% !important;
+        background-color: rgba(0, 0, 0, 0.2) !important;
+        padding-left: 15px !important;
+        box-shadow: none !important;
     }
 
     /* Stile per i link interni del sottomenu */
