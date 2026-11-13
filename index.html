@@ -534,6 +534,8 @@
 /* Telefono */
 @media screen and (max-width: 768px) {
 
+    @media screen and (max-width: 768px) {
+
     .desktop-menu {
         display: none !important;
     }
@@ -550,8 +552,22 @@
         cursor: pointer;
         z-index: 1000;
     }
+
+    /* Rende visibili o gestibili i sottomenu nel menu mobile */
+    .mobile-menu .dropdown,
+    .mobile-menu ul {
+        position: static !important;
+        display: none; /* Si aprono al click o puoi metterli a 'block' se vuoi vederli sempre */
+        list-style: none;
+        padding-left: 15px;
+    }
+
+    /* Se usi una classe come .open o .active via JavaScript per attivarli */
+    .mobile-menu .has-dropdown.open .dropdown {
+        display: block !important;
+    }
 }
-        #chi-siamo,
+#chi-siamo,
 #servizi,
 #progetti,
 #iso,
