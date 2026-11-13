@@ -117,18 +117,20 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        #drawer {
-            position: fixed;
-            top: 0;
-            left: -280px;
-            width: 280px;
-            height: 100%;
-            background: var(--leaf-green-dark);
-            color: #fff;
-            padding: 40px 30px;
-            transition: left 0.3s ease;
-            z-index: 999;
-        }
+       #drawer {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background: var(--leaf-green-dark);
+    color: #fff;
+    padding: 40px 30px;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
 
         #drawer.open {
             left: 0;
