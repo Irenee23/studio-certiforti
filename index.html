@@ -743,7 +743,50 @@
 #contatti {
     scroll-margin-top: 140px;
 }
-            
+/* --- PULSANTE AREA RISERVATA (Sotto il logo, fuori dall'header) --- */
+.sub-header-cta {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-portale-nc {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1b4332;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-portale-nc:hover {
+  background-color: #122e22;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .sub-header-cta {
+    padding: 0 16px;
+    justify-content: flex-start;
+  }
+  .btn-portale-nc {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+}            
     </style>        
 </head>
 <body>
@@ -837,7 +880,16 @@
 
 </nav>
 </header>
-
+<!-- Pulsante Area Riservata sotto il logo -->
+<div class="sub-header-cta">
+  <a href="https://www.appsheet.com/start/b688bd1f-09cf-49a8-a34e-0471822bd059" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="btn-portale-nc"
+     title="Accesso riservato ai clienti registrati">
+    &#128274; Area Riservata Clienti
+  </a>
+</div>
 <div id="drawer">
     <h2>Studio CertifOrti</h2>
     <a href="#home" onclick="toggleDrawer()">Home</a>
