@@ -87,46 +87,50 @@
             letter-spacing: -0.5px;
         }
 /* --- PULSANTE AREA RISERVATA (Nessuna modifica al layout esistente) --- */
-.header-app-cta {
+/* --- PULSANTE AREA RISERVATA (Allineato a sinistra sotto il logo) --- */
+.sub-header-cta {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 14px;
+  padding: 0 40px; /* Stesso margine sinistro del logo nell'header */
   display: flex;
-  align-items: center;
-  margin-left: 24px;
+  justify-content: flex-start; /* Allineato a sinistra nel riquadro rosso */
 }
 
 .btn-portale-nc {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #ffffff;
-  color: #1f4e2a;
+  background-color: #1f4e2a;
+  color: #ffffff;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 600;
-  padding: 8px 16px;
+  padding: 9px 18px;
   border-radius: 6px;
   text-decoration: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14);
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
   white-space: nowrap;
 }
 
 .btn-portale-nc:hover {
-  background-color: #e8f5e9;
+  background-color: #16381e;
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Adattamento automatico per schermi smartphone */
+/* Adattamento automatico su smartphone */
 @media (max-width: 768px) {
-  .header-app-cta {
-    margin-left: 10px;
+  .sub-header-cta {
+    padding: 0 20px;
+    justify-content: flex-start;
   }
   .btn-portale-nc {
-    font-size: 12px;
-    padding: 6px 10px;
+    font-size: 13px;
+    padding: 8px 14px;
   }
-}
-        nav {
+}        nav {
     display: flex;
     gap: 20px;
     margin-left: auto;
@@ -796,7 +800,8 @@
 </div>
 <button id="drawer-btn" onclick="toggleDrawer()" aria-label="Apri menu">☰</button>
 
-    <div class="header-app-cta">
+   <!-- Barra Accesso Riservato allineata a sinistra sotto il logo -->
+<div class="sub-header-cta">
   <a href="https://www.appsheet.com/start/b688bd1f-09cf-49a8-a34e-0471822bd059" 
      target="_blank" 
      rel="noopener noreferrer" 
@@ -804,6 +809,7 @@
      title="Accesso riservato ai clienti registrati">
     &#128274; Area Riservata Clienti
   </a>
+</div>
 </div><!-- Blocco Menu di Navigazione (Destra) -->
 <nav class="desktop-menu">
 
