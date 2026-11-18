@@ -86,7 +86,46 @@
             font-weight: 700;
             letter-spacing: -0.5px;
         }
+/* --- PULSANTE AREA RISERVATA (Nessuna modifica al layout esistente) --- */
+.header-app-cta {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+}
 
+.btn-portale-nc {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #1f4e2a;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-portale-nc:hover {
+  background-color: #e8f5e9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Adattamento automatico per schermi smartphone */
+@media (max-width: 768px) {
+  .header-app-cta {
+    margin-left: 10px;
+  }
+  .btn-portale-nc {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
         nav {
     display: flex;
     gap: 20px;
@@ -757,7 +796,15 @@
 </div>
 <button id="drawer-btn" onclick="toggleDrawer()" aria-label="Apri menu">☰</button>
 
-    <!-- Blocco Menu di Navigazione (Destra) -->
+    <div class="header-app-cta">
+  <a href="https://www.appsheet.com/start/b688bd1f-09cf-49a8-a34e-0471822bd059" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="btn-portale-nc"
+     title="Accesso riservato ai clienti registrati">
+    &#128274; Area Riservata Clienti
+  </a>
+</div><!-- Blocco Menu di Navigazione (Destra) -->
 <nav class="desktop-menu">
 
   <!-- 1. Chi Siamo -->
