@@ -86,54 +86,8 @@
             font-weight: 700;
             letter-spacing: -0.5px;
         }
-/* --- PULSANTE AREA RISERVATA (Nessuna modifica al layout esistente) --- */
-/* --- PULSANTE AREA RISERVATA (Allineato a sinistra sotto il logo) --- */
-/* --- PULSANTE AREA RISERVATA (Sotto l'header, allineato a sinistra) --- */
-.sub-header-cta {
-  width: 100%;
-  box-sizing: border-box;
-  margin-top: 14px;
-  margin-bottom: 5px;
-  padding: 0 40px; /* Allineato perfettamente al margine sinistro del logo nell'header */
-  display: flex;
-  justify-content: flex-start;
-}
 
-.btn-portale-nc {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #1f4e2a;
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 9px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14);
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-  white-space: nowrap;
-}
-
-.btn-portale-nc:hover {
-  background-color: #16381e;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Adattamento automatico per smartphone */
-@media (max-width: 768px) {
-  .sub-header-cta {
-    padding: 0 20px;
-    justify-content: flex-start;
-  }
-  .btn-portale-nc {
-    font-size: 13px;
-    padding: 8px 14px;
-  }
-}        
-nav {
+        nav {
     display: flex;
     gap: 20px;
     margin-left: auto;
@@ -799,15 +753,11 @@ nav {
     <!-- Blocco Logo (Sinistra) -->
    <div class="logo-wrapper" style="display: flex; align-items: center; gap: 12px;">
 <img src="logo.png" alt="Logo Studio CertifOrti" style="width:75px; height:75px; object-fit:cover; object-position:center; background:white; border-radius:50%; transform:scale(1.18);">
-<div class="sub-header-cta">
-  <a href="https://www.appsheet.com/start/b688bd1f-09cf-49a8-a34e-0471822bd059" 
-     target="_blank" 
-     rel="noopener noreferrer" 
-     class="btn-portale-nc"
-     title="Accesso riservato ai clienti registrati">
-    &#128274; Area Riservata Clienti
-  </a>
+<div class="brand-text" style="color: white; font-weight: bold;">Studio CertifOrti</div>
 </div>
+<button id="drawer-btn" onclick="toggleDrawer()" aria-label="Apri menu">☰</button>
+
+    <!-- Blocco Menu di Navigazione (Destra) -->
 <nav class="desktop-menu">
 
   <!-- 1. Chi Siamo -->
@@ -972,7 +922,7 @@ nav {
     <div class="hero">
     
     <div class="hero-text">
-        <h1>Consulenza Certificazioni ISO 22000, ISO 9001, HACCP e Agronomia Rigenerativa per le Filiere Agroalimentari e l'HORECA</h1>
+        <h1>Consulenza ISO, HACCP e Agronomia Rigenerativa per le Filiere Agroalimentari e l'HORECA</h1>
 <p>Certifichiamo la qualità, blindiamo la sicurezza alimentare e ingegnerizziamo la sostenibilità della tua azienda dal campo alla tavola. Studio CertifOrti è il tuo partner per audit ispettivi qualificati e conformità integrata.</p>
 
 <ul class="hero-highlights">
